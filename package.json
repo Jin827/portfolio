@@ -1,0 +1,19 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Jiah Lee  Protfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jin827/portfolio.git"
+  },
+  "author": "Jiah Lee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jin827/portfolio/issues"
+  },
+  "homepage": "https://github.com/Jin827/portfolio#readme"
+}
