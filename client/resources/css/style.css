@@ -55,9 +55,15 @@ header {
     filter: alpha(opacity=80); /* For IE8 and earlier */
 }
 
+.nav-link--box {
+    display: flex;
+    justify-content: space-between;
+}
+
 .mobile-nav-icon {
-    display: block;
+    display: inline-block;
     padding: 25px 0 13px 20px;
+
 }
 
 .mobile-nav-icon img {
@@ -65,11 +71,14 @@ header {
     width: auto
 }
 
+.main-nav--box {
+    background-color: rgba(255,255,255,0.3);
+}
+
 .main-nav {
     display: flex;
     justify-content: space-around;
     list-style: none; 
-    background-color: rgba(255,255,255,0.3);
     padding: 13px 1em;
     transition: all .3s ease-in-out;
     display: none;
@@ -80,13 +89,26 @@ header {
     display: flex;
 }
 
-.main-nav li {
-   
-}
-
 .main-nav li a {
     text-decoration: none;
     text-transform: uppercase;
     color: black;
     font-size: 1.1em;
 }
+
+#download-link-mobile {
+    display: inline-block;
+    border: 1px solid hsl(212, 72%, 59%, 0.5);
+    background-color: hsl(212, 72%, 59%, 0.8);
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 4px;
+    margin: 20px 20px 13px 0px;
+    color: black;
+}
+
+#download-link-mobile:hover {
+    border: 2px solid rgb(34, 69, 109);
+}
+
+#download-link { display: none; }
