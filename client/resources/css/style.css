@@ -1,0 +1,92 @@
+/* ---------------------------------------- */
+
+/* BASIC SETUP */
+
+/* ---------------------------------------- */
+
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    background: #fff;
+    height: 100%;
+    color: #333;
+}
+
+/* ---------------------------------------- */
+
+/* VARIABLES */
+
+/* ---------------------------------------- */
+
+:root {
+    --main-blue: #4A90E2;
+    --orange: #E05915;
+}
+
+/* ---------------------------------------- */
+
+/* HEADER */
+
+/* ---------------------------------------- */
+
+header {
+    background-image: linear-gradient(rgba(223, 178, 149, 0.3), rgba(223, 178, 149, 0.3)), url(../assets/svg/background.svg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    opacity: 0.8;
+    filter: alpha(opacity=80); /* For IE8 and earlier */
+}
+
+.mobile-nav-icon {
+    display: block;
+    padding: 25px 0 13px 20px;
+}
+
+.mobile-nav-icon img {
+    height: 18px;
+    width: auto
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-around;
+    list-style: none; 
+    background-color: rgba(255,255,255,0.3);
+    padding: 13px 1em;
+    transition: all .3s ease-in-out;
+    display: none;
+}
+
+.open{
+    display: block;
+    display: flex;
+}
+
+.main-nav li {
+   
+}
+
+.main-nav li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    font-size: 1.1em;
+}
