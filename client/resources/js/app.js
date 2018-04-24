@@ -5,7 +5,7 @@
 
     const navOpen = 'resources/assets/svg/nav-open.svg';
     const navClose = 'resources/assets/svg/nav-close.svg';
-    
+
     /* --- Nav Icon & Toggle box --- */
     navIcon.addEventListener('click', function(e) {
         e.preventDefault();
@@ -21,15 +21,5 @@
 
     /* --- Sticky Nav --- */
 
-
-    /* --- Sticky Nav --- */
-    const downloadBtn = document.querySelector('#download-link');
-
-    downloadBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-
-        this.href = 'https://drive.google.com/open?id=1zPNrPO2_HuJMA1uOcqb_Wb-ajMGXgwnq';
-    })
     
-
 })();

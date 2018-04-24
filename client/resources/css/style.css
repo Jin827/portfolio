@@ -42,6 +42,35 @@ body {
 
 /* ---------------------------------------- */
 
+/* REUSABLE COMPONENTS */
+
+/* ---------------------------------------- */
+
+/* --- Header --- */
+h1 {
+    font-size: 5em;
+    line-height: 1.5em;
+    letter-spacing: 5px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+    font-size: 2em;
+    width: 100vw;
+    letter-spacing: 3px;
+    font-weight: bold;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+
+.point-color--blue {
+    color: rgb(9, 25, 43);
+}
+
+/* ---------------------------------------- */
+
 /* HEADER */
 
 /* ---------------------------------------- */
@@ -55,6 +84,24 @@ header {
     filter: alpha(opacity=80); /* For IE8 and earlier */
 }
 
+.header-text--box {
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-40%, -40%);
+}
+
+.header-arrow--img {
+    position: absolute;
+    top: 96%;
+    left: 50%;
+    transform: translate(-96%, -50%);
+    height: 30px;
+    width: auto;
+}
+
+/* --- Mobile Nav --- */
 .nav-link--box {
     display: flex;
     justify-content: space-between;
@@ -71,12 +118,30 @@ header {
     width: auto
 }
 
+#download-link-mobile {
+    display: inline-block;
+    border: 1px solid hsl(212, 72%, 59%, 0.8);
+    background-color: hsl(212, 72%, 59%, 0.8);
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 4px;
+    margin: 20px 20px 13px 0px;
+    color: black;
+}
+
+#download-link-mobile:hover {
+    border: 2px solid rgb(34, 69, 109);
+    transition: border .3s;
+}
+
+#download-link { display: none; }
+
+/* --- Main Nav --- */
 .main-nav--box {
     background-color: rgba(255,255,255,0.3);
 }
 
 .main-nav {
-    display: flex;
     justify-content: space-around;
     list-style: none; 
     padding: 13px 1em;
@@ -96,19 +161,3 @@ header {
     font-size: 1.1em;
 }
 
-#download-link-mobile {
-    display: inline-block;
-    border: 1px solid hsl(212, 72%, 59%, 0.5);
-    background-color: hsl(212, 72%, 59%, 0.8);
-    text-decoration: none;
-    border-radius: 5px;
-    padding: 4px;
-    margin: 20px 20px 13px 0px;
-    color: black;
-}
-
-#download-link-mobile:hover {
-    border: 2px solid rgb(34, 69, 109);
-}
-
-#download-link { display: none; }

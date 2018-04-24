@@ -1,22 +1,19 @@
-@media screen and (min-width: 500px) {
-    
-    .main-nav {
-        padding-left: 1.5em;
-        padding-right: 1.5em;
-    }
-
-    
+@media screen and (min-width: 500px) { 
+  
 }
 
 @media screen and (min-width: 640px) {
     
-    .mobile-nav-icon {
-        padding-left: 30px;
-    }
+    /* --- Header --- */
+    h1 { font-size: 6em; }
+    h2 { font-size: 3em; }
 }
 
 @media screen and (min-width: 900px) {
+    
+    
 
+    /* --- Nav --- */
     #nav-container {
         padding: 1.5em;
     }
@@ -32,6 +29,7 @@
     .main-nav { 
         padding-top: 5px;
         background-color: transparent;
+        display: flex;
     }
 
     .main-nav li {
@@ -65,14 +63,26 @@
         margin: 1em;
         color: black;
     }
+
+    #download-link:hover {
+        border: 2px solid rgb(34, 69, 109);
+        transition: border .3s;
+    }
 }
 
 @media screen and (min-width: 1024px) {
 
+    /* --- Header --- */
+    h1 { font-size: 7em; }
+    h2 { font-size: 3em; }
 }
 
 @media screen and (min-width: 1300px) {
+    
+    /* --- Header --- */
+    h1 { font-size: 9em; }
 
+    h2 { font-size: 4em; }
 }
 
 @media screen and (min-width: 1700px) {
