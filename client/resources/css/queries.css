@@ -19,7 +19,8 @@
     }
 
     .mobile-nav-icon { display: none; }  
-
+    .main-nav--triangle { display: none }
+    
     .main-nav--box { 
         background-color: transparent;
         display: flex;
@@ -27,7 +28,6 @@
     }
 
     .main-nav { 
-        padding-top: 5px;
         background-color: transparent;
         display: flex;
     }
@@ -39,10 +39,10 @@
     .main-nav li:first-child,
     .main-nav li:nth-child(2) {
         border: 2px solid transparent;
-        padding: 10px 5px;
+        padding: 12px 5px;
     }
     .main-nav li:last-child {
-        border: 2px solid var(--main-blue);
+        border: 3px solid var(--main-blue);
         padding: 10px;
         margin-right: 0;
     }
@@ -60,8 +60,9 @@
         text-decoration: none;
         border-radius: 5px;
         padding: 4px;
-        margin: 1em;
+        margin: 1.4em 1em 1.4em 1em;
         color: black;
+        box-shadow: .5px .5px rgb(34, 69, 109);
     }
 
     #download-link:hover {
@@ -75,13 +76,19 @@
     /* --- Header --- */
     h1 { font-size: 7em; }
     h2 { font-size: 3em; }
+
+    .main-nav li a { font-size: 1.2em; }
+    #download-link { 
+        font-size: 1.2em; 
+        margin-top: 1.2em;
+        margin-bottom: 1.2em;
+    }
 }
 
 @media screen and (min-width: 1300px) {
     
     /* --- Header --- */
     h1 { font-size: 9em; }
-
     h2 { font-size: 4em; }
 }
 

@@ -1,6 +1,7 @@
 (function() {
 
     const navIcon = document.querySelector('#js--nav-icon');
+    const navTriangle = document.querySelector('.main-nav--triangle'); 
     const mainNav = document.querySelector('.main-nav');
 
     const navOpen = 'resources/assets/svg/nav-open.svg';
@@ -11,9 +12,11 @@
         e.preventDefault();
 
         if ( !mainNav.classList.contains('open') ) {
+            navTriangle.classList.add('open');
             mainNav.classList.add('open');
             this.src = navClose;
         } else {
+            navTriangle.classList.remove('open');
             mainNav.classList.remove('open');
             this.src = navOpen;
         }

@@ -54,6 +54,7 @@ h1 {
     color: white;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
+    text-shadow: .4px .4px rgb(168, 166, 166);
 }
 
 h2 {
@@ -63,6 +64,7 @@ h2 {
     font-weight: bold;
     color: black;
     font-family: 'Roboto', sans-serif;
+    text-shadow: .4px .4px rgb(168, 166, 166);
 }
 
 .point-color--blue {
@@ -109,7 +111,7 @@ header {
 
 .mobile-nav-icon {
     display: inline-block;
-    padding: 25px 0 13px 20px;
+    padding: 25px 0 0 20px;
 
 }
 
@@ -121,11 +123,11 @@ header {
 #download-link-mobile {
     display: inline-block;
     border: 1px solid hsl(212, 72%, 59%, 0.8);
-    background-color: hsl(212, 72%, 59%, 0.8);
+    background-color: var(--main-blue);
     text-decoration: none;
     border-radius: 5px;
     padding: 4px;
-    margin: 20px 20px 13px 0px;
+    margin: 20px 20px 10px 0px;
     color: black;
 }
 
@@ -137,6 +139,13 @@ header {
 #download-link { display: none; }
 
 /* --- Main Nav --- */
+.main-nav--triangle {
+    height: 14px;
+    width: auto;
+    margin-left: 16px;
+    display: none;
+}
+
 .main-nav--box {
     background-color: rgba(255,255,255,0.3);
 }
@@ -159,5 +168,6 @@ header {
     text-transform: uppercase;
     color: black;
     font-size: 1.1em;
+    text-shadow: .2px .2px #333;
 }
 
