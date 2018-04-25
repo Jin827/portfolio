@@ -157,9 +157,11 @@
     /* --- About me --- */
     .about-me--p { font-size: 1.5em; }
     .about-me--link a img { height: 44px; }
+
+    /* --- Skills --- */
+    .skills { max-width: 60em;}
 }
 
 @media screen and (min-width: 1700px) {
-    
-    
+
 }
