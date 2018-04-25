@@ -202,6 +202,7 @@ header {
     min-height: 1000px;
     width: auto;
     filter: alpha(opacity=80); /* For IE8 and earlier */
+    padding: 140px 0;
 }
 
 .about-me--container {
@@ -226,7 +227,7 @@ header {
 /* --- Skills --- */
 .skills {
     text-align: center;
-    margin: 100px 20px 0 20px;
+    margin: 140px 20px 0 20px;
     padding: 60px 20px;
     background-color: rgba(255,255,255,0.9);
 }
