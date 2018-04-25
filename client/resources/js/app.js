@@ -4,8 +4,8 @@
     const navTriangle = document.querySelector('.main-nav--triangle'); 
     const mainNav = document.querySelector('.main-nav');
 
-    const navOpen = 'resources/assets/svg/nav-open.svg';
-    const navClose = 'resources/assets/svg/nav-close.svg';
+    const navOpen = 'resources/assets/svg/icon/nav-open.svg';
+    const navClose = 'resources/assets/svg/icon/nav-close.svg';
 
     /* --- Nav Icon & Toggle box --- */
     navIcon.addEventListener('click', function(e) {

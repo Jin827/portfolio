@@ -13,13 +13,11 @@ html {
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
-
     box-sizing: border-box;
 }
 
 body {
     font-size: 16px;
-    font-weight: 300;
     font-family: 'Nunito', sans-serif;
     font-weight: 400;
     text-rendering: optimizeLegibility;
@@ -28,6 +26,8 @@ body {
     height: 100%;
     color: #333;
 }
+
+section { padding: 80px 0; }
 
 /* ---------------------------------------- */
 
@@ -46,7 +46,7 @@ body {
 
 /* ---------------------------------------- */
 
-/* --- Header --- */
+/* --- Heading --- */
 h1 {
     font-size: 5em;
     line-height: 1.5em;
@@ -54,7 +54,8 @@ h1 {
     color: white;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
-    text-shadow: .4px .4px rgb(168, 166, 166);
+    text-shadow: 0 0 1px rgb(168, 166, 166);
+    -webkit-font-smoothing: antialiased;
 }
 
 h2 {
@@ -67,9 +68,19 @@ h2 {
     text-shadow: .4px .4px rgb(168, 166, 166);
 }
 
+h3 {
+    font-size: 2em;
+    letter-spacing: 1.1px;
+}
+
 .point-color--blue {
     color: rgb(9, 25, 43);
 }
+
+.point-color--main-blue {
+    color: var(--main-blue);
+}
+
 
 /* ---------------------------------------- */
 
@@ -78,12 +89,13 @@ h2 {
 /* ---------------------------------------- */
 
 header {
-    background-image: linear-gradient(rgba(223, 178, 149, 0.3), rgba(223, 178, 149, 0.3)), url(../assets/svg/background.svg);
+    background-image: linear-gradient(rgba(223, 178, 149, 0.3), rgba(223, 178, 149, 0.3)), url(../assets/svg/background/background_1.svg);
     background-size: cover;
     background-position: center;
     height: 100vh;
     opacity: 0.8;
     filter: alpha(opacity=80); /* For IE8 and earlier */
+    position: relative;
 }
 
 .header-text--box {
@@ -112,7 +124,6 @@ header {
 .mobile-nav-icon {
     display: inline-block;
     padding: 25px 0 0 20px;
-
 }
 
 .mobile-nav-icon img {
@@ -132,8 +143,8 @@ header {
 }
 
 #download-link-mobile:hover {
-    border: 2px solid rgb(34, 69, 109);
-    transition: border .3s;
+    border: 1.2px solid rgb(34, 69, 109);
+    transition: border .6s;
 }
 
 #download-link { display: none; }
@@ -146,28 +157,64 @@ header {
     display: none;
 }
 
+.open{ display: block; }
+
 .main-nav--box {
     background-color: rgba(255,255,255,0.3);
+    transition: background-color .3s ease-out;
 }
 
 .main-nav {
+    display: flex;
     justify-content: space-around;
     list-style: none; 
     padding: 13px 1em;
-    transition: all .3s ease-in-out;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    text-shadow: .2px .2px #333;
     display: none;
 }
 
-.open{
-    display: block;
+.main-nav.open{ 
+    display: block; 
     display: flex;
 }
 
 .main-nav li a {
     text-decoration: none;
-    text-transform: uppercase;
     color: black;
-    font-size: 1.1em;
-    text-shadow: .2px .2px #333;
 }
 
+/* ---------------------------------------- */
+
+/* ABOUT ME SECTION */
+
+/* ---------------------------------------- */
+
+.section-about {
+    background-image: linear-gradient(rgba(112, 48, 107, .3), rgba(112, 48, 107, .3)), url(../assets/svg/background/background_2.svg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 1000px;
+    width: auto;
+    filter: alpha(opacity=80); /* For IE8 and earlier */
+}
+
+.about-me--container {
+    background-color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.about-me--p {
+    margin: 30px 20px;
+    line-height: 1.4em;
+}
+
+.about-me--link a { margin: 15px; }
+
+.about-me--link a img {
+    height: 38px;
+    width: auto;
+}
