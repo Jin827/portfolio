@@ -71,6 +71,7 @@ h2 {
 h3 {
     font-size: 2em;
     letter-spacing: 1.1px;
+    text-transform: uppercase;
 }
 
 .point-color--blue {
@@ -155,6 +156,7 @@ header {
     width: auto;
     margin-left: 16px;
     display: none;
+    cursor: pointer;
 }
 
 .open{ display: block; }
@@ -208,7 +210,7 @@ header {
 }
 
 .about-me--p {
-    margin: 30px 20px;
+    margin: 40px 20px;
     line-height: 1.4em;
 }
 
@@ -218,3 +220,48 @@ header {
     height: 38px;
     width: auto;
 }
+
+.skills {
+    text-align: center;
+    margin: 80px 20px 0 20px;
+    padding: 60px 20px;
+    background-color: rgba(255,255,255,0.8);
+}
+
+.skills--logo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.skills--logo li {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    font-size: .9em;
+    text-align: center;
+}
+
+.skills--logo div {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+.skills--logo img {
+    width: 45px;
+    height: auto;
+}
+
+.skills--logo p { text-align: center; }
+
+.webpack { margin-left: 8px; }
+.scss { margin-left: 8px; }
+.material-ui { margin-left: 14px; }
+.nodejs { margin-top: 14.5px; }
+.jquery { margin-top: 20px; }
+.html img { 
+    width: 49px;
+    margin-top: 1px; 
+}
+.css img { width: 35px; }
