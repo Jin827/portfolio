@@ -202,19 +202,20 @@ header {
     min-height: 1000px;
     width: auto;
     filter: alpha(opacity=80); /* For IE8 and earlier */
-    padding: 140px 0;
+    padding: 150px 0;
 }
 
 .about-me--container {
     background-color: white;
-    padding: 60px 0;
+    padding: 80px 0;
     text-align: center;
 }
 
 .about-me--p {
-    margin: 40px 20px;
+    margin: 50px 20px;
     line-height: 1.4em;
     font-size: 1.13em;
+    letter-spacing: 1.1px;
 }
 
 .about-me--link a { margin: 15px; }
@@ -225,10 +226,10 @@ header {
 }
 
 /* --- Skills --- */
-.skills {
+.skills--container {
     text-align: center;
-    margin: 140px 20px 0 20px;
-    padding: 60px 20px;
+    margin: 150px 20px 0 20px;
+    padding: 80px 20px;
     background-color: rgba(255,255,255,0.9);
 }
 
@@ -236,7 +237,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 45px;
 }
 
 .skills--logo li {
