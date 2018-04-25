@@ -1,10 +1,19 @@
 @media screen and (min-width: 500px) { 
     
     /* --- About me --- */
+    .about-me--container {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
     .about-me--p { font-size: 1.3em; }
     .about-me--link a img { height: 42px; }
 
     /* --- Skills --- */
+    .skills--container {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
     .skills--logo { 
         padding-left: 0;
         padding-right: 0;
@@ -29,7 +38,7 @@
 
     /* --- About me --- */
     .about-me--p {
-        width: 33em; 
+        width: 28.5em; 
         margin-left: auto; 
         margin-right: auto;
     }
@@ -109,14 +118,14 @@
 
     /* --- About me --- */
     .about-me--p {
-        width: 35em; 
+        width: 37em; 
         font-size: 1.4em;
     }
 
     .about-me--link a img { height: 43px; }
 
     /* --- Skills --- */
-    .skills { 
+    .skills--container { 
         max-width: 54em;
         margin-left: auto;
         margin-right: auto;
@@ -155,11 +164,19 @@
     h2 { font-size: 4em; }
 
     /* --- About me --- */
+    .about-me--container {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
     .about-me--p { font-size: 1.5em; }
     .about-me--link a img { height: 44px; }
 
     /* --- Skills --- */
-    .skills { max-width: 60em;}
+    .skills--container { 
+        max-width: 60em;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
 }
 
 @media screen and (min-width: 1700px) {
