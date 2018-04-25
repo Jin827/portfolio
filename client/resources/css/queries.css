@@ -1,5 +1,24 @@
 @media screen and (min-width: 500px) { 
-  
+    
+    /* --- About me --- */
+    .about-me--p { font-size: 1.3em; }
+    .about-me--link a img { height: 42px; }
+
+    /* --- Skills --- */
+    .skills--logo { 
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .skills--logo li { margin: 2em; }
+
+    .skills--logo div {
+        width: 60px;
+        height: 60px;
+    }
+
+    .skills--logo img { width: 55px; }
+    .html img { width: 56px; }
+    .css img { width: 42px; }
 }
 
 @media screen and (min-width: 640px) {
@@ -7,6 +26,29 @@
     /* --- Heading --- */
     h1 { font-size: 6em; }
     h2 { font-size: 3em; }
+
+    /* --- About me --- */
+    .about-me--p {
+        width: 33em; 
+        margin-left: auto; 
+        margin-right: auto;
+    }
+
+    /* --- Skills --- */
+    .skills--logo { 
+        max-width: 40em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .skills--logo li { margin: 2.5em; }
+  
+}
+
+@media screen and (min-width: 735px) {
+    
+    /* --- Skills --- */
+    .skills--logo li { margin: 3em; }
 }
 
 @media screen and (min-width: 900px) {
@@ -64,6 +106,31 @@
         border: 1.2px solid rgb(34, 69, 109);
         transition: border .6s;
     }
+
+    /* --- About me --- */
+    .about-me--p {
+        width: 35em; 
+        font-size: 1.4em;
+    }
+
+    .about-me--link a img { height: 43px; }
+
+    /* --- Skills --- */
+    .skills { 
+        max-width: 54em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .skills--logo { max-width: 47em; }
+    .skills--logo li { margin: 4em; }
+
+    .skills--logo div {
+        width: 70px;
+        height: 70px;
+    }
+    .skills--logo img { width: 65px; }
+    .html img { width: 66px; }
+    .css img { width: 50px; }
 }
 
 @media screen and (min-width: 1024px) {
@@ -86,8 +153,13 @@
     /* --- Heading --- */
     h1 { font-size: 9em; }
     h2 { font-size: 4em; }
+
+    /* --- About me --- */
+    .about-me--p { font-size: 1.5em; }
+    .about-me--link a img { height: 44px; }
 }
 
 @media screen and (min-width: 1700px) {
-
+    
+    
 }
