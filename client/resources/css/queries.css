@@ -5,6 +5,7 @@
         padding-top: 90px;
         padding-bottom: 90px;
     }
+    
     .about-me--p { font-size: 1.3em; }
     .about-me--link a img { height: 42px; }
 
@@ -18,6 +19,7 @@
         padding-left: 0;
         padding-right: 0;
     }
+
     .skills--logo li { margin: 2em; }
 
     .skills--logo div {
@@ -28,6 +30,28 @@
     .skills--logo img { width: 55px; }
     .html img { width: 56px; }
     .css img { width: 42px; }
+
+    /* --- Offer --- */
+    .offer--container {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    .offer--contents {
+        margin-left: 1em;
+        margin-right: 1em;
+        margin-top: 100px;
+    }
+
+    .offer--contents li { 
+        margin: 0; 
+        font-size: 1.4em;
+    }
+
+    .offer--contents img { 
+        width: 120px; 
+        padding-bottom: 2em;; 
+    }
 }
 
 @media screen and (min-width: 640px) {
@@ -52,13 +76,27 @@
 
     .skills--logo li { margin: 2.5em; }
   
+    /* --- Offer --- */
+    .offer--contents img { width: 160px; }
 }
 
 @media screen and (min-width: 735px) {
     
     /* --- Skills --- */
     .skills--logo li { margin: 3em; }
-}
+
+    /* --- Offer --- */
+    .offer--container { 
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    .offer--contents {
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+    .offer--contents img { width: 180px; }
+    
+    
 
 @media screen and (min-width: 900px) {
 
@@ -140,6 +178,9 @@
     .skills--logo img { width: 65px; }
     .html img { width: 66px; }
     .css img { width: 50px; }
+
+    /* --- Offer --- */
+    .offer--contents img { width: 200px; }
 }
 
 @media screen and (min-width: 1024px) {
@@ -148,6 +189,12 @@
     h1 { font-size: 7em; }
     h2 { font-size: 3em; }
 
+    /* --- About me --- */
+    .section-about { padding: 100px 0; }
+
+    /* --- Skills --- */
+    .skills--container { margin-top: 100px; }
+
     /* --- Nav --- */
     .main-nav li a { font-size: 1.2em; }
     #download-link { 
@@ -155,6 +202,11 @@
         margin-top: 1.2em;
         margin-bottom: 1.2em;
     }
+
+    /* --- Offer --- */
+    .offer--container { margin-top: 100px; }
+    .offer--contents li { font-size: 1.6em; }
+    .offer--contents img { width: 220px; }
 }
 
 @media screen and (min-width: 1300px) {
@@ -177,8 +229,46 @@
         padding-top: 100px;
         padding-bottom: 100px;
     }
+
+    /* --- Offer --- */
+    .offer--container { 
+        margin-top: 100px;
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+    .offer--contents {
+        margin-left: 3em;
+        margin-right: 3em;
+    }
+    .offer--contents img { width: 240px; }
 }
 
 @media screen and (min-width: 1700px) {
+    
+    /* --- About me --- */
+    .about-me--link a img { height: 48px; }
 
+    /* --- Skills --- */
+    .skills--logo { max-width: 48em; }
+    .skills--logo li { margin: em; }
+
+    .skills--logo div {
+        width: 75px;
+        height: 75px;
+    }
+    .skills--logo img { width: 70px; }
+    .html img { width: 75px; }
+    .css img { width: 56px; }
+
+    /* --- Offer --- */
+    .offer--container { 
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+    .offer--contents {
+        margin-top: 120px;
+        margin-left: 5em;
+        margin-right: 5em;
+    }
+    .offer--contents li { font-size: 1.6em; }
 }
