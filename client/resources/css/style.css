@@ -69,7 +69,7 @@ h2 {
 }
 
 h3 {
-    font-size: 2em;
+    font-size: 2.3em;
     letter-spacing: 1.1px;
     text-transform: uppercase;
 }
@@ -268,3 +268,31 @@ header {
     margin-top: 1px; 
 }
 .css img { width: 35px; }
+
+
+/* ---------------------------------------- */
+
+/* OFFER SECTION */
+
+/* ---------------------------------------- */
+
+.offer--container {
+    background-color: rgba(76,139,166,0.5);
+    margin: 130px 20px 0 20px;
+    text-align: center;
+}
+
+.offer--contents {
+    margin-top: 45px;
+}
+
+.offer--contents li {
+    display: flex;
+    flex-direction: column;
+    margin: 3em;
+    font-size: 1.4em;
+}
+
+.offer--contents li:last-child { margin-bottom: 0; }
+.offer--contents img { padding-bottom: 15px; }
+
