@@ -27,7 +27,7 @@ body {
     color: #333;
 }
 
-section { padding: 80px 0; }
+section { padding: 100px 0; }
 
 /* ---------------------------------------- */
 
@@ -193,6 +193,7 @@ header {
 
 /* ---------------------------------------- */
 
+/* --- About me --- */
 .section-about {
     background-image: linear-gradient(rgba(112, 48, 107, .3), rgba(112, 48, 107, .3)), url(../assets/svg/background/background_2.svg);
     background-size: cover;
@@ -212,6 +213,7 @@ header {
 .about-me--p {
     margin: 40px 20px;
     line-height: 1.4em;
+    font-size: 1.13em;
 }
 
 .about-me--link a { margin: 15px; }
@@ -221,11 +223,12 @@ header {
     width: auto;
 }
 
+/* --- Skills --- */
 .skills {
     text-align: center;
-    margin: 80px 20px 0 20px;
+    margin: 100px 20px 0 20px;
     padding: 60px 20px;
-    background-color: rgba(255,255,255,0.8);
+    background-color: rgba(255,255,255,0.9);
 }
 
 .skills--logo {
@@ -238,7 +241,7 @@ header {
 .skills--logo li {
     display: flex;
     flex-direction: column;
-    margin: 20px;
+    margin: 2.3em;
     font-size: .9em;
     text-align: center;
 }
@@ -252,8 +255,6 @@ header {
     width: 45px;
     height: auto;
 }
-
-.skills--logo p { text-align: center; }
 
 .webpack { margin-left: 8px; }
 .scss { margin-left: 8px; }
