@@ -2,7 +2,11 @@
     /* --- Heading --- */
     h1 { font-size: 5.8em; }
     h2 { font-size: 2.2em; }
-    h2 { font-size: 2.3em; }
+    h3 { font-size: 3.4em; }
+    .section-offer h3,
+    .section-portfolio h3 { font-size: 3.7em;}
+    h4, h5 { font-size: 2em; }
+    h5 { margin-bottom: 2em;}
 
     /* --- About me --- */
     .about-me--container {
@@ -59,14 +63,24 @@
         width: 120px; 
         padding-bottom: 2em;; 
     }
+
+    /* --- portfolio --- */
+    .main-portfolio--title { width: 80vw;}
+    .section-portfolio p { 
+        font-size: 1.3em; 
+        letter-spacing: 1.2px;
+    }
+
+    .sub-portfolio { 
+        padding: 3em 2em; 
+        top: -550px;
+    }
 }
 
 @media screen and (min-width: 640px) {
     
     /* --- Heading --- */
     h1 { font-size: 7em; }
-    h2 { font-size: 2.5em; }
-    h3 { font-size: 2.5em; }
 
     /* --- About me --- */
     .about-me--p {
@@ -86,6 +100,7 @@
   
     /* --- Offer --- */
     .offer--contents img { width: 160px; }
+
 }
 
 @media screen and (min-width: 735px) {
@@ -103,7 +118,17 @@
         margin-right: 2em;
     }
     .offer--contents img { width: 180px; }
-    
+
+    /* --- portfolio --- */
+    .main-portfolio--title {max-width: 500px; }
+    .main-portfolio--contents--skills {
+        width: 70vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .sub-portfolio { padding: 4em 3.5em; }
+}    
     
 
 @media screen and (min-width: 900px) {
@@ -111,7 +136,6 @@
      /* --- Heading --- */
      h1 { font-size: 8em; }
      h2 { font-size: 3em; }
-     h3 { font-size: 3.2em; }
 
     /* --- Nav --- */
     #nav-container { padding: 1.5em; }
@@ -193,6 +217,7 @@
     .css img { width: 50px; }
 
     /* --- Offer --- */
+    .offer--contents { margin-top: 9em;}
     .offer--contents img { width: 200px; }
 }
 
@@ -216,6 +241,29 @@
     .section-offer { margin-top: 100px; }
     .offer--contents li { font-size: 1.6em; }
     .offer--contents img { width: 220px; }
+
+    /* --- portfolio --- */
+    .main-portfolio {
+        display: flex;
+    }
+    .image--web { 
+        width: 50vw;
+        margin: 0 auto;
+    }
+    .main-portfolio--contents,
+    .main-portfolio--contents--skills { width: 45vw;}
+    .main-portfolio--title { 
+        width: 40vw; 
+        margin-top: 0;
+        max-width: 650px;
+    }
+    .sub-portfolio { 
+        top: -500px;
+        max-width: 1000px;
+        padding: 4em; 
+        background: linear-gradient(to bottom right,rgba(134, 199, 226, 0.4), rgba(35, 118, 153, 0.67));
+    }
+    .fade { opacity: .1; }
 }
 
 @media screen and (min-width: 1300px) {
@@ -224,9 +272,13 @@
     h1 { font-size: 9em; }
     h2 { font-size: 3.4em; }
     h3 { 
-        font-size: 3.5em; 
-        margin-bottom: 70px;
+        font-size: 4.5em; 
+        margin-bottom: 1.5em;
     }
+    .skills--container h3 { margin-bottom: .7em;}
+    .section-offer h3,
+    .section-portfolio h3 { font-size: 5em;}
+    h4,h5 { font-size: 2.2em}
 
     /* --- About me --- */
     .about-me--container {
@@ -257,10 +309,21 @@
         margin-right: 3em;
     }
     .offer--contents img { width: 240px; }
+
+    /* --- portfolio --- */
+    .main-portfolio--title { padding: 3em 0;}
+    .section-portfolio p { font-size: 1.5em; }
+    .main-portfolio--contents--main-text { margin: 4em; }
+    .main-portfolio--contents--skills { width: 45vw; }
+    .main-portfolio--btns { margin-top: 1em;}
+    .sub-portfolio { 
+        top: -550px;
+        max-width: 1200px;
+    }
 }
 
 @media screen and (min-width: 1700px) {
-    
+
     /* --- About me --- */
     .about-me--link a img { height: 48px; }
 
@@ -282,9 +345,14 @@
         margin-right: 80px;
     }
     .offer--contents {
-        margin-top: 120px;
+        margin-top: 11em;
         margin-left: 5em;
         margin-right: 5em;
     }
     .offer--contents li { font-size: 1.6em; }
+
+    /* --- portfolio --- */
+    .main-portfolio--contents { margin: 2em auto; }
+    .main-portfolio--contents--skills { width: 30vw; }
+   
 }
