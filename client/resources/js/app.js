@@ -23,9 +23,10 @@
     }, false)
 
     /* --- Sticky Nav --- */
+    /* --- Scroll on Buttons --- */
+    /* --- Header Typewriting Animation --- */
 
-
-    /* --- portfolio --- */
+    /* --- Sub Prtfolio --- */
     const btnToSubPortfolio = document.querySelector('.js--btn-to-sub');
     const btnToMainPortfolio = document.querySelector('.js--btn-to-main');
     const mainPortfolio = document.querySelector('.main-portfolio');
@@ -44,4 +45,9 @@
         mainPortfolio.classList.remove('fade');
         subPortfolio.classList.remove('open');
     }, false)
+
+    /* --- Portfolio page change --- */
+    /* --- Contact --- */
+    /* --- Map --- */
+    
 })();

@@ -416,3 +416,20 @@ header {
 
 .fade { opacity: .4; }
 .open { display: block; }
+
+/* ---------------------------------------- */
+
+/* FOOTER */
+
+/* ---------------------------------------- */
+
+footer {
+    min-height: 50px;
+    text-align: center;
+    padding: 15px 0;
+    background-color: rgb(224, 210, 210);
+    font-size: 1.1em;
+    line-height: 1.4em;
+}
+
+footer a { margin-left: 6px;}
