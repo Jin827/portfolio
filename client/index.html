@@ -79,31 +79,45 @@
             <div class="portfolio-container">
                 <div class="portpolio-box">
                     <div class="main-portfolio">
-                        <img/>
-                        <div>
-                            <div class="hr">
-                                <p></p>
-                                <h4></h4>
+                        <img class="image--web" src="resources/assets/svg/portfolio/flightnook.svg" alt="flightnook"/>
+                        <div class="main-portfolio--contents">
+                            <div class="main-portfolio--title">
+                                <p>Carbon Footprint App &#47; Contract Project</p>
+                                <h4>Flightnook</h4>
                             </div>
-                            <p>
-
+                            <p class="main-portfolio--contents--main-text">
+                                Search Airport by airport&#44;<br/>city or state name<br/><br/>
+                                Automatically activate last input row&#44;<br/>add an inactivated input row<br/>when user fill out the form<br/><br/>
+                                Accurate error message position
                             </p>
-                            <p></p>
-                            <div class="porfolio-box--btns">
-                                <a href="" target="_blank"><button>Github</button></a>
-                                <a href="" target="_blank"><button>Live Site</button></a>
-                                <img src="resources/assets/svg/triangle-reverse.svg"/>
+                            <ul class="main-portfolio--contents--skills">
+                                <li><span class="point-color--main-blue ">#</span>ES7</li>
+                                <li><span class="point-color--main-blue ">#</span>WEBPACK</li>
+                                <li><span class="point-color--main-blue ">#</span>REACT FIBER</li>          
+                                <li><span class="point-color--main-blue ">#</span>REDUX</li>
+                                <li><span class="point-color--main-blue ">#</span>REST-API</li>
+                                <li><span class="point-color--main-blue ">#</span>SCSS</li>
+                                <li><span class="point-color--main-blue ">#</span>REACT TRANSITION GROUP LIBRARY</li>
+                            </ul>
+                            <div class="main-portfolio--btns">
+                                <!-- message on mouse over -->
+                                <a href="#" target="_blank" title="click here"><button class="github">Github</button></a>
+                                <a href="#" target="_blank"><button class="live-site">Live Site</button></a>
+                                <a class="btn-triangle js--btn-to-sub"><img src="resources/assets/svg/triangle-reverse.svg"/></a>
                             </div>
                         </div>
                     </div>
                     <div class="sub-portfolio">
-                        <h4></h4>
-                        <p></p>
-                        <div>
-                            <img src="resources/assets/svg/triangle.svg"/>
-                        </div>
+                        <h4 class="point-color--blue">Behind Story&#35;&#35;</h4>
+                        <p>
+                            The most challenge part was <span class="point-color--dark-orange">&#39;Saving search result values by each input row&#39;</span> on user click in order to add new trip form when both values of the input row&#39;s filled out&#46;<br/><br/>
+                            For instance&#44; to get &#39;Trip1&#58; destination&#39; value when saving &#39;Trip1&#58; departure&#39; value&#44; I first needed to check if &#39;Trip1&#39; object is exist in Redux store&#46; If not&#44; set the value as empty&#46;<br/><br/>
+                            It&#39;s solved by using <span class="point-color--dark-orange">normalized data structure</span>&#44; creating an array of &#39;Trip Id&#39;s&#46; so I can quickly check if &#39;Trip1&#39; object is Exist&#46;     
+                        </p>
+                        <a class="btn-triangle on-sub js--btn-to-main"><img src="resources/assets/svg/triangle-orange.svg"/></a>
                     </div>
                 </div>
+
             </div>
         </section>
         <section class="section-contract" id="contact">
