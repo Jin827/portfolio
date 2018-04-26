@@ -56,13 +56,14 @@ h1 {
     font-family: 'Roboto', sans-serif;
     text-shadow: 0 0 1px rgb(168, 166, 166);
     -webkit-font-smoothing: antialiased;
+    margin-top: 0;
+    margin-bottom: 60px;
 }
 
 h2 {
     font-size: 2em;
     width: 100vw;
     letter-spacing: 3px;
-    font-weight: bold;
     color: black;
     font-family: 'Roboto', sans-serif;
     text-shadow: .4px .4px rgb(168, 166, 166);
@@ -70,8 +71,14 @@ h2 {
 
 h3 {
     font-size: 2.3em;
-    letter-spacing: 1.1px;
+    letter-spacing: 1.3px;
     text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.text-color--white { 
+    color: white; 
+    text-shadow: powderblue;
 }
 
 .point-color--blue {
@@ -102,9 +109,9 @@ header {
 .header-text--box {
     text-align: center;
     position: absolute;
-    top: 40%;
-    left: 40%;
-    transform: translate(-40%, -40%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .header-arrow--img {
@@ -212,7 +219,7 @@ header {
 }
 
 .about-me--p {
-    margin: 50px 20px;
+    margin: 0 20px 50px 0;
     line-height: 1.4em;
     font-size: 1.1em;
     letter-spacing: 1.1px;
@@ -237,7 +244,6 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 45px;
 }
 
 .skills--logo li {
