@@ -48,7 +48,7 @@ section { padding: 80px 0; }
 
 /* --- Heading --- */
 h1 {
-    font-size: 5em;
+    font-size: 3em;
     line-height: 1.5em;
     letter-spacing: 5px;
     color: white;
@@ -61,7 +61,7 @@ h1 {
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 1em;
     width: 100vw;
     letter-spacing: 3px;
     color: black;
@@ -97,7 +97,7 @@ h3 {
 /* ---------------------------------------- */
 
 header {
-    background-image: linear-gradient(rgba(223, 178, 149, 0.3), rgba(223, 178, 149, 0.3)), url(../assets/svg/background/background_1.svg);
+    background-image: linear-gradient(rgba(223, 178, 149, 0.3), rgba(223, 178, 149, 0.3)), url(../assets/img/background_1.jpg);
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -117,8 +117,8 @@ header {
 .header-arrow--img {
     position: absolute;
     top: 96%;
-    left: 50%;
-    transform: translate(-96%, -50%);
+    left: 57%;
+    transform: translate(-96%, -57%);
     height: 30px;
     width: auto;
 }
@@ -202,7 +202,7 @@ header {
 
 /* --- About me --- */
 .section-about {
-    background-image: linear-gradient(rgba(112, 48, 107, .3), rgba(112, 48, 107, .3)), url(../assets/svg/background/background_2.svg);
+    background-image: linear-gradient(rgba(112, 48, 107, .3), rgba(112, 48, 107, .3)), url(../assets/img/background_2.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -219,7 +219,7 @@ header {
 }
 
 .about-me--p {
-    margin: 0 20px 50px 0;
+    margin: 0 20px 50px 20px;
     line-height: 1.4em;
     font-size: 1.1em;
     letter-spacing: 1.1px;
@@ -282,7 +282,7 @@ header {
 
 /* ---------------------------------------- */
 
-.offer--container {
+.section-offer {
     background-color: rgba(76,139,166,0.5);
     margin: 80px 20px 0 20px;
     text-align: center;
@@ -291,9 +291,6 @@ header {
 .offer--contents {
     margin-top: 60px;
     list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
 }
 
 .offer--contents li {
@@ -302,12 +299,34 @@ header {
     font-family: 'Roboto', sans-serif;
     font-size: 1.1em;
     font-weight: bold;
+    margin: 2.5em;
 }
 
 .offer--contents li:last-child { margin-bottom: 0; }
 .offer--contents img { 
-    padding-bottom: 15px; 
+    padding-bottom: 10px; 
     height: auto;
-    width: 80px;
+    width: 110px;
 }
 
+/* ---------------------------------------- */
+
+/* PORTFOLIO SECTION */
+
+/* ---------------------------------------- */
+
+.section-portfolio {
+    text-align: center;
+}
+
+.portfolio-box {
+    display: flex;
+}
+
+.porfolio-box--btns { 
+    display: flex;
+}
+
+.sub-portfolio {
+    display: none;
+}
