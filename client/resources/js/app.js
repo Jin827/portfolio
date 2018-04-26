@@ -24,7 +24,24 @@
 
     /* --- Sticky Nav --- */
 
-    /* --- portfolio --- */
 
-    
+    /* --- portfolio --- */
+    const btnToSubPortfolio = document.querySelector('.js--btn-to-sub');
+    const btnToMainPortfolio = document.querySelector('.js--btn-to-main');
+    const mainPortfolio = document.querySelector('.main-portfolio');
+    const subPortfolio = document.querySelector('.sub-portfolio');
+
+    btnToSubPortfolio.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        mainPortfolio.classList.add('fade');
+        subPortfolio.classList.add('open');
+    }, false)
+
+    btnToMainPortfolio.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        mainPortfolio.classList.remove('fade');
+        subPortfolio.classList.remove('open');
+    }, false)
 })();

@@ -27,7 +27,7 @@ body {
     color: #333;
 }
 
-section { padding: 80px 0; }
+section { padding: 80px 20px; }
 
 /* ---------------------------------------- */
 
@@ -70,25 +70,29 @@ h2 {
 }
 
 h3 {
-    font-size: 1.9em;
+    font-size: 2em;
     letter-spacing: 1.3px;
     text-transform: uppercase;
     margin-bottom: 50px;
+    text-shadow: .4px .4px rgba(255,255,255,0.3)
 }
 
+h4 {
+    color: var(--main-blue);
+    margin-top: 10px;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+/* --- span colors --- */
 .text-color--white { 
     color: white; 
     text-shadow: powderblue;
 }
 
-.point-color--blue {
-    color: rgb(9, 25, 43);
-}
-
-.point-color--main-blue {
-    color: var(--main-blue);
-}
-
+.point-color--blue { color: rgb(9, 25, 43); }
+.point-color--dark-orange { color: rgb(172, 65, 11); }
+.point-color--main-blue { color: var(--main-blue); }
 
 /* ---------------------------------------- */
 
@@ -317,16 +321,84 @@ header {
 
 .section-portfolio {
     text-align: center;
+    margin-top: 3em;
 }
 
-.portfolio-box {
+.section-portfolio h3 {
+   padding-bottom: .5em;
+}
+
+.main-portfolio img {
+    width: 320px;
+    height: auto;
+}
+
+/* --- contents --- */
+.main-portfolio--title {
+    border-top: 1px solid var(--main-blue);
+    border-bottom: 1px solid var(--main-blue);
+    padding: 10px 0;
+    width: 40vh;
+    margin: 30px auto 0 auto;
+}
+
+.main-portfolio--title p { font-weight: bold; }
+
+.main-portfolio--contents--main-text {
+    margin: 30px;
+    letter-spacing: .5px;
+}
+
+.main-portfolio--contents--skills {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    line-height: 1.2em;
+    letter-spacing: 1.1px;
+    color: var(--orange);
+    list-style: none;
 }
 
-.porfolio-box--btns { 
+/* --- buttons --- */
+.main-portfolio--btns { 
     display: flex;
+    justify-content: center;
 }
 
+.main-portfolio--btns button {
+    width: 100px;
+    padding: 6px;
+    border-radius: 20px;
+    margin: 20px 12px;
+}
+
+.github {
+    border: 1px solid var(--main-blue);
+    background-color: var(--main-blue);
+}
+
+.live-site {
+    border: 1px solid var(--main-blue);
+}
+
+.btn-triangle img {
+    height: 16px;
+    width: auto;
+    margin: 28px 12px 12px 12px;
+}
+
+.btn-triangle.on-sub { float: right; }
+.btn-triangle.on-sub img { margin: 0 5px 0 0; }
+
+/* --- sub-portfolio --- */
 .sub-portfolio {
     display: none;
+    position: relative;
+    top: -330px;
+    background: linear-gradient(to bottom right,rgba(88, 144, 168, 0.8), rgba(39, 126, 163, 0.9));
+    padding: 30px 10px;
+    border-radius: 5px;
 }
+
+.fade { opacity: .4; }
+.open { display: block; }
