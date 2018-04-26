@@ -32,7 +32,7 @@
     .css img { width: 42px; }
 
     /* --- Offer --- */
-    .offer--container {
+    .section-offer {
         padding-top: 90px;
         padding-bottom: 90px;
     }
@@ -41,6 +41,9 @@
         margin-left: 1em;
         margin-right: 1em;
         margin-top: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
     }
 
     .offer--contents li { 
@@ -87,7 +90,7 @@
     .skills--logo li { margin: 3em; }
 
     /* --- Offer --- */
-    .offer--container { 
+    .section-offer { 
         margin-left: 40px;
         margin-right: 40px;
     }
@@ -206,7 +209,7 @@
     }
 
     /* --- Offer --- */
-    .offer--container { margin-top: 100px; }
+    .section-offer { margin-top: 100px; }
     .offer--contents li { font-size: 1.6em; }
     .offer--contents img { width: 220px; }
 }
@@ -240,7 +243,7 @@
     }
 
     /* --- Offer --- */
-    .offer--container { 
+    .section-offer { 
         margin-top: 100px;
         margin-left: 60px;
         margin-right: 60px;
@@ -270,7 +273,7 @@
     .css img { width: 56px; }
 
     /* --- Offer --- */
-    .offer--container { 
+    .section-offer { 
         margin-left: 80px;
         margin-right: 80px;
     }
