@@ -48,7 +48,7 @@ section { padding: 80px 0; }
 
 /* --- Heading --- */
 h1 {
-    font-size: 3em;
+    font-size: 3.6em;
     line-height: 1.5em;
     letter-spacing: 5px;
     color: white;
@@ -61,7 +61,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1em;
+    font-size: 1.4em;
     width: 100vw;
     letter-spacing: 3px;
     color: black;
@@ -70,7 +70,7 @@ h2 {
 }
 
 h3 {
-    font-size: 2.3em;
+    font-size: 1.9em;
     letter-spacing: 1.3px;
     text-transform: uppercase;
     margin-bottom: 50px;
@@ -104,6 +104,7 @@ header {
     opacity: 0.8;
     filter: alpha(opacity=80); /* For IE8 and earlier */
     position: relative;
+    padding-top: 10px;
 }
 
 .header-text--box {
@@ -117,9 +118,9 @@ header {
 .header-arrow--img {
     position: absolute;
     top: 96%;
-    left: 57%;
-    transform: translate(-96%, -57%);
-    height: 30px;
+    left: 53%;
+    transform: translate(-96%, -53%);
+    height: 25px;
     width: auto;
 }
 
@@ -221,7 +222,6 @@ header {
 .about-me--p {
     margin: 0 20px 50px 20px;
     line-height: 1.4em;
-    font-size: 1.1em;
     letter-spacing: 1.1px;
 }
 
@@ -304,7 +304,7 @@ header {
 
 .offer--contents li:last-child { margin-bottom: 0; }
 .offer--contents img { 
-    padding-bottom: 10px; 
+    padding-bottom: 8px; 
     height: auto;
     width: 110px;
 }

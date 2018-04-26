@@ -1,5 +1,9 @@
 @media screen and (min-width: 500px) { 
-    
+    /* --- Heading --- */
+    h1 { font-size: 5.8em; }
+    h2 { font-size: 2.2em; }
+    h2 { font-size: 2.3em; }
+
     /* --- About me --- */
     .about-me--container {
         padding-top: 90px;
