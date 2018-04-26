@@ -1,4 +1,5 @@
 @media screen and (min-width: 500px) { 
+
     /* --- Heading --- */
     h1 { font-size: 5.8em; }
     h2 { font-size: 2.2em; }
@@ -7,6 +8,10 @@
     .section-portfolio h3 { font-size: 3.7em;}
     h4, h5 { font-size: 2em; }
     h5 { margin-bottom: 2em;}
+
+    /* --- Nav --- */
+    .mobile-nav-icon img { height: 25px; }
+    #download-link-mobile { padding: 8px; }
 
     /* --- About me --- */
     .about-me--container {
@@ -164,7 +169,7 @@
     }
     .main-nav li:last-child {
         border: 3px solid var(--main-blue);
-        padding: 10px;
+        padding: 12px 10px 8px 10px;
         margin-right: 0;
     }
     .main-nav li:first-child a:hover,
@@ -180,7 +185,7 @@
         background-color: var(--main-blue);
         text-decoration: none;
         border-radius: 5px;
-        padding: 4px;
+        padding: 6px;
         margin: 1.4em 1em 1.4em 1em;
         color: black;
         box-shadow: .5px .5px rgb(34, 69, 109);
