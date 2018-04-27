@@ -18,7 +18,7 @@
             <nav id="nav-container">
                 <div class="nav-link--box">
                     <a class="mobile-nav-icon"><img id="js--nav-icon" src="resources/assets/svg/icon/nav-open.svg" alt="nav icon" /></a>
-                    <a id="download-link-mobile" href="https://drive.google.com/open?id=1zPNrPO2_HuJMA1uOcqb_Wb-ajMGXgwnq" target="_blank">Download Resume</a>
+                    <a class="btn download-link-mobile" href="https://drive.google.com/open?id=1zPNrPO2_HuJMA1uOcqb_Wb-ajMGXgwnq" target="_blank">Download Resume</a>
                 </div>
                 <img class="main-nav--triangle" src="resources/assets/svg/triangle-white.svg" alt="triangle" />
                 <div class="main-nav--box">
@@ -27,14 +27,14 @@
                         <li><a href="#portfolio">portfolio</a></li>
                         <li><a href="#contact">contact</a></li>
                     </ul>
-                    <a id="download-link" href="https://drive.google.com/open?id=1zPNrPO2_HuJMA1uOcqb_Wb-ajMGXgwnq" target="_blank">Download Resume</a>
+                    <a class="btn download-link" href="https://drive.google.com/open?id=1zPNrPO2_HuJMA1uOcqb_Wb-ajMGXgwnq" target="_blank">Download Resume</a>
                 </div>
             </nav>
             <div class="header-text--box">
                 <h1>I<span class="point-color--blue">&#39;</span>m<br/>Jiah Lee<span class="point-color--blue">&#46;</span></h1>
                 <h2>Front-End Developer</h2>
             </div>
-            <a href="#about"><img class="header-arrow--img" src="resources/assets/svg/triangle-reverse.svg" alt="arrow" /></a>
+            <a href="#about"><img class="header-arrow--img js--btn-hover--blue--reverse" src="resources/assets/svg/triangle-reverse.svg" alt="arrow" /></a>
         </header>
         <section class="section-about" id="about">
             <div class="about-me--container">
@@ -44,8 +44,8 @@
                     <span class="point-color--main-blue">I am also&#58;</span> animal lover&#44; dance lover with chemical engineering background and math teaching experience to students aged 7-15.
                 </P>
                 <div class="about-me--link">
-                    <a href="https://www.linkedin.com/in/jiah827/" target="_black"><img src="resources/assets/svg/icon/linkedin.svg" alt="linkedin" /></a>
-                    <a href="https://github.com/Jin827?tab=repositories" target="_black"><img src="resources/assets/svg/icon/github.svg" alt="github" /></a>
+                    <a href="https://www.linkedin.com/in/jiah827/" target="_black"><img class="js--btn-hover--linkedin" src="resources/assets/svg/icon/linkedin.svg" alt="linkedin" /></a>
+                    <a href="https://github.com/Jin827?tab=repositories" target="_black"><img class="js--btn-hover--github" src="resources/assets/svg/icon/github.svg" alt="github" /></a>
                 </div>
             </div>
             <div class="skills--container">
@@ -100,10 +100,9 @@
                                 <li><span class="point-color--main-blue ">#</span>REACT TRANSITION GROUP LIBRARY</li>
                             </ul>
                             <div class="main-portfolio--btns">
-                                <!-- message on mouse over -->
-                                <a href="#" target="_blank" title="click here"><button class="github">Github</button></a>
-                                <a href="#" target="_blank"><button class="live-site">Live Site</button></a>
-                                <a class="btn-triangle js--btn-to-sub"><img src="resources/assets/svg/triangle.svg"/></a>
+                                <a ng-href="#" title="not available"><button class="btn" >Github</button></a>
+                                <a ng-href="#" title="coming soon! The project is waiting for Back-End part."><button class="btn live-site">Live Site</button><a/>
+                                <a class="btn-triangle js--btn-to-sub" title="Click to see behind story"><img class="js--btn-hover--blue" src="resources/assets/svg/triangle.svg"/></a>
                             </div>
                         </div>
                     </div>
@@ -114,10 +113,9 @@
                             For instance&#44; to get &#39;Trip1&#58; destination&#39; value when saving &#39;Trip1&#58; departure&#39; value&#44; I first needed to check if &#39;Trip1&#39; object is exist in Redux store&#46; If not&#44; set the value as empty&#46;<br/><br/>
                             It&#39;s solved by using <span class="point-color--dark-orange">normalized data structure</span>&#44; creating an array of &#39;Trip Id&#39;s&#46; so I can quickly check if &#39;Trip1&#39; object is Exist&#46;     
                         </p>
-                        <a class="btn-triangle on-sub js--btn-to-main"><img src="resources/assets/svg/triangle-reverse-orange.svg"/></a>
+                        <a class="btn-triangle on-sub js--btn-to-main"><img class="js--btn-hover--orange" src="resources/assets/svg/triangle-reverse-orange.svg"/></a>
                     </div>
                 </div>
-
             </div>
         </section>
         <section class="section-contract" id="contact">

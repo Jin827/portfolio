@@ -96,6 +96,23 @@ h5 {
 .point-color--dark-orange { color: rgb(172, 65, 11); }
 .point-color--main-blue { color: var(--main-blue); }
 
+/* --- buttons --- */
+.btn {
+    border: 1px solid var(--main-blue);
+    background-color: var(--main-blue);
+    cursor: pointer;
+    color: black;
+    padding: 4px;
+    border-radius: 5px;
+    margin: 20px 20px 10px 0px;
+}
+
+.btn:hover {
+    border: 1px solid rgb(18, 71, 247);
+    background-color: rgb(18, 71, 247);
+    transition: border .3s;
+}
+
 /* ---------------------------------------- */
 
 /* HEADER */
@@ -121,15 +138,6 @@ header {
     transform: translate(-50%, -50%);
 }
 
-.header-arrow--img {
-    position: absolute;
-    top: 96%;
-    left: 53%;
-    transform: translate(-96%, -53%);
-    height: 25px;
-    width: auto;
-}
-
 /* --- Mobile Nav --- */
 .nav-link--box {
     display: flex;
@@ -146,23 +154,23 @@ header {
     width: auto
 }
 
-#download-link-mobile {
+/* --- Buttons --- */
+.header-arrow--img {
+    position: absolute;
+    top: 96%;
+    left: 53%;
+    transform: translate(-96%, -53%);
+    height: 25px;
+    width: 40px;
+}
+
+.download-link-mobile {
     display: inline-block;
-    border: 1px solid hsl(212, 72%, 59%, 0.8);
-    background-color: var(--main-blue);
     text-decoration: none;
-    border-radius: 5px;
-    padding: 4px;
-    margin: 20px 20px 10px 0px;
-    color: black;
+    box-shadow: .5px .5px rgb(34, 69, 109);
 }
 
-#download-link-mobile:hover {
-    border: 1.2px solid rgb(34, 69, 109);
-    transition: border .6s;
-}
-
-#download-link { display: none; }
+.download-link { display: none; }
 
 /* --- Main Nav --- */
 .main-nav--triangle {
@@ -334,8 +342,13 @@ header {
    padding-bottom: .5em;
 }
 
-.portpolio-box { padding: 3em 0; }
-.portpolio-box.first-child { padding-top: 1.5em; }
+.portfolio-box { padding: 3em 0; }
+.portfolio-box.first-child { padding-top: 1.5em; }
+
+.main-portfolio.reverse { 
+    display: flex;
+    flex-direction: row-reverse;
+}
 
 .image--web{
     width: 80vw;
@@ -380,21 +393,25 @@ header {
     padding: 6px;
     border-radius: 20px;
     margin: 20px 12px;
-}
-
-.github {
-    border: 1px solid var(--main-blue);
-    background-color: var(--main-blue);
+    border-width: 1.5px;
 }
 
 .live-site {
-    border: 1px solid var(--main-blue);
+    border: 1.5px solid var(--main-blue);
+    background-color: white;
+}
+
+.live-site:hover {
+    background-color: white;
+    border: 1.5px solid rgb(18, 71, 247);
+    transition: border .3s;
 }
 
 .btn-triangle img {
-    height: 16px;
-    width: auto;
+    height: 18px;
+    width: 24PX;
     margin: 28px 12px 12px 12px;
+    cursor: pointer;
 }
 
 .btn-triangle.on-sub { float: right; }
