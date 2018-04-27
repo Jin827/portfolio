@@ -9,9 +9,11 @@
     h4, h5 { font-size: 2em; }
     h5 { margin-bottom: 2em;}
 
+    /* --- buttons --- */
+    .btn { padding: 6px; }
+    
     /* --- Nav --- */
     .mobile-nav-icon img { height: 25px; }
-    #download-link-mobile { padding: 8px; }
 
     /* --- About me --- */
     .about-me--container {
@@ -150,7 +152,7 @@
      h2 { font-size: 3em; }
 
     /* --- Nav --- */
-    #nav-container { padding: 1.5em; }
+    .nav-container { padding: 1.5em; }
     .mobile-nav-icon { display: none; }  
     .main-nav--triangle { display: none }
     
@@ -185,22 +187,13 @@
         padding-bottom: 10px;
     }
     
-    #download-link-mobile { display: none; }
-    #download-link {
+    .download-link-mobile { display: none; }
+    .download-link {
         display: inline-block;
-        border: 1px solid var(--main-blue);
-        background-color: var(--main-blue);
         text-decoration: none;
-        border-radius: 5px;
-        padding: 6px;
         margin: 1.4em 1em 1.4em 1em;
-        color: black;
+        padding: 6px;
         box-shadow: .5px .5px rgb(34, 69, 109);
-    }
-
-    #download-link:hover {
-        border: 1.2px solid rgb(34, 69, 109);
-        transition: border .6s;
     }
 
     /* --- About me --- */
@@ -241,7 +234,7 @@
 
     /* --- Nav --- */
     .main-nav li a { font-size: 1.2em; }
-    #download-link { 
+    .download-link { 
         font-size: 1.2em; 
         margin-top: 1.2em;
         margin-bottom: 1.2em;
