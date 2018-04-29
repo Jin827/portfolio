@@ -27,6 +27,11 @@
     /* --- Header Typewriting Animation --- */
 
     /* --- Sub Prtfolio --- */
+    const projectNum = [ 1, 2, 3, 4 ];
+    projectNum.forEach(num => {
+        
+    })
+
     const btnToSubPortfolio = document.querySelector('.js--btn-to-sub');
     const btnToMainPortfolio = document.querySelector('.js--btn-to-main');
     const mainPortfolio = document.querySelector('.main-portfolio');
@@ -34,7 +39,7 @@
 
     btnToSubPortfolio.addEventListener('click', function(e) {
         e.preventDefault();
-    
+    console.log("hello");
         mainPortfolio.classList.add('fade');
         subPortfolio.classList.add('open');
         
@@ -42,7 +47,7 @@
 
     btnToMainPortfolio.addEventListener('click', function(e) {
         e.preventDefault();
-        
+        console.log("hello2222");
         mainPortfolio.classList.remove('fade');
         subPortfolio.classList.remove('open');
     }, false)
@@ -65,7 +70,6 @@
     const linkedin = 'resources/assets/svg/icon/linkedin.svg';
     const linkedinDark = 'resources/assets/svg/icon/linkedin-dark.svg';
 
-
     btnBlue.addEventListener('mouseover', function(e) {
         e.preventDefault();
         this.src = triangleDarkblue;
@@ -78,6 +82,7 @@
     btnOrange.addEventListener('mouseover', function(e) {
         e.preventDefault();
         this.src = triangleDarkorange;
+        
     }, false)
     btnOrange.addEventListener('mouseout', function(e) {
         e.preventDefault();

@@ -27,6 +27,10 @@ body {
     color: #333;
 }
 
+*:focus {
+    outline: none;
+}
+
 section { padding: 80px 20px; }
 
 /* ---------------------------------------- */
@@ -91,19 +95,19 @@ h5 {
     font-size: 1.5em;
 }
 
-/* --- span colors --- */
+/* --- Span colors --- */
 .point-color--blue { color: rgb(9, 25, 43); }
 .point-color--dark-orange { color: rgb(172, 65, 11); }
 .point-color--main-blue { color: var(--main-blue); }
 
-/* --- buttons --- */
+/* --- Buttons --- */
 .btn {
     border: 1px solid var(--main-blue);
+    border-radius: 5px;
     background-color: var(--main-blue);
     cursor: pointer;
     color: black;
     padding: 4px;
-    border-radius: 5px;
     margin: 20px 20px 10px 0px;
 }
 
@@ -241,9 +245,13 @@ header {
     letter-spacing: 1.1px;
 }
 
+/* --- Icons --- */
 .about-me--link a { margin: 1.2em; }
-
 .about-me--link a img {
+    height: 2.5em;
+    width: auto;
+}
+[CLASS*='icon-'] {
     height: 2.5em;
     width: auto;
 }
@@ -275,6 +283,8 @@ header {
     height: 45px;
     margin-bottom: 10px;
 }
+
+/* --- Icons --- */
 .skills--logo img {
     width: 40px;
     height: auto;
@@ -350,12 +360,12 @@ header {
     flex-direction: row-reverse;
 }
 
-.image--web{
+.image--web {
     width: 80vw;
     height: auto;
 }
 
-/* --- contents --- */
+/* --- Contents --- */
 .main-portfolio--contents { margin: 0 auto; }
 .main-portfolio--title {
     border-top: 1px solid var(--main-blue);
@@ -381,7 +391,7 @@ header {
     list-style: none;
 }
 
-/* --- buttons --- */
+/* --- Buttons --- */
 .main-portfolio--btns { 
     display: flex;
     justify-content: center;
@@ -404,9 +414,11 @@ header {
 .live-site:hover {
     background-color: white;
     border: 1.5px solid rgb(18, 71, 247);
+    border-radius: 20px;
     transition: border .3s;
 }
 
+/* --- Icons --- */
 .btn-triangle img {
     height: 18px;
     width: 24PX;
@@ -417,7 +429,7 @@ header {
 .btn-triangle.on-sub { float: right; }
 .btn-triangle.on-sub img { margin: 15px 5px 0 0; }
 
-/* --- sub-portfolio --- */
+/* --- Sub-portfolio --- */
 .sub-portfolio {
     display: none;
     position: relative;
