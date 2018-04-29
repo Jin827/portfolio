@@ -260,6 +260,12 @@
         margin-top: 0;
         max-width: 650px;
     }
+    
+    .even { 
+        display: flex;
+        flex-direction: row-reverse; 
+    }
+
     .sub-portfolio { 
         top: -500px;
         max-width: 1000px;
