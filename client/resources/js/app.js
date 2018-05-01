@@ -39,7 +39,6 @@
 
     btnToSubPortfolio.addEventListener('click', function(e) {
         e.preventDefault();
-    console.log("hello");
         mainPortfolio.classList.add('fade');
         subPortfolio.classList.add('open');
         
@@ -47,7 +46,6 @@
 
     btnToMainPortfolio.addEventListener('click', function(e) {
         e.preventDefault();
-        console.log("hello2222");
         mainPortfolio.classList.remove('fade');
         subPortfolio.classList.remove('open');
     }, false)
