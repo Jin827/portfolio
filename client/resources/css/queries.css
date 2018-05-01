@@ -29,8 +29,8 @@
 
     /* --- Skills --- */
     .skills--container {
-        padding-top: 90px;
-        padding-bottom: 90px;
+        padding-top: 70px;
+        padding-bottom: 60px;
     }
 
     .skills--logo { 
@@ -95,6 +95,7 @@
     }
 
     /* --- portfolio --- */
+    .portpolio-box { max-height: 70em;}
     .main-portfolio--title { width: 80vw;}
     .section-portfolio p { 
         font-size: 1.3em; 
@@ -160,6 +161,7 @@
     .icon-offer { width: 180px; }
 
     /* --- portfolio --- */
+    .portpolio-box { max-height: 80em;}
     .main-portfolio--title {max-width: 500px; }
     .main-portfolio--contents--skills {
         width: 70vw;
@@ -202,11 +204,18 @@
         border: 2px solid transparent;
         padding: 12px 5px;
     }
+
     .main-nav li:last-child {
         border: 3px solid var(--main-blue);
         padding: 12px 10px 8px 10px;
         margin-right: 0;
     }
+
+    .main-nav li:last-child:hover { 
+        border-color: rgb(1, 102, 197);
+        transition: fill .3s;
+    }
+
     .main-nav li:first-child a:hover,
     .main-nav li:nth-child(2) a:hover {
         border-bottom: 2px solid var(--main-blue);
@@ -234,8 +243,10 @@
         margin-left: auto;
         margin-right: auto;
     }
-    .skills--logo { max-width: 47em; }
-    .skills--logo li { margin: 4em; }
+    .skills--logo { 
+        max-width: 47em; 
+    }
+    .skills--logo li { margin: 3.5em; }
 
     .skills--logo div {
         width: 70px;
@@ -271,6 +282,9 @@
         width: 200px; 
         height: 200px;
     }
+
+    /* --- portfolio --- */
+    .portpolio-box { max-height: 83em;}
 }
 
 @media screen and (min-width: 1024px) {
@@ -298,6 +312,7 @@
     }
 
     /* --- portfolio --- */
+    .portpolio-box { max-height: 45em;}
     .main-portfolio {
         display: flex;
     }
@@ -359,8 +374,6 @@
     /* --- Skills --- */
     .skills--container { 
         max-width: 60em;
-        padding-top: 100px;
-        padding-bottom: 100px;
     }
 
     [CLASS*='icon-logo'] {
@@ -368,10 +381,13 @@
         height: 75px;
     }
 
-    .skills--logo li .html {
-        margin-left: -12.4px;
+    .skills--logo li { 
+        margin-left: 4em;
+        margin-right: 4em;
     }
 
+    .skills--logo li .html { margin-left: -12.4px; }
+    .skills--logo li .material-ui { margin-left: -12.4px; }
     .icon-logo--html {
         width: 84px;
         height: 70px;  
@@ -405,30 +421,25 @@
     }
 
     /* --- portfolio --- */
+    .portpolio-box { max-height: 55em;}
     .main-portfolio--title { padding: 3em 0;}
-    .section-portfolio p { font-size: 1.5em; }
     .main-portfolio--contents--main-text { margin: 4em; }
     .main-portfolio--contents--skills { width: 45vw; }
     .main-portfolio--btns { margin-top: 1em;}
     .sub-portfolio { 
-        top: -550px;
+        top: -650px;
         max-width: 1200px;
     }
-
-    /* --- Footer --- */
-    footer { font-size: 1.4em; }
 }
 
 @media screen and (min-width: 1700px) {
 
     /* --- Skills --- */
-
-    /* skill icons size need to be done !!!!!!!  */
-    .skills--logo { max-width: 48em; }
+    /* .skills--logo { max-width: 48em; }
     .skills--logo div {
         width: 75px;
         height: 75px;
-    }
+    } */
 
     /* --- Offer --- */
     .section-offer { 
