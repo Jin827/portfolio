@@ -8,7 +8,7 @@
       <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0"/>
     </filter>
   </defs>
-  <g fill="none" fill-rule="evenodd" transform="translate(-1)">
+  <g id="nav-open" fill="none" fill-rule="evenodd" transform="translate(-1)">
     <use fill="#000" xlink:href="#nav-open-a"/>
     <use fill="#000" filter="url(#nav-open-b)" xlink:href="#nav-open-a"/>
   </g>

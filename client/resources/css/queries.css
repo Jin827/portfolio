@@ -22,7 +22,10 @@
     }
 
     .about-me--p { font-size: 1.3em; }
-    .about-me--link a img { height: 3em; }
+    [CLASS*='icon-'] {
+        height: 3em;
+        width: 3em;
+    }
 
     /* --- Skills --- */
     .skills--container {
@@ -42,10 +45,29 @@
         height: 60px;
     }
 
-    .skills--logo img { width: 55px; }
-    .html img { width: 56px; }
-    .css img { width: 42px; }
-
+    [CLASS*='icon-logo'] {
+        width: 45px;
+        height: 55px;
+    }
+    .icon-logo--html {
+        width: 56px;
+        height: 53px;
+         
+    }
+    .icon-logo--css { 
+        width: 37.5px;
+        height: 55px;
+        margin-top: -2px;
+    }
+    .icon-logo--nodejs {  
+        width: 55px;
+        height: 65px; 
+    }
+    .icon-logo--jquery { 
+        width: 68px;
+        height: 70px;
+    }
+   
     /* --- Offer --- */
     .section-offer {
         padding-top: 90px;
@@ -66,9 +88,10 @@
         font-size: 1.4em;
     }
 
-    .offer--contents img { 
+    .icon-offer { 
         width: 120px; 
-        padding-bottom: 2em;; 
+        height: 120px;
+        margin-bottom: 2em;
     }
 
     /* --- portfolio --- */
@@ -113,7 +136,10 @@
     .skills--logo li { margin: 2.5em; }
   
     /* --- Offer --- */
-    .offer--contents img { width: 160px; }
+    .icon-offer { 
+        width: 160px; 
+        height: 160px;
+    }
 
 }
 
@@ -131,7 +157,7 @@
         margin-left: 2em;
         margin-right: 2em;
     }
-    .offer--contents img { width: 180px; }
+    .icon-offer { width: 180px; }
 
     /* --- portfolio --- */
     .main-portfolio--title {max-width: 500px; }
@@ -215,13 +241,36 @@
         width: 70px;
         height: 70px;
     }
-    .skills--logo img { width: 65px; }
-    .html img { width: 66px; }
-    .css img { width: 50px; }
+
+    [CLASS*='icon-logo'] {
+        height: 65px;
+        width: 55px;
+    }
+    .icon-logo--html {
+        width: 66px;
+        height: 63px;
+         
+    }
+    .icon-logo--css { 
+        width: 45.5px;
+        height: 65px;
+        margin-top: -2px;
+    }
+    .icon-logo--jquery { 
+        width: 90px;
+        height: 85px;
+    }
+    .icon-logo--nodejs { 
+        width: 75px;
+        height: 70px;
+    }
 
     /* --- Offer --- */
     .offer--contents { margin-top: 9em;}
-    .offer--contents img { width: 200px; }
+    .icon-offer { 
+        width: 200px; 
+        height: 200px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -243,7 +292,10 @@
     /* --- Offer --- */
     .section-offer { margin-top: 100px; }
     .offer--contents li { font-size: 1.6em; }
-    .offer--contents img { width: 220px; }
+    .icon-offer { 
+        width: 220px; 
+        height: 220px;
+    }
 
     /* --- portfolio --- */
     .main-portfolio {
@@ -299,13 +351,42 @@
         margin-bottom: 3.6em;
     }
 
-    .about-me--link a img { height: 3.5em; }
+    [CLASS*='icon-'] {
+        height: 3.5em;
+        width: 3.5em;
+    }
 
     /* --- Skills --- */
     .skills--container { 
         max-width: 60em;
         padding-top: 100px;
         padding-bottom: 100px;
+    }
+
+    [CLASS*='icon-logo'] {
+        width: 65px;
+        height: 75px;
+    }
+
+    .skills--logo li .html {
+        margin-left: -12.4px;
+    }
+
+    .icon-logo--html {
+        width: 84px;
+        height: 70px;  
+    }
+    .icon-logo--css { 
+        width: 48.5px;
+        height: 71px;
+    }
+    .icon-logo--jquery { 
+        width: 95px;
+        height: 90px;
+    }
+    .icon-logo--nodejs { 
+        width: 80px;
+        height: 75px;
     }
 
     /* --- Offer --- */
@@ -318,7 +399,10 @@
         margin-left: 3em;
         margin-right: 3em;
     }
-    .offer--contents img { width: 240px; }
+    .icon-offer { 
+        width: 240px; 
+        height: 240px;
+    }
 
     /* --- portfolio --- */
     .main-portfolio--title { padding: 3em 0;}
@@ -338,16 +422,13 @@
 @media screen and (min-width: 1700px) {
 
     /* --- Skills --- */
-    .skills--logo { max-width: 48em; }
-    .skills--logo li { margin: em; }
 
+    /* skill icons size need to be done !!!!!!!  */
+    .skills--logo { max-width: 48em; }
     .skills--logo div {
         width: 75px;
         height: 75px;
     }
-    .skills--logo img { width: 70px; }
-    .html img { width: 75px; }
-    .css img { width: 56px; }
 
     /* --- Offer --- */
     .section-offer { 

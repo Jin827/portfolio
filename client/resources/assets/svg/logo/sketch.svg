@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="256" height="232" preserveAspectRatio="xMidYMid" version="1">
-  <path fill="#FDB300" d="M128 0L56 8 0 83l128 149L256 83 200 8z"/>
-  <path fill="#EB6C00" d="M0 83l128 149L52 83zm204 0l-76 149L256 83z"/>
-  <path fill="#FDAD00" d="M52 83l76 149 76-149z"/>
-  <path fill="#FDD231" d="M56 8l-4 75 76-83zm148 75l-4-75-72-8z"/>
-  <path fill="#FDAD00" d="M204 83h52L200 8zM0 83h52l4-75z"/>
-  <path fill="#FEEEB7" d="M128 0L52 83h152z"/>
-</svg>
