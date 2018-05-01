@@ -246,14 +246,10 @@ header {
 }
 
 /* --- Icons --- */
-.about-me--link a { margin: 1.2em; }
-.about-me--link a img {
+[CLASS*='icon-media'] {
+    margin: 1.2em;
     height: 2.5em;
-    width: auto;
-}
-[CLASS*='icon-'] {
-    height: 2.5em;
-    width: auto;
+    width: 2.5em;
 }
 
 /* --- Skills --- */
@@ -285,21 +281,30 @@ header {
 }
 
 /* --- Icons --- */
-.skills--logo img {
+[CLASS*='icon-logo'] {
     width: 40px;
-    height: auto;
+    height: 50px;
 }
-
-.webpack { margin-left: 8px; }
-.scss { margin-left: 8px; }
-.material-ui { margin-left: 14px; }
-.nodejs { margin-top: 14.5px; }
-.jquery { margin-top: 20px; }
-.html img { 
-    width: 43px;
-    margin-top: 1px; 
+.icon-logo--react { margin-left: 3px; }
+.icon-logo--webpack { margin-left: 8px; }
+.icon-logo--scss { margin-left: 8px; }
+.icon-logo--material-ui { margin-left: 14px; }
+.icon-logo--nodejs { margin-top: 2px; }
+.icon-logo--jquery { 
+    width: 55px;
+    height: 65px;
+    margin-top: -2px;
 }
-.css img { width: 31px; }
+.icon-logo--html {
+    width: 45px;
+    height: 50px;
+     
+}
+.icon-logo--css { 
+    width: 31.5px;
+    height: 46px;
+    margin-top: 1.1px;
+}
 
 
 /* ---------------------------------------- */
@@ -331,10 +336,10 @@ header {
 }
 
 .offer--contents li:last-child { margin-bottom: 0; }
-.offer--contents img { 
-    padding-bottom: 8px; 
-    height: auto;
+.icon-offer { 
+    height: 110px;
     width: 110px;
+    margin: 0 0 8px 0;
 }
 
 /* ---------------------------------------- */
