@@ -1,7 +1,7 @@
 (function() {
 
     const navIcon = document.querySelector('#js--nav-icon');
-    const navTriangle = document.querySelector('.main-nav--triangle'); 
+    const navTriangle = document.querySelector('.triangle--main-nav'); 
     const mainNav = document.querySelector('.main-nav');
 
     const navOpen = 'resources/assets/svg/nav-open.svg';

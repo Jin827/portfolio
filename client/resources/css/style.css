@@ -117,6 +117,13 @@ h5 {
     transition: border .3s;
 }
 
+/* --- Icons --- */
+[CLASS*='triangle'] {
+    height: 18px;
+    width: 24PX;
+    cursor: pointer;
+}
+
 /* ---------------------------------------- */
 
 /* HEADER */
@@ -159,15 +166,6 @@ header {
 }
 
 /* --- Buttons --- */
-.header-arrow--img {
-    position: absolute;
-    top: 96%;
-    left: 53%;
-    transform: translate(-96%, -53%);
-    height: 25px;
-    width: 40px;
-}
-
 .download-link-mobile {
     display: inline-block;
     text-decoration: none;
@@ -176,13 +174,26 @@ header {
 
 .download-link { display: none; }
 
+/* --- Icons --- */
+.header-arrow--img {
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-95%, -50%);
+    height: 25px;
+    width: 40px;
+    fill: var(--main-blue);
+    transform: rotate(180deg);
+}
+
 /* --- Main Nav --- */
-.main-nav--triangle {
+.triangle--main-nav {
     height: 14px;
     width: auto;
-    margin-left: 16px;
+    margin-left: -120px;
     display: none;
     cursor: pointer;
+    fill: rgba(255,255,255,0.3);
 }
 
 .open{ display: block; }
@@ -424,15 +435,20 @@ header {
 }
 
 /* --- Icons --- */
-.btn-triangle img {
-    height: 18px;
-    width: 24PX;
+.triangle--main-portfolio {
     margin: 28px 12px 12px 12px;
-    cursor: pointer;
+    fill: var(--main-blue);
 }
 
-.btn-triangle.on-sub { float: right; }
-.btn-triangle.on-sub img { margin: 15px 5px 0 0; }
+.triangle--main-portfolio:hover { fill: #1247F7; }
+
+.on-sub { float: right; }
+.triangle--sub-portfolio { 
+    margin: 15px 5px 0 0; 
+    transform: rotate(180deg);
+    fill: var(--orange);
+}
+.triangle--sub-portfolio:hover { fill: #FF2E03;}
 
 /* --- Sub-portfolio --- */
 .sub-portfolio {
