@@ -160,9 +160,9 @@ header {
     padding: 25px 0 0 20px;
 }
 
-.mobile-nav-icon img {
+.mobile-nav-icon {
     height: 18px;
-    width: auto
+    width: 18px;
 }
 
 /* --- Buttons --- */
@@ -190,7 +190,6 @@ header {
     fill: #1247F7; 
     transition: fill .3s;
 }
-
 /* --- Main Nav --- */
 .triangle--main-nav {
     height: 14px;
@@ -205,10 +204,14 @@ header {
 
 .main-nav--box {
     background-color: rgba(255,255,255,0.3);
-    transition: background-color .3s ease-out;
+    transition-duration: .5s;
 }
 
-.main-nav { display: none; }
+.main-nav { 
+    display: none; 
+    transition: all .5s ease;
+    list-style: none;
+}
 
 .main-nav.open{ 
     display: block; 
