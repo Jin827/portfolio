@@ -193,6 +193,12 @@
     .main-nav { 
         display: block; 
         display: flex;
+        justify-content: space-around;
+        list-style: none; 
+        padding: 13px 1em;
+        text-transform: uppercase;
+        font-size: 1.1em;
+        text-shadow: .2px .2px #333;
     }
 
     .main-nav li {
@@ -387,7 +393,7 @@
     }
 
     .skills--logo li .html { margin-left: -12.4px; }
-    .skills--logo li .material-ui { margin-left: -12.4px; }
+    .skills--logo li .material-ui { margin-left: -13px;}
     .icon-logo--html {
         width: 84px;
         height: 70px;  

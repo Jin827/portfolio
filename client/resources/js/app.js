@@ -27,28 +27,23 @@
     /* --- Header Typewriting Animation --- */
 
     /* --- Sub Prtfolio --- */
-    const projectNum = [ 1, 2, 3, 4 ];
-    projectNum.forEach(num => {
-        
-    })
-
     const btnToSubPortfolio = document.querySelector('.js--btn-to-sub');
     const btnToMainPortfolio = document.querySelector('.js--btn-to-main');
-    const mainPortfolio = document.querySelector('.main-portfolio');
-    const subPortfolio = document.querySelector('.sub-portfolio');
 
     btnToSubPortfolio.addEventListener('click', function(e) {
         e.preventDefault();
-        mainPortfolio.classList.add('fade');
-        subPortfolio.classList.add('open');
+        console.log('this.id: ', this.id);
+        document.querySelector(`.main--${this.id}`).classList.add('fade');
+        document.querySelector(`.sub--${this.id}`).classList.add('open');
         
     }, false)
 
     btnToMainPortfolio.addEventListener('click', function(e) {
         e.preventDefault();
-        mainPortfolio.classList.remove('fade');
-        subPortfolio.classList.remove('open');
+        document.querySelector(`.main--${this.id}`).classList.remove('fade');
+        document.querySelector(`.sub--${this.id}`).classList.remove('open');
     }, false)
+    
 
     /* --- Portfolio page change --- */
     /* --- Contact --- */

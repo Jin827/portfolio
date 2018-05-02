@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27" height="23" viewBox="0 0 27 23">
-  <defs>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <!-- <defs> -->
     <path id="nav-open-a" d="M1.48770466,0 L28.5122953,0 C29.3339319,0 30,0.665797234 30,1.5 C30,2.32842712 29.3170416,3 28.5122953,3 L1.48770466,3 C0.666068066,3 0,2.33420277 0,1.5 C0,0.671572875 0.682958364,0 1.48770466,0 Z M0,21.5 C0,20.6715729 0.682958364,20 1.48770466,20 L28.5122953,20 C29.3339319,20 30,20.6657972 30,21.5 C30,22.3284271 29.3170416,23 28.5122953,23 L1.48770466,23 C0.666068066,23 0,22.3342028 0,21.5 L0,21.5 Z M0,11.5 C0,10.6715729 0.682958364,10 1.48770466,10 L28.5122953,10 C29.3339319,10 30,10.6657972 30,11.5 C30,12.3284271 29.3170416,13 28.5122953,13 L1.48770466,13 C0.666068066,13 0,12.3342028 0,11.5 L0,11.5 Z"/>
     <filter id="nav-open-b" width="113.3%" height="117.4%" x="-6.7%" y="-8.7%" filterUnits="objectBoundingBox">
       <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"/>
@@ -7,9 +7,9 @@
       <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
       <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0"/>
     </filter>
-  </defs>
-  <g id="nav-open" fill="none" fill-rule="evenodd" transform="translate(-1)">
+  <!-- </defs> -->
+  <symbol id="nav-open" viewBox="0 0 27 23" fill="none" fill-rule="evenodd" transform="translate(-1)">
     <use fill="#000" xlink:href="#nav-open-a"/>
     <use fill="#000" filter="url(#nav-open-b)" xlink:href="#nav-open-a"/>
-  </g>
+  </symbol>
 </svg>

@@ -15,7 +15,7 @@
     </head>
     <body>
         <header>
-            <nav id="nav-container">
+            <nav id="nav-container" role="navigation">
                 <div class="nav-link--box">
                     <a class="mobile-nav-icon"><img id="js--nav-icon" src="resources/assets/svg/nav-open.svg" alt="nav icon" /></a>
                     <a class="btn download-link-mobile" href="https://drive.google.com/open?id=1zPNrPO2_HuJMA1uOcqb_Wb-ajMGXgwnq" target="_blank">Download Resume</a>
@@ -78,7 +78,7 @@
             <h3>portfolio</h3>
             <div class="portfolio-container">
                 <div class="portpolio-box first-child">
-                    <div class="main-portfolio">
+                    <div class="main-portfolio main--1">
                         <img class="image--web" src="resources/assets/svg/portfolio/flightnook.svg" alt="flightnook"/>
                         <div class="main-portfolio--contents">
                             <div class="main-portfolio--title">
@@ -102,22 +102,22 @@
                             <div class="main-portfolio--btns">
                                 <a ng-href="#" title="not available"><button class="btn" >Github</button></a>
                                 <a ng-href="#" title="coming soon! The project is waiting for Back-End part."><button class="btn live-site">Live Site</button><a/>
-                                <a class="js--btn-to-sub" title="Click to see behind story"><svg class="triangle--main-portfolio"><use xlink:href="resources/assets/svg/svg-symbol.svg#triangle" alt="triangle"></use></svg></a>
+                                <a class="js--btn-to-sub" id="1" title="Click to see behind story"><svg class="triangle--main-portfolio"><use xlink:href="resources/assets/svg/svg-symbol.svg#triangle" alt="triangle"></use></svg></a>
                             </div>
                         </div>
                     </div>
-                    <div class="sub-portfolio">
+                    <div class="sub-portfolio sub--1">
                         <h5>Behind Story&#35;&#35;</h4>
                         <p>
                             The most challenge part was <span class="point-color--dark-orange">&#39;Saving search result values by each input row&#39;</span> on user click in order to add new trip form when both values of the input row&#39;s filled out&#46;<br/><br/>
                             For instance&#44; to get &#39;Trip1&#58; destination&#39; value when saving &#39;Trip1&#58; departure&#39; value&#44; I first needed to check if &#39;Trip1&#39; object is exist in Redux store&#46; If not&#44; set the value as empty&#46;<br/><br/>
                             It&#39;s solved by using <span class="point-color--dark-orange">normalized data structure</span>&#44; creating an array of &#39;Trip Id&#39;s&#46; so I can quickly check if &#39;Trip1&#39; object is Exist&#46;     
                         </p>
-                        <a class="on-sub js--btn-to-main"><svg class="triangle--sub-portfolio"><use xlink:href="resources/assets/svg/svg-symbol.svg#triangle" alt="triangle"></use></svg></a>
+                        <a class="on-sub js--btn-to-main" id="1"><svg class="triangle--sub-portfolio"><use xlink:href="resources/assets/svg/svg-symbol.svg#triangle" alt="triangle"></use></svg></a>
                     </div>
                 </div>
                 <div class="portpolio-box second-child">
-                    <div class="main-portfolio even">
+                    <div class="main-portfolio even main--2">
                         <img class="image--web" src="resources/assets/svg/portfolio/flightnook.svg" alt="flightnook"/>
                         <div class="main-portfolio--contents">
                             <div class="main-portfolio--title">
@@ -137,18 +137,18 @@
                             <div class="main-portfolio--btns">
                                 <a href="https://github.com/Jin827/vanillaJs-weather-app" target="_blank"><button class="btn" >Github</button></a>
                                 <a href="https://jh-weather.herokuapp.com/index.html" target="_blank"><button class="btn live-site">Live Site</button><a/>
-                                <a class="js--btn-to-sub" title="Click to see behind story"><svg class="triangle--main-portfolio"><use xlink:href="resources/assets/svg/svg-symbol.svg#triangle" alt="triangle"></use></svg></a>
+                                <a class="js--btn-to-sub" id="2" title="Click to see behind story"><svg class="triangle--main-portfolio"><use xlink:href="resources/assets/svg/svg-symbol.svg#triangle" alt="triangle"></use></svg></a>
                             </div>
                         </div>
                     </div>
-                    <div class="sub-portfolio">
+                    <div class="sub-portfolio sub--2">
                         <h5>Behind Story&#35;&#35;</h4>
                         <p>
                             The most challenge part was <span class="point-color--dark-orange">&#39;Saving search result values by each input row&#39;</span> on user click in order to add new trip form when both values of the input row&#39;s filled out&#46;<br/><br/>
                             For instance&#44; to get &#39;Trip1&#58; destination&#39; value when saving &#39;Trip1&#58; departure&#39; value&#44; I first needed to check if &#39;Trip1&#39; object is exist in Redux store&#46; If not&#44; set the value as empty&#46;<br/><br/>
                             It&#39;s solved by using <span class="point-color--dark-orange">normalized data structure</span>&#44; creating an array of &#39;Trip Id&#39;s&#46; so I can quickly check if &#39;Trip1&#39; object is Exist&#46;     
                         </p>
-                        <a class="on-sub js--btn-to-main"><svg class="triangle--sub-portfolio"><use xlink:href="resources/assets/svg/svg-symbol.svg#triangle" alt="triangle"></use></svg></a>
+                        <a class="on-sub js--btn-to-main" id="2"><svg class="triangle--sub-portfolio"><use xlink:href="resources/assets/svg/svg-symbol.svg#triangle" alt="triangle"></use></svg></a>
                     </div>
                 </div>
             </div>
