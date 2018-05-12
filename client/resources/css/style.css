@@ -268,8 +268,10 @@ header {
     width: 2.5em;
 }
 
-.github-outer { stroke: currentColor; }
-.github-inner { fill: currentColor; }
+#github-outline { stroke: #FB3C03; }
+#github-inline { fill: #FB3C03; }
+#linkedin-outline { fill: #0077B5; }
+#linkedin-inline { stroke: #0077B5; }
 
 /* --- Skills --- */
 .skills--container {

@@ -26,6 +26,36 @@
     /* --- Scroll on Buttons --- */
     /* --- Header Typewriting Animation --- */
 
+    
+    /* --- Media icons hover effect --- */
+    const linkedin = document.querySelector('.icon-media--linkedin');
+    const linkedinOutline = document.getElementById('linkedin-outline');
+    const linkedinInline = document.getElementById('linkedin-inline');
+    const github = document.querySelector('.icon-media--github');
+    const gitOutline = document.getElementById('github-outline');
+    const gitInline = document.getElementById('github-inline');
+
+    linkedin.addEventListener("mouseover", function() {
+        linkedinOutline.style.fill="#0A278B";
+        linkedinInline.style.stroke="#0A278B";
+    }, false)
+    
+    linkedin.addEventListener("mouseleave", function() {
+        linkedinOutline.style.fill="#0077B5";
+        linkedinInline.style.stroke="#0077B5";
+    }, false)
+
+    github.addEventListener("mouseover", function() {
+        gitOutline.style.stroke="#EF0320";
+        gitInline.style.fill="#EF0320";
+    }, false)
+
+    github.addEventListener("mouseleave", function() {
+        gitOutline.style.stroke="#FB3C03";
+        gitInline.style.fill="#FB3C03";
+    }, false)
+
+
     /* --- Sub Prtfolio --- */
     const btnToSubPortfolio = document.querySelector('.js--btn-to-sub');
     const btnToMainPortfolio = document.querySelector('.js--btn-to-main');
