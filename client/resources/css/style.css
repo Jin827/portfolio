@@ -273,6 +273,18 @@ header {
 #linkedin-outline { fill: #0077B5; }
 #linkedin-inline { stroke: #0077B5; }
 
+
+/* #github-inline {
+    transform-origin: center center;
+    animation: doRotate 5s infinite;
+}
+
+@keyframes doRotate {
+    to {
+        transform: rotate(360deg);
+    }
+} */
+
 /* --- Skills --- */
 .skills--container {
     text-align: center;
