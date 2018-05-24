@@ -160,11 +160,6 @@ header {
     padding: 25px 0 0 20px;
 }
 
-.mobile-nav-icon {
-    height: 18px;
-    width: 18px;
-}
-
 /* --- Buttons --- */
 .download-link-mobile {
     display: inline-block;
@@ -488,11 +483,12 @@ header {
 .sub-portfolio.open { 
     display: block; 
     position: relative;
-    top: -420px;
-    background: linear-gradient(to bottom right,rgba(134, 199, 226, .9), rgba(35, 118, 153, .95));
-    padding: 3em 1em;
+    top: -520px;
+    background: linear-gradient(to bottom right,#f5f6f8, #add0f8);
+    padding: 3em 1.8em;
     border-radius: 5px;
     width: 90vw;
+    height: 500px;
     margin: 0 auto;
 }
 
