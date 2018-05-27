@@ -102,7 +102,7 @@
         letter-spacing: 1.2px;
     }
 
-    .sub-portfolio { 
+    .sub-portfolio.open { 
         padding: 3em 2em; 
         top: -550px;
     }
@@ -169,7 +169,7 @@
         margin-right: auto;
     }
 
-    .sub-portfolio { padding: 4em 3.5em; }
+    .sub-portfolio.open { padding: 4em 3.5em; }
 }    
     
 
@@ -339,11 +339,10 @@
         flex-direction: row-reverse; 
     }
 
-    .sub-portfolio { 
+    .sub-portfolio.open { 
         top: -500px;
         max-width: 1000px;
-        padding: 4em; 
-        background: linear-gradient(to bottom right,rgba(134, 199, 226, 0.4), rgba(35, 118, 153, 0.67));
+        padding: 4em;
     }
     .fade { opacity: .1; }
 }
@@ -429,11 +428,17 @@
     /* --- portfolio --- */
     .portpolio-box { max-height: 55em;}
     .main-portfolio--title { padding: 3em 0;}
-    .main-portfolio--contents--main-text { margin: 4em; }
-    .main-portfolio--contents--skills { width: 45vw; }
+    .main-portfolio--contents--main-text { 
+        margin-top: 4em; 
+        margin-bottom: 2em;
+    }
+    .main-portfolio--contents--skills { 
+        width: 45vw;
+        margin-bottom: 4em; 
+    }
     .main-portfolio--btns { margin-top: 1em;}
-    .sub-portfolio { 
-        top: -650px;
+    .sub-portfolio.open { 
+        top: -590px;
         max-width: 1200px;
     }
 }
@@ -460,6 +465,7 @@
     .offer--contents li { font-size: 1.6em; }
 
     /* --- portfolio --- */
+    .portpolio-box { height: 56.5em; }
     .main-portfolio--contents { margin: 2em auto; }
     .main-portfolio--contents--skills { width: 30vw; }
    

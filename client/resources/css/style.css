@@ -391,6 +391,7 @@ header {
 .portpolio-box { 
     max-height: 56.5em;
     padding: 2.5em 0;
+    margin: 2em 0;
     position: relative;
 }
 
@@ -411,7 +412,8 @@ header {
 .main-portfolio--title p { font-weight: bold; }
 
 .main-portfolio--contents--main-text {
-    margin: 2em;
+    margin-top: 2em;
+    margin-bottom: 1em;
     letter-spacing: .5px;
 }
 
@@ -423,6 +425,7 @@ header {
     letter-spacing: 1.2px;
     color: var(--orange);
     list-style: none;
+    margin-bottom: 2em;
 }
 
 /* --- Buttons --- */
@@ -477,9 +480,7 @@ header {
 
 /* --- Sub-portfolio --- */
 .sub-portfolio { display: none; }
-
 .sub-portfolio p { text-align: start; }
-
 .fade { opacity: .4; }
 .sub-portfolio.open { 
     display: block; 
