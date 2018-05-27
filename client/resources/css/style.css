@@ -27,9 +27,8 @@ body {
     color: #333;
 }
 
-*:focus {
-    outline: none;
-}
+*:focus { outline: none; }
+* { text-decoration: none; }
 
 section { padding: 80px 20px; }
 
@@ -148,6 +147,8 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.typewrite { color: black; }
 
 /* --- Mobile Nav --- */
 .nav-link--box {
