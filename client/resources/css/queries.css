@@ -322,10 +322,7 @@
     .main-portfolio {
         display: flex;
     }
-    .image--web { 
-        width: 50vw;
-        margin: 0 auto;
-    }
+    .image--web { width: 50vw; }
     .main-portfolio--contents,
     .main-portfolio--contents--skills { width: 45vw;}
     .main-portfolio--title { 
@@ -429,12 +426,12 @@
     .portpolio-box { max-height: 55em;}
     .main-portfolio--title { padding: 3em 0;}
     .main-portfolio--contents--main-text { 
-        margin-top: 4em; 
+        margin-top: 3em; 
         margin-bottom: 2em;
     }
     .main-portfolio--contents--skills { 
         width: 45vw;
-        margin-bottom: 4em; 
+        margin-bottom: 3em; 
     }
     .main-portfolio--btns { margin-top: 1em;}
     .sub-portfolio.open { 
