@@ -125,6 +125,14 @@
         e.preventDefault();
         document.querySelector(`.main--${this.id}`).classList.add('fade');
         document.querySelector(`.sub--${this.id}`).classList.add('open');
+
+        const profileNum = [1,2,3,4];
+        profileNum
+            .filter( id => id != this.id )
+            .forEach( id => {
+                document.querySelector(`.main--${id}`).classList.remove('fade');
+                document.querySelector(`.sub--${id}`).classList.remove('open');
+            })
     };
 
     function hideSubPortfolio(e) {
