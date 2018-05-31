@@ -184,5 +184,20 @@
     }
     
     /* --- Map --- */
-    
+    const googleMap = document.getElementById('map');
+    const city = { 
+        montreal: { lat: 45.5181804, lng: -73.55 }, 
+        gyeongju: { lat: 35.8534645, lng: 129.1693305 }
+    };
+
+    const map = new google.maps.Map(googleMap, {
+        center: city.montreal,
+        zoom: 9.5
+    })
+
+    new google.maps.Marker({
+        map: map,
+        position: city.montreal,
+        title: 'Montreal'
+    });
 })();
