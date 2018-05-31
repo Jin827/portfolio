@@ -4,7 +4,8 @@
   "description": "Jiah Lee  Protfolio",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "http-server -p 8080",
+    "server": "nodemon server/index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,17 @@
   "bugs": {
     "url": "https://github.com/Jin827/portfolio/issues"
   },
-  "homepage": "https://github.com/Jin827/portfolio#readme"
+  "homepage": "https://github.com/Jin827/portfolio#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "node-fetch": "^1.7.3",
+    "nodemailer": "^4.6.5",
+    "nodemon": "^1.17.5",
+    "request": "^2.87.0"
+  }
 }
