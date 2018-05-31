@@ -107,6 +107,9 @@
         top: -550px;
     }
 
+    /* --- Contact --- */
+    .btn--submit { padding: 7px 37px; }
+
     /* --- Footer --- */
     footer {
         display: flex;
@@ -142,6 +145,10 @@
         height: 160px;
     }
 
+    /* --- Contact --- */
+    .client-info { display: flex; justify-content: space-between;}
+    #name, #email { width: 48%}
+    #name, #email, #subject, #message { padding: 10px 0 10px 15px;}
 }
 
 @media screen and (min-width: 735px) {
@@ -235,6 +242,7 @@
         margin: 1.4em 1em 1.4em 1em;
         padding: 6px;
         box-shadow: .5px .5px rgb(34, 69, 109);
+        color: #000;
     }
 
     /* --- About me --- */
@@ -317,7 +325,7 @@
         height: 220px;
     }
 
-    /* --- portfolio --- */
+    /* --- Portfolio --- */
     .portpolio-box { max-height: 45em;}
     .main-portfolio {
         display: flex;
@@ -342,6 +350,35 @@
         padding: 4em;
     }
     .fade { opacity: .1; }
+
+    /* --- Contact --- */
+    .section-contact {
+        display: flex;
+        padding: 0;
+        background-color: transparent;
+    }
+
+    #map { 
+        position: relative; 
+        height: 600px;
+        margin-bottom: 0;
+        z-index: -1;
+    }
+
+    .contact-form { 
+        position: absolute; 
+        right: 0;
+        height: 600px;
+        width: 50%;
+        z-index: 10;
+        background-color: rgba(255, 255, 255, 0.493);
+        padding: 4.2em 2em;
+    }
+
+    #name, #email, #subject, #message { 
+        margin-top: 7px;
+        margin-bottom: 7px;
+    }
 }
 
 @media screen and (min-width: 1300px) {
@@ -422,7 +459,7 @@
         height: 240px;
     }
 
-    /* --- portfolio --- */
+    /* --- Portfolio --- */
     .portpolio-box { max-height: 55em;}
     .main-portfolio--title { padding: 3em 0;}
     .main-portfolio--contents--main-text { 
@@ -438,16 +475,17 @@
         top: -590px;
         max-width: 1200px;
     }
+
+    /* --- Contact --- */
+    #map { height: 650px; }
+    .contact-form { 
+        height: 650px; 
+        padding: 82px 30px;
+    }
+    .contact-form h3 { margin-bottom: 50px; }
 }
 
 @media screen and (min-width: 1700px) {
-
-    /* --- Skills --- */
-    /* .skills--logo { max-width: 48em; }
-    .skills--logo div {
-        width: 75px;
-        height: 75px;
-    } */
 
     /* --- Offer --- */
     .section-offer { 
@@ -461,9 +499,14 @@
     }
     .offer--contents li { font-size: 1.6em; }
 
-    /* --- portfolio --- */
+    /* --- Portfolio --- */
     .portpolio-box { height: 56.5em; }
     .main-portfolio--contents { margin: 2em auto; }
     .main-portfolio--contents--skills { width: 30vw; }
    
+    /* --- Contact --- */
+    .contact-form { 
+        padding-left: 3.3em;
+        padding-right: 3.3em;
+    }
 }
