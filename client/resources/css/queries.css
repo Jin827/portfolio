@@ -7,7 +7,6 @@
     .section-offer h3,
     .section-portfolio h3 { font-size: 3.7em;}
     h4, h5 { font-size: 2em; }
-    h5 { margin-bottom: 2em;}
 
     /* --- buttons --- */
     .btn { padding: 6px; }
@@ -98,13 +97,8 @@
     .portpolio-box { max-height: 70em;}
     .main-portfolio--title { width: 80vw;}
     .section-portfolio p { 
-        font-size: 1.3em; 
+        font-size: 1.1em; 
         letter-spacing: 1.2px;
-    }
-
-    .sub-portfolio.open { 
-        padding: 3em 2em; 
-        top: -550px;
     }
 
     /* --- Contact --- */

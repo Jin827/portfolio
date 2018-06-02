@@ -165,7 +165,7 @@
         
             const xhr = new XMLHttpRequest();
             
-            xhr.open("POST", "http://localhost:3000/", true);
+            xhr.open("POST", "http://localhost:8000/", true);
             xhr.onload = function () {
                 if (this.status >= 200 && this.status < 300) {
                     resolve(xhr.response);
