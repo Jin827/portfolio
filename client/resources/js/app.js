@@ -153,7 +153,7 @@
             message: form.message.value
         } 
         xhrPostRequest(formContents);
-        form.innerHTML = `<P>Hello ${form.name.value}, Your message has been sent. Thank you &#128420;</P>`
+        form.innerHTML = `<P class="contact-message">Hello ${form.name.value}, Your message has been sent.<br/> Thank you &#128420;</P>`
         form.reset();
     };
 
