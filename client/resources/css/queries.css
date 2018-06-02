@@ -379,6 +379,11 @@
         margin-top: 7px;
         margin-bottom: 7px;
     }
+
+    .contact-message { 
+        margin-top: 7em; 
+        font-size: 1.5em;
+    }
 }
 
 @media screen and (min-width: 1300px) {

@@ -16,14 +16,18 @@ module.exports = {
             from: `${name} ${email}`,
             to: 'jiah.lee827@gmail.com',
             subject: subject,
-            html: `<h6>Name: ${name} <br/> Contact: ${email}</h6> <p>${message}</p>`,
+            html: `<p>Name: ${name} <br/> Contact: ${email}<br/><br/>${message}</p>`,
         }
-        
-        transporter.sendMail(mailOptions, function(error, info) {
-            error ? console.log(`Unable to send the email: ${error}`) : console.log(`Email sent: ${info.response}`);
-        })
 
-        return data;
+        return new Promise((resolve, reject) => {
+            return transporter.sendMail(mailOptions, function(error, info) {
+                error ? 
+                    console.error(`Unable to send the email: ${error}`) : 
+                        console.log(`Email sent: ${info.response}`);
+            })
+        })
+        .catch(err => console.error(`sendEmail func err : ${err}`));
+        
     },
 
     replyEmail: (data) => {
@@ -32,20 +36,25 @@ module.exports = {
             from: 'jiah.lee827@gmail.com',
             to: email,
             subject: 'Auto reply message from Jiah Lee',
-            html: `
-                <h6>Hello ${name},</h6>
-                <p>Thank you for getting in touch!<br/>
-                    I will reply to you as soon as possible<br/><br/>
-                    Thank you<br/>
+            html: `          
+                <p>
+                    Hello ${name},<br/><br/>
+                    Thank you for getting in touch.<br/>
+                    I will reply to you as soon as possible.<br/>
+                    Thank you.<br/><br/>
                     Best,<br/><br/>
-                </p>
-                <h6>Jiah Lee<h6>
-                
+                    Jiah Lee
+                </p>   
             `
         }
 
-        return transporter.sendMail(mailOptions, function(error, info) {
-            error ? console.log(`Unable to send the email: ${error}`) : console.log(`Email sent: ${info.response}`);
+        return new Promise((resolve, reject) => {
+            return transporter.sendMail(mailOptions, function(error, info) {
+                error ? 
+                    console.error(`Unable to send the email: ${error}`) : 
+                        console.log(`Email sent: ${info.response}`);
+            })
         })
+        .catch(err => console.error(`replyEmail func err : ${err}`))
     }
 }
