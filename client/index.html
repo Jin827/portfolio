@@ -121,9 +121,11 @@
                     <div class="sub-portfolio sub--4">
                         <h5>Behind Story&#35;&#35;</h4>
                         <p>
-                            The most challenge part was <span class="point-color--dark-orange">&#39;Saving search result values by each input row&#39;</span> on user click in order to add new trip form when both values of the input row&#39;s filled out&#46;<br/><br/>
-                            For instance&#44; to get &#39;Trip1&#58; destination&#39; value when saving &#39;Trip1&#58; departure&#39; value&#44; I first needed to check if &#39;Trip1&#39; object exist in Redux store&#46; If not&#44; set the value as empty&#46;<br/><br/>
-                            It&#39;s solved by using <span class="point-color--dark-orange">normalized data structure</span>&#44; creating an array of &#39;Trip Id&#39;s&#46; so I can quickly check if &#39;Trip1&#39; object is Exist&#46;     
+                            The most challenge part was &#39;<span class="point-color--dark-orange">Passing search result departure and destination both values together</span>&#39; when Storing a search result value into Redux store as an object like below&#46;<br/><br/>
+                            const searchValues = {{ id&#58; 1&#44; departure&#58; YUL&#44; destination&#58; ICN }&#44; {...} }&#59;<br/><br/>
+                            For instance&#44; to get &#39;destination value of Trip1&#39; when saving &#39;departure value of Trip2&#39;&#44; I first needed to check if &#39;the object of Id 1&#39; exists in Redux store&#46; If it doesn&#39;t, define the destination value empty&#46;<br/><br/>
+                            I solved it by using <span class="point-color--dark-orange">normalized data structure</span>&#44; creating an array of &#39;Trip Ids&#39; like below. So that I can quickly check if &#39;Trip1&#39; object exists with <span class="point-color--dark-orange">findIndex() method</span>&#46;<br/><br/>
+                            const tripIds = [ 1, 2, ... ]&#59;
                         </p>
                         <a class="on-sub js--btn-to-main" id="4"><svg class="triangle--sub-portfolio"><use xlink:href="resources/assets/svg/svg-symbol.svg#triangle" alt="button"></use></svg></a>
                     </div>

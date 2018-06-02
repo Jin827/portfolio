@@ -91,7 +91,8 @@ h4 {
 
 h5 {
     color: rgb(9, 25, 43);
-    margin: .5em 0 1.5em 0;
+    margin-top: 16px;
+    margin-bottom: 1.5em;
     font-size: 1.5em;
 }
 
@@ -485,18 +486,27 @@ header {
 
 /* --- Sub-portfolio --- */
 .sub-portfolio { display: none; }
-.sub-portfolio p { text-align: start; }
+.sub-portfolio p { 
+    text-align: start; 
+    letter-spacing: 1.1px;
+}
 .fade { opacity: .4; }
 .sub-portfolio.open { 
     display: block; 
     position: relative;
     top: -520px;
     background: linear-gradient(to bottom right,#f5f6f8, #add0f8);
-    padding: 3em 1.8em;
+    padding: 2em;
     border-radius: 5px;
     width: 90vw;
     height: 500px;
     margin: 0 auto;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
 }
 
 /* ---------------------------------------- */
