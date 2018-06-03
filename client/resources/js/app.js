@@ -81,7 +81,7 @@
         // INJECT CSS
         const css = document.createElement("style");
         css.type = "text/css";
-        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #000; text-decoration: none;}";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.04em solid #000; text-decoration: none; }";
         document.body.appendChild(css);
     };
     
@@ -186,20 +186,17 @@
     /* --- Map --- */
     const googleMap = document.getElementById('map');
     const location = {
-        montreal: { 
-            city: { lat: 45.5081804, lng: -73.52 },
-            marker: { lat: 45.5081804, lng: -73.59 }
-        }
+        montreal: { lat: 45.5081804, lng: -73.57 }
     }
 
     const map = new google.maps.Map(googleMap, {
-        center: location.montreal.city,
+        center: location.montreal,
         zoom: 11.5
     })
 
     new google.maps.Marker({
         map: map,
-        position: location.montreal.marker,
+        position: location.montreal,
         title: 'Montreal'
     });
 })();

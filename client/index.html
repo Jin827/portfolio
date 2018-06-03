@@ -44,7 +44,7 @@
             </nav>
             <div class="header-text--box">
                 <h1>I<span class="point-color--blue">&#39;</span>m<br/>Jiah Lee<span class="point-color--blue">&#46;</span></h1>
-                <h2 class="typewrite" data-period="2000" data-type='["Web Developer", "Front-End", "React Developer"]'></h2>
+                <h2 class="typewrite" data-period="2000" data-type='["Web Developer", "React Developer"]'></h2>
             </div>
             <a href="#about"><svg class="triangle--header"><use xlink:href="resources/assets/svg/svg-symbol.svg#triangle" alt="triangle"></use></svg></a>
         </header>
@@ -98,7 +98,7 @@
                                 <h4>Flightnook</h4>
                             </div>
                             <p class="main-portfolio--contents--main-text">
-                                Search Airport by airport&#44;<br/>city or state name<br/><br/>
+                                <span class="point-font-bold">Scalable App</span><br/><br/>Search Airport by airport&#44;<br/>city or state name<br/><br/>
                                 Automatically activate last input row&#44;<br/>add an inactivated input row<br/>when user fill out the form<br/><br/>
                                 Accurate error message position
                             </p>
@@ -131,7 +131,7 @@
                     </div>
                 </div>
                 <div class="portpolio-box">
-                    <div class="main-portfolio main--3">
+                    <div class="main-portfolio main--3 reverse">
                         <img class="image--web" src="resources/assets/svg/portfolio/flightnook.svg" alt="flightnook"/>
                         <div class="main-portfolio--contents">
                             <div class="main-portfolio--title">
@@ -139,7 +139,7 @@
                                 <h4>JH Weather</h4>
                             </div>
                             <p class="main-portfolio--contents--main-text">
-                                Responsive<br/><br/><br/>Get local Current&#44;<br/>8 days weather forecasts<br/><br/></br/>
+                                <span class="point-font-bold">Responsive</span><br/><br/><br/>Get local Current&#44;<br/>8 days weather forecasts<br/><br/></br/>
                                 Geolocation service<br/><br/>
                             </p>
                             <ul class="main-portfolio--contents--skills">
@@ -175,7 +175,7 @@
                                 <h4>Omni-Food</h4>
                             </div>
                             <p class="main-portfolio--contents--main-text">
-                                <br/><br/>Responsive<br/><br/><br/><br/>Promote a restaurant business<br/><br/><br/>
+                                <br/><br/><span class="point-font-bold">Responsive</span><br/><br/><br/><br/>Promote a restaurant business<br/><br/><br/>
                             </p>
                             <ul class="main-portfolio--contents--skills">
                                 <li><span class="point-color--main-blue ">#</span>JQUERY</li>
@@ -200,7 +200,7 @@
                     </div>
                 </div>
                 <div class="portpolio-box">
-                    <div class="main-portfolio main--1">
+                    <div class="main-portfolio main--1 reverse">
                         <img class="image--web" src="resources/assets/svg/portfolio/flightnook.svg" alt="flightnook"/>
                         <div class="main-portfolio--contents">
                             <div class="main-portfolio--title">
@@ -243,24 +243,34 @@
             </div>
         </section>
         <section class="section-contact" id="contact">
-            <div id="map"></div>
-            <div class="contact-form">
-                <h3>CONTACT ME</h3>
-                <form id="contact-form" method="post" action="#">
-                    <div class="client-info">
-                        <input type="text" id="name" name="name" placeholder="Name&#42;" required> 
-                        <input type="email" id="email" name="email" placeholder="Email&#42;" required>
+            <div class="mail-circle">
+                    <img class="mail-circle--icon" src="/client/resources/assets/svg/mail.svg" alt="mail icon">
+            </div>
+            <h3>Get in touch</h3>
+            <div class="section-contact--contents">
+                <div class="map-form">
+                    <div id="map"></div>
+                    <div class="download-btn--box">
+                            <a class="static-btn download-resume" href="https://drive.google.com/open?id=1zPNrPO2_HuJMA1uOcqb_Wb-ajMGXgwnq" target="_blank">Download Resume</a>
                     </div>
-                    <input type="text" id="subject" name="subject" placeholder="Subject">
-                    <textarea id="message" name="message" placeholder="Message&#42;" style="height: 200px" required></textarea>
-                    <input class="btn btn--submit" type="submit" value="Send it !">
-                </form>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form" method="post" action="#">
+                        <div class="client-info">
+                            <input type="text" id="name" name="name" placeholder="Name&#42;" required> 
+                            <input type="email" id="email" name="email" placeholder="Email&#42;" required>
+                        </div>
+                        <input type="text" id="subject" name="subject" placeholder="Subject">
+                        <textarea id="message" name="message" placeholder="Message&#42;" style="height: 200px" required></textarea>
+                        <input class="static-btn btn--submit" type="submit" value="Send it !">
+                    </form>
+                </div>
             </div>
         </section>
         <footer>
             <!-- emial link -->
-            <p>&#169;&#32; 2018 &#32;&#124;&#32; Jiah Lee &#32;&#124;</p>
-            <a href="mailto:jiah.lee827@gmail.com">jiah.lee827@gmail&#46;com</a>
+            <p>&#169;&#32; 2018 &#32;&#124;&#32; <a href="mailto:jiah.lee827@gmail.com">Jiah Lee</a> &#32;&#124;</p>
+            <a href="#about">Web Developer</a>
         </footer>
         <!-- google map	-->
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMAXJdNIqAcL_kpxzKy8c4jwxsQqdq_I0"></script>

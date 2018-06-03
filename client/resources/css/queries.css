@@ -15,11 +15,6 @@
     .mobile-nav-icon img { height: 25px; }
 
     /* --- About me --- */
-    .about-me--container {
-        padding-top: 90px;
-        padding-bottom: 90px;
-    }
-
     .about-me--p { font-size: 1.3em; }
     [CLASS*='icon-'] {
         height: 3em;
@@ -27,18 +22,12 @@
     }
 
     /* --- Skills --- */
-    .skills--container {
-        padding-top: 70px;
-        padding-bottom: 60px;
-    }
-
     .skills--logo { 
         padding-left: 0;
         padding-right: 0;
     }
 
     .skills--logo li { margin: 2em; }
-
     .skills--logo div {
         width: 60px;
         height: 60px;
@@ -69,14 +58,14 @@
    
     /* --- Offer --- */
     .section-offer {
-        padding-top: 90px;
-        padding-bottom: 90px;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
     .offer--contents {
         margin-left: 1em;
         margin-right: 1em;
-        margin-top: 100px;
+        margin-top: 70px;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -100,9 +89,6 @@
         font-size: 1.1em; 
         letter-spacing: 1.2px;
     }
-
-    /* --- Contact --- */
-    .btn--submit { padding: 7px 37px; }
 
     /* --- Footer --- */
     footer {
@@ -135,8 +121,8 @@
   
     /* --- Offer --- */
     .icon-offer { 
-        width: 160px; 
-        height: 160px;
+        width: 150px; 
+        height: 150px;
     }
 
     /* --- Contact --- */
@@ -154,10 +140,6 @@
     .section-offer { 
         margin-left: 40px;
         margin-right: 40px;
-    }
-    .offer--contents {
-        margin-left: 2em;
-        margin-right: 2em;
     }
     .icon-offer { width: 180px; }
 
@@ -265,6 +247,7 @@
         height: 65px;
         width: 55px;
     }
+
     .icon-logo--html {
         width: 66px;
         height: 63px;
@@ -284,24 +267,58 @@
         height: 70px;
     }
 
-    /* --- Offer --- */
-    .offer--contents { margin-top: 9em;}
-    .icon-offer { 
-        width: 200px; 
-        height: 200px;
-    }
-
     /* --- portfolio --- */
     .portpolio-box { max-height: 83em;}
+
+    /* --- Contact --- */
+    .section-contact--contents {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+    }
+
+    .mail-circle {
+        margin-top: -7.3em;
+    }
+
+    .mail-circle--icon {
+        height: 8em;
+    }
+    .map-form { 
+        margin: 0 auto;
+        width: 30%;
+        padding-top: .9em;
+    }
+
+    #map { 
+        height: 250px;
+        min-width: 250px;
+        margin: 0 auto;
+    }
+
+    .download-resume { 
+        margin-top: 2.5em;
+        margin-bottom: 0;
+    }
+
+    .contact-form { 
+        width: 60%;
+        margin: 0 auto;
+        max-width: 800px;
+    }
+
+    #name, #email, #subject, #message { 
+        margin-top: 7px;
+        margin-bottom: 7px;
+    }
+
+    .contact-message { 
+        margin-top: 7em; 
+        font-size: 1.5em;
+    }
 }
 
 @media screen and (min-width: 1024px) {
-
-    /* --- About me --- */
-    .section-about { padding: 100px 0; }
-    
-    /* --- Skills --- */
-    .skills--container { margin-top: 100px; }
 
     /* --- Nav --- */
     .main-nav li a { font-size: 1.2em; }
@@ -312,12 +329,7 @@
     }
 
     /* --- Offer --- */
-    .section-offer { margin-top: 100px; }
     .offer--contents li { font-size: 1.6em; }
-    .icon-offer { 
-        width: 220px; 
-        height: 220px;
-    }
 
     /* --- Portfolio --- */
     .portpolio-box { max-height: 45em;}
@@ -345,39 +357,7 @@
     }
     .fade { opacity: .1; }
 
-    /* --- Contact --- */
-    .section-contact {
-        display: flex;
-        padding: 0;
-        background-color: transparent;
-    }
-
-    #map { 
-        position: relative; 
-        height: 600px;
-        margin-bottom: 0;
-        z-index: -1;
-    }
-
-    .contact-form { 
-        position: absolute; 
-        right: 0;
-        height: 600px;
-        width: 50%;
-        z-index: 10;
-        background-color: rgba(255, 255, 255, 0.493);
-        padding: 4.2em 2em;
-    }
-
-    #name, #email, #subject, #message { 
-        margin-top: 7px;
-        margin-bottom: 7px;
-    }
-
-    .contact-message { 
-        margin-top: 7em; 
-        font-size: 1.5em;
-    }
+    
 }
 
 @media screen and (min-width: 1300px) {
@@ -385,24 +365,13 @@
     /* --- Heading --- */
     h1 { font-size: 9em; }
     h2 { font-size: 3.4em; }
-    h3 { 
-        font-size: 4.3em; 
-        margin-bottom: 1.3em;
-    }
-    .skills--container h3 { margin-bottom: .7em;}
+    h3 { font-size: 4.3em; }
     .section-offer h3,
     .section-portfolio h3 { font-size: 5em;}
     h4,h5 { font-size: 2.2em}
 
     /* --- About me --- */
-    .about-me--container {
-        padding-top: 100px;
-        padding-bottom: 100px;
-    }
-    .about-me--p { 
-        font-size: 1.5em; 
-        margin-bottom: 3.6em;
-    }
+    .about-me--p { font-size: 1.5em; }
 
     [CLASS*='icon-'] {
         height: 3.5em;
@@ -449,13 +418,9 @@
         margin-left: 60px;
         margin-right: 60px;
     }
-    .offer--contents {
-        margin-left: 3em;
-        margin-right: 3em;
-    }
     .icon-offer { 
-        width: 240px; 
-        height: 240px;
+        width: 200px; 
+        height: 200px;
     }
 
     /* --- Portfolio --- */
@@ -474,14 +439,6 @@
         top: -590px;
         max-width: 1200px;
     }
-
-    /* --- Contact --- */
-    #map { height: 650px; }
-    .contact-form { 
-        height: 650px; 
-        padding: 82px 30px;
-    }
-    .contact-form h3 { margin-bottom: 50px; }
 }
 
 @media screen and (min-width: 1700px) {
@@ -491,21 +448,10 @@
         margin-left: 80px;
         margin-right: 80px;
     }
-    .offer--contents {
-        margin-top: 11em;
-        margin-left: 5em;
-        margin-right: 5em;
-    }
     .offer--contents li { font-size: 1.6em; }
 
     /* --- Portfolio --- */
     .portpolio-box { height: 56.5em; }
     .main-portfolio--contents { margin: 2em auto; }
     .main-portfolio--contents--skills { width: 30vw; }
-   
-    /* --- Contact --- */
-    .contact-form { 
-        padding-left: 3.3em;
-        padding-right: 3.3em;
-    }
 }
