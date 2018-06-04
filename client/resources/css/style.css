@@ -524,7 +524,7 @@ header {
 #map { 
     height: 200px;
     border-radius: 12px;
-    box-shadow: 0 5px 5px 0 rgba(0,0,0.1,0.2), 0 0 1px 1px #EEEFE5;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2), 0 0 1px 1px #EEEFE5;
 }
 .download-btn--box { text-align: center; }
 .static-btn {
@@ -547,7 +547,6 @@ header {
     margin-top: 2em;
     margin-bottom: 2em;
     padding: 10px 20px;
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2), 0 0 0 1px var(--main-blue);
 }
 
 .section-contact h3 { margin-top: .3em;}
@@ -576,19 +575,29 @@ header {
 /* FOOTER */
 
 /* ---------------------------------------- */
-
 footer {
     min-height: 3em;
     text-align: center;
-    padding: 16px 0;
-    background-color: #f9f7f3;
-    color: #333;
-    font-size: 1.1em;
+    padding: 2em 0;
+    background-color: #8C43FF;
+    color: #fff;
     line-height: 1.4em;
     font-weight: 200;
+}
+.jh-logo { 
+    stroke: #fff; 
+    fill: #fff;
+    height: 3.5em;
+    width: 3.5em;
+    padding-top: 1em;
+}
+.quote { 
+    padding: 1.7em;
+    font-size: 1.2em;
+    line-height: 1.3em;
 }
 
 footer a { 
     margin-left: 6px;
-    color: #333;
+    color: #fff;
 }
