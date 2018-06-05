@@ -126,7 +126,7 @@
         document.querySelector(`.main--${this.id}`).classList.add('fade');
         document.querySelector(`.sub--${this.id}`).classList.add('open');
 
-        const profileNum = [1,2,3,4];
+        const profileNum = [1, 3, 4];
         profileNum
             .filter( id => id != this.id )
             .forEach( id => {
