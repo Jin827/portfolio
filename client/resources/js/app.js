@@ -161,7 +161,7 @@
 
         const data = JSON.stringify(formContents);
 
-        return new Promise(function(resolve, reject) {
+        return new Promise((resolve, reject) => {
         
             const xhr = new XMLHttpRequest();
             
