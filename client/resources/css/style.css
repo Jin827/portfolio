@@ -18,7 +18,7 @@ html {
 
 body {
     font-size: 16px;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: 400;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
@@ -40,7 +40,7 @@ section { padding: 4em 2em; }
 
 :root {
     --main-blue: rgba(76,139,166);
-    --orange: #E05915;
+    --purple: #8C43FF;
 }
 
 /* ---------------------------------------- */
@@ -101,8 +101,8 @@ h5 {
 
 /* --- Span colors --- */
 .point-color--blue { color: rgb(9, 25, 43); }
-.point-color--dark-orange { color: #ac410b; }
-.point-color--main-blue { color: var(--main-blue); }
+.point-color--purple { color: #8C43FF; }
+.point-color--grey { color: rgb(212, 191, 245); }
 .point-font-bold { font-weight: bold; } 
 
 /* --- Buttons --- */
@@ -419,7 +419,7 @@ header {
     justify-content: center;
     line-height: 1.2em;
     letter-spacing: 1.2px;
-    color: var(--orange);
+    color: var(--purple);
     list-style: none;
     margin-bottom: 2em;
 }
@@ -467,11 +467,11 @@ header {
 .triangle--sub-portfolio { 
     margin: 15px 5px 0 0; 
     transform: rotate(180deg);
-    fill: var(--orange);
+    fill: var(--purple);
 }
 
 .triangle--sub-portfolio:hover { 
-    fill: #FF2E03;
+    fill: rgb(111, 37, 231);
     transition: fill .3s;
 }
 
@@ -507,7 +507,7 @@ header {
 
 /* ---------------------------------------- */
 .section-contact { 
-    background-color: #EEEFE5;
+    background-color: #f9f8fa;
     margin-top: 4em;
     width: 100%;
 }
