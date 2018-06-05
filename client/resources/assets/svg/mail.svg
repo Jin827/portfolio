@@ -4,8 +4,8 @@
   </defs>
   <g fill="none" fill-rule="evenodd" transform="translate(1 1)">
     <g style="mix-blend-mode:overlay">
-      <use fill="#EEEFE5" xlink:href="#mail-a" style="mix-blend-mode:overlay"/>
-      <use stroke="#EEEFE5" stroke-width="2" xlink:href="#mail-a"/>
+      <use fill="#f9f8fa" xlink:href="#mail-a" style="mix-blend-mode:overlay"/>
+      <use stroke="#f9f8fa" stroke-width="2" xlink:href="#mail-a"/>
     </g>
     <path stroke="#43484D" stroke-width="2" d="M13 16L21.6264559 24.9877232C22.9797815 26.3456798 25.1411222 26.3361465 26.4825067 24.9665383L35 16.0624957M35 33L28 24M13 33L21 24"/>
     <rect width="24" height="19" x="12" y="15" stroke="#43484D" stroke-width="2" rx="4"/>
