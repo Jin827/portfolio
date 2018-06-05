@@ -121,9 +121,9 @@
                     <div class="sub-portfolio sub--4">
                         <h5>Behind Story&#35;&#35;</h4>
                         <p>
-                            The most challenge part was &#39;<span class="point-color--dark-orange">Passing search result departure and destination both values together</span>&#39; when Storing a search result value into Redux store as an object like below&#46;<br/><br/>
-                            const searchValues = {{ id&#58; 1&#44; departure&#58; YUL&#44; destination&#58; ICN }&#44; {...} }&#59;<br/><br/>
-                            For instance&#44; to get &#39;destination value of Trip1&#39; when saving &#39;departure value of Trip2&#39;&#44; I first needed to check if &#39;the object of Id 1&#39; exists in Redux store&#46; If it doesn&#39;t, define the destination value empty&#46;<br/><br/>
+                            The most challenge part was &#39;<span class="point-color--dark-orange">Passing search result departure and destination both values together</span>&#39; 
+                            when Storing a search result value into Redux store as an object like below&#46;<br/><br/>
+                            const searchValues = {{ id&#58; 1&#44; departure&#58; YUL&#44; destination&#58; ICN }&#44; {...} }&#59;<br/><br/> For instance&#44; to get &#39;destination value of Trip1&#39; when saving &#39;departure value of Trip2&#39;&#44; I first needed to check if &#39;the object of Id 1&#39; exists in Redux store&#46; If it doesn&#39;t, define the destination value empty&#46;<br/><br/> 
                             I solved it by using <span class="point-color--dark-orange">normalized data structure</span>&#44; creating an array of &#39;Trip Ids&#39; like below. So that I can quickly check if &#39;Trip1&#39; object exists with <span class="point-color--dark-orange">findIndex() method</span>&#46;<br/><br/>
                             const tripIds = [ 1, 2, ... ]&#59;
                         </p>
@@ -159,9 +159,12 @@
                     <div class="sub-portfolio sub--3">
                         <h5>Behind Story&#35;&#35;</h4>
                         <p>
-                            In ordr to <span class="point-color--dark-orange">secure API keys</span>&#39; Node Js is used&#46;  <span class="point-color--dark-orange">&#39;Saving search result values by each input row&#39;</span> on user click in order to add new trip form when both values of the input row&#39;s filled out&#46;<br/><br/>
-                            For instance&#44; to get &#39;Trip1&#58; destination&#39; value when saving &#39;Trip1&#58; departure&#39; value&#44; I first needed to check if &#39;Trip1&#39; object is exist in Redux store&#46; If not&#44; set the value as empty&#46;<br/><br/>
-                            It&#39;s solved by using <span class="point-color--dark-orange">normalized data structure</span>&#44; creating an array of &#39;Trip Id&#39;s&#46; so I can quickly check if &#39;Trip1&#39; object is Exist&#46;     
+                            I used Vanilla&#46;js in front-end to improve my JavaScript skills&#46; Vanilla&#46;js is pure JavaScript&#46; I believe that It’s important to have knowledge of the core of the language itself to become a strong developer&#46; 
+                            In Back-end&#44; Node&#46;js with Express&#46;js framework is used for API security&#46;<br/><br/>
+                            External APIs are asynchronously integrated using Promise to improve application performance and responsiveness&#46;
+                            Once i had <span class="point-color--dark-orange">&#39;then is not a function&#39; Promise error&#46;</span> With a bit of search online&#44; i learned that function need to return Promise object&#46; 
+                            So i <span class="point-color--dark-orange">solved it by implementing Promise constructor in external APIs integration</span>&#46;<br/><br/>
+                            Last but not least&#44; I love clean and quality code&#46; Throughout this project&#44; i focused on keeping <span class="point-color--dark-orange">the code clean and readable</span>&#46;
                         </p>
                         <a class="on-sub js--btn-to-main" id="3"><svg class="triangle--sub-portfolio"><use xlink:href="resources/assets/svg/svg-symbol.svg#triangle" alt="button"></use></svg></a>
                     </div>
@@ -185,18 +188,8 @@
                             <div class="main-portfolio--btns">
                                 <a href="https://github.com/Jin827/responsive-css-and-grids/tree/master/omnifood" target="_blank"><button class="btn">Github</button></a>
                                 <a href="https://hj-omnifood.herokuapp.com/index.html" target="_blank"><button class="btn live-site">Live Site</button><a/>
-                                <a class="js--btn-to-sub" id="2" title="Click to see behind story"><svg class="triangle--main-portfolio"><use xlink:href="resources/assets/svg/svg-symbol.svg#triangle" alt="button"></use></svg></a>
                             </div>
                         </div>
-                    </div>
-                    <div class="sub-portfolio sub--2">
-                        <h5>Behind Story&#35;&#35;</h4>
-                        <p>
-                            The most challenge part was <span class="point-color--dark-orange">&#39;Saving search result values by each input row&#39;</span> on user click in order to add new trip form when both values of the input row&#39;s filled out&#46;<br/><br/>
-                            For instance&#44; to get &#39;Trip1&#58; destination&#39; value when saving &#39;Trip1&#58; departure&#39; value&#44; I first needed to check if &#39;Trip1&#39; object is exist in Redux store&#46; If not&#44; set the value as empty&#46;<br/><br/>
-                            It&#39;s solved by using <span class="point-color--dark-orange">normalized data structure</span>&#44; creating an array of &#39;Trip Id&#39;s&#46; so I can quickly check if &#39;Trip1&#39; object is Exist&#46;     
-                        </p>
-                        <a class="on-sub js--btn-to-main" id="2"><svg class="triangle--sub-portfolio"><use xlink:href="resources/assets/svg/svg-symbol.svg#triangle" alt="button"></use></svg></a>
                     </div>
                 </div>
                 <div class="portpolio-box">
@@ -208,7 +201,7 @@
                                 <h4>WorkFlow</h4>
                             </div>
                             <p class="main-portfolio--contents--main-text">
-                                <br/>Boost users' productive team work<br/><br/>
+                                <br/><span class="point-font-bold">Boost users' productive team work</span><br/><br/>
                                 Create a project and tasks<br/>set deadline, priority<br/>assign team members<br/><br/>
                                 Track progress<br/><br/>
                             </p>
@@ -233,9 +226,12 @@
                     <div class="sub-portfolio sub--1">
                         <h5>Behind Story&#35;&#35;</h4>
                         <p>
-                            The most challenge part was <span class="point-color--dark-orange">&#39;Saving search result values by each input row&#39;</span> on user click in order to add new trip form when both values of the input row&#39;s filled out&#46;<br/><br/>
-                            For instance&#44; to get &#39;Trip1&#58; destination&#39; value when saving &#39;Trip1&#58; departure&#39; value&#44; I first needed to check if &#39;Trip1&#39; object is exist in Redux store&#46; If not&#44; set the value as empty&#46;<br/><br/>
-                            It&#39;s solved by using <span class="point-color--dark-orange">normalized data structure</span>&#44; creating an array of &#39;Trip Id&#39;s&#46; so I can quickly check if &#39;Trip1&#39; object is Exist&#46;     
+                            I mainly <span class="point-color--dark-orange">worked on Authentication&#44; Task page&#44; Integration frontend with backend and debugging</span>&#46;<br/><br/>
+                            The most fun part was Integration between frontend and backend&#46;<br/><br/>
+                            After integration&#44; we had some bugs and we were not sure if the bugs come from frontend or backend&#46;
+                            One of teammates who worked on back-end and I teamed up together&#46; 
+                            Put two monitors side by side&#44; one front-end code and one back-end code&#44; tried to find where bugs coming from by checking each lines&#46;<br/><br/>
+                            This was where i <span class="point-color--dark-orange">learned the power of teamwork</span>&#46;
                         </p>
                         <a class="on-sub js--btn-to-main" id="1"><svg class="triangle--sub-portfolio"><use xlink:href="resources/assets/svg/svg-symbol.svg#triangle" alt="button"></use></svg></a>
                     </div>
@@ -282,7 +278,5 @@
         <script src="vendors/js/babel.js"></script>
         <script src="vendors/js/fetch.js"></script>
         <script src="vendors/js/promise.min.js"></script>
-
-       
     </body>
 </html>
