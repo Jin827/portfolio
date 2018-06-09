@@ -30,7 +30,7 @@ body {
 *:focus { outline: none; }
 * { text-decoration: none; }
 
-section { padding: 4em 2em; }
+section { padding: 70px 20px; }
 
 /* ---------------------------------------- */
 
@@ -40,7 +40,7 @@ section { padding: 4em 2em; }
 
 :root {
     --main-blue: rgba(76,139,166);
-    --purple: #8C43FF;
+    --purple: rgba(139, 67, 255);
 }
 
 /* ---------------------------------------- */
@@ -68,7 +68,7 @@ h2 {
     font-weight: 300;
     width: 100vw;
     letter-spacing: 3px;
-    color: black;
+    color: #fff;
     font-family: 'Roboto', sans-serif;
     text-shadow: .4px .4px rgb(168, 166, 166);
 }
@@ -80,7 +80,6 @@ h3 {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     margin-bottom: 1em;
-    text-shadow: .4px .4px rgba(255,255,255,0.3);
     text-align: center;
 }
 
@@ -100,8 +99,8 @@ h5 {
 }
 
 /* --- Span colors --- */
-.point-color--blue { color: rgb(9, 25, 43); }
-.point-color--purple { color: #8C43FF; }
+.point-color--blue { color: var(--main-blue); }
+.point-color--purple { color: var(--purple); }
 .point-color--grey { color: rgb(212, 191, 245); }
 .point-font-bold { font-weight: bold; } 
 
@@ -136,7 +135,8 @@ h5 {
 /* ---------------------------------------- */
 
 header {
-    background-image: linear-gradient(rgba(223, 178, 149, 0.3), rgba(223, 178, 149, 0.3)), url(../assets/img/background_1.jpg);
+    /* background-image: linear-gradient(rgba(223, 178, 149, 0.3), rgba(223, 178, 149, 0.3)), url(../assets/img/background_1.jpg); */
+    background-image: linear-gradient(rgba(49, 21, 46, 0.55), rgba(49, 21, 46, 0.55)), url(../assets/img/background_2.jpg);
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -154,7 +154,10 @@ header {
     transform: translate(-50%, -50%);
 }
 
-.typewrite { color: black; }
+.typewrite { 
+    color: #fff;
+    box-shadow: .5px .5px fff; 
+}
 
 /* --- Mobile Nav --- */
 .nav-link--box {
@@ -164,15 +167,15 @@ header {
 
 .mobile-nav-icon {
     display: inline-block;
-    padding: 25px 0 0 20px;
+    padding: 22px 0 0 20px;
 }
 
 /* --- Buttons --- */
 .download-link-mobile {
     display: inline-block;
     text-decoration: none;
-    box-shadow: .5px .5px #abb6bb;
-    color: #000;
+    box-shadow: .5px .5px fff;
+    color: #fff;
 }
 
 .download-link { display: none; }
@@ -181,10 +184,10 @@ header {
 .triangle--header {
     position: absolute;
     top: 95%;
-    left: 45%;
+    left: 50%;
     transform: translate(-95%, -45%);
     height: 25px;
-    width: 40px;
+    width: 25px;
     fill: var(--main-blue);
     transform: rotate(180deg);
 }
@@ -194,10 +197,13 @@ header {
     transition: fill .3s;
 }
 /* --- Main Nav --- */
+.triangle--box-main-nav { margin-bottom: -9px; }
 .triangle--main-nav {
-    height: 14px;
-    width: auto;
-    margin-left: -120px;
+    height: 20px;
+    width: 20px;
+    background: #fefdff;
+    transform: rotate(45deg);
+    margin-left: 20px;
     display: none;
     cursor: pointer;
     fill: rgba(255,255,255,0.3);
@@ -206,13 +212,12 @@ header {
 .open{ display: block; }
 
 .main-nav--box {
-    background-color: rgba(255,255,255,0.3);
-    transition-duration: .5s;
+    background-color: #fefdff;
 }
 
 .main-nav { 
     display: none; 
-    transition: all .5s ease;
+    transition: all .5s cubic-bezier(0, 1, 0.5, 1);
     list-style: none;
 }
 
@@ -229,7 +234,7 @@ header {
 
 .main-nav li a {
     text-decoration: none;
-    color: black;
+    color: #fff;
 }
 
 /* ---------------------------------------- */
@@ -240,19 +245,7 @@ header {
 
 /* --- About me --- */
 .section-about {
-    background-image: linear-gradient(rgba(112, 48, 107, .3), rgba(112, 48, 107, .3)), url(../assets/img/background_2.jpg);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    min-height: 600px;
-    width: auto;
-    filter: alpha(opacity=80); /* For IE8 and earlier */
-    padding: 4em 0;
-}
-
-.about-me--container {
     background-color: white;
-    padding: 3em 0;
     text-align: center;
 }
 
@@ -276,15 +269,18 @@ header {
 #linkedin-outline { fill: #0077B5; }
 #linkedin-inline { stroke: #0077B5; }
 
-/* --- Skills --- */
-.skills--container {
+/* ---------------------------------------- */
+
+/* SKILL SECTION */
+
+/* ---------------------------------------- */
+.section-skill {
+    background-color: rgba(76, 139, 166, 0.1);
     text-align: center;
-    margin: 4em 1em 0 1em;
-    padding: 3em 1em 2em 1em;
-    background-color: rgba(255,255,255,0.9);
+    padding-bottom: 2em;
 }
 
-.skills--container h3 { margin-bottom: .2em;}
+.section-skill h3 { margin-bottom: .2em;}
 
 .skills--logo {
     display: flex;
@@ -311,6 +307,7 @@ header {
     width: 40px;
     height: 50px;
 }
+
 .icon-logo--react { margin-left: 3px; }
 .icon-logo--webpack { margin-left: 10px; }
 .icon-logo--scss { margin-left: 8px; }
@@ -322,17 +319,6 @@ header {
     margin-top: -2px;
     margin-left: -4px;
 }
-.icon-logo--html {
-    width: 45px;
-    height: 50px;
-     
-}
-.icon-logo--css { 
-    width: 31.5px;
-    height: 46px;
-    margin-top: 1.1px;
-}
-
 
 /* ---------------------------------------- */
 
@@ -378,7 +364,7 @@ header {
 .section-portfolio {
     text-align: center;
     padding-bottom: 0;
-    padding-top: 8em;
+    padding-top: 100px;
 }
 
 .main-portfolio.reverse { 
@@ -476,7 +462,21 @@ header {
 }
 
 /* --- Sub-portfolio --- */
-.sub-portfolio { display: none; }
+.main-portfolio {
+    z-index: -1;
+    /* position: relative; */
+}
+.sub-portfolio { 
+    z-index: 10;
+    height: 0;
+    transition: all .5s cubic-bezier(0, 1, .5, 1);
+    background: linear-gradient(to bottom right,#f5f6f8, #add0f8);
+    border-radius: 5px;
+    width: 90vw;
+    overflow-y: hidden;
+    top: -520px;
+}
+
 .sub-portfolio p { 
     text-align: start; 
     letter-spacing: 1.1px;
@@ -484,16 +484,11 @@ header {
 }
 .fade { opacity: .4; }
 .sub-portfolio.open { 
-    display: block; 
     position: relative;
-    top: -520px;
-    background: linear-gradient(to bottom right,#f5f6f8, #add0f8);
-    padding: 2em;
-    border-radius: 5px;
-    width: 90vw;
     height: 500px;
     margin: 0 auto;
     overflow-y: scroll;
+    padding: 2em;
 }
 
 ::-webkit-scrollbar {
@@ -508,10 +503,11 @@ header {
 /* ---------------------------------------- */
 .section-contact { 
     background-color: #f9f8fa;
-    margin-top: 4em;
+    margin-top: 4.5em;
     width: 100%;
 }
 
+.section-contact h3 { margin-top: ;}
 .mail-circle { 
     margin-top: -6.5em; 
     text-align: center;
@@ -549,7 +545,6 @@ header {
     padding: 10px 20px;
 }
 
-.section-contact h3 { margin-top: .3em;}
 #name, #email, #subject, #message { 
     width: 100%;
     margin: 5px 0;
@@ -579,14 +574,14 @@ footer {
     min-height: 3em;
     text-align: center;
     padding: 2em 0;
-    background-color: #8C43FF;
-    color: #fff;
+    background-color: rgba(139, 67, 255, 0.5);
+    color: #333;
     line-height: 1.4em;
     font-weight: 200;
 }
 .jh-logo { 
-    stroke: #fff; 
-    fill: #fff;
+    stroke: #333; 
+    fill: #333;
     height: 3.5em;
     width: 3.5em;
     padding-top: 1em;
@@ -599,5 +594,5 @@ footer {
 
 footer a { 
     margin-left: 6px;
-    color: #fff;
+    color: #333;
 }

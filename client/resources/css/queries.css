@@ -12,7 +12,7 @@
     .btn { padding: 6px; }
     
     /* --- Nav --- */
-    .mobile-nav-icon img { height: 25px; }
+    .mobile-nav-icon img { height: 20px; }
 
     /* --- About me --- */
     .about-me--p { font-size: 1.3em; }
@@ -231,11 +231,6 @@
     }
 
     /* --- Skills --- */
-    .skills--container { 
-        max-width: 54em;
-        margin-left: auto;
-        margin-right: auto;
-    }
     .skills--logo { 
         max-width: 47em; 
     }
@@ -382,10 +377,6 @@
     }
 
     /* --- Skills --- */
-    .skills--container { 
-        max-width: 60em;
-    }
-
     [CLASS*='icon-logo'] {
         width: 65px;
         height: 75px;
