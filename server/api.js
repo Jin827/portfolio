@@ -13,8 +13,10 @@ module.exports = {
     sendEmail: (data) => {
         const { name, email, subject, message } = data;
         const mailOptions = {
-            from: `${name} ${email}`,
-            to: 'jiah.lee827@gmail.com',
+            envolope: {
+                from: `${name} <${email}>`,
+                to: 'jiah.lee827@gmail.com',
+            },
             subject: subject,
             html: `<p>Name: ${name} <br/> Contact: ${email}<br/><br/>${message}</p>`,
         }
