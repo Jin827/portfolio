@@ -15,74 +15,25 @@
     .mobile-nav-icon img { height: 20px; }
 
     /* --- About me --- */
-    .about-me--p { font-size: 1.3em; }
-    [CLASS*='icon-'] {
-        height: 3em;
-        width: 3em;
+    .about-me--p { font-size: 1.2em; }
+
+    .offer--contents ul {
+        width: 80%;
+        margin: 0 auto;
     }
 
     /* --- Skills --- */
-    .skills--logo { 
-        padding-left: 0;
-        padding-right: 0;
+    .skill--contents { 
+        width: 70%; 
+        margin: 0 auto;
     }
 
-    .skills--logo li { margin: 2em; }
-    .skills--logo div {
-        width: 60px;
-        height: 60px;
-    }
-
-    [CLASS*='icon-logo'] {
-        width: 45px;
-        height: 55px;
-    }
-    .icon-logo--html {
-        width: 56px;
-        height: 53px;
-         
-    }
-    .icon-logo--css { 
-        width: 37.5px;
-        height: 55px;
-        margin-top: -2px;
-    }
-    .icon-logo--nodejs {  
-        width: 55px;
-        height: 65px; 
-    }
-    .icon-logo--jquery { 
-        width: 68px;
-        height: 70px;
-    }
-   
     /* --- Offer --- */
-    .section-offer {
-        padding-top: 50px;
-        padding-bottom: 50px;
+    .offer--contents { 
+        padding-left: 0;
     }
 
-    .offer--contents {
-        margin-left: 1em;
-        margin-right: 1em;
-        margin-top: 70px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    .offer--contents li { 
-        margin: 0; 
-        font-size: 1.4em;
-    }
-
-    .icon-offer { 
-        width: 120px; 
-        height: 120px;
-        margin-bottom: 2em;
-    }
-
-    /* --- portfolio --- */
+    /* --- Portfolio --- */
     .portpolio-box { max-height: 70em;}
     .main-portfolio--title { width: 80vw;}
     .section-portfolio p { 
@@ -113,21 +64,6 @@
         margin-right: auto;
     }
 
-    /* --- Skills --- */
-    .skills--logo { 
-        max-width: 40em;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .skills--logo li { margin: 2.5em; }
-  
-    /* --- Offer --- */
-    .icon-offer { 
-        width: 150px; 
-        height: 150px;
-    }
-
     /* --- Contact --- */
     .client-info { display: flex; justify-content: space-between;}
     #name, #email { width: 48%}
@@ -141,10 +77,49 @@
 
     /* --- Offer --- */
     .section-offer { 
-        margin-left: 40px;
-        margin-right: 40px;
+        margin: 0; 
     }
-    .icon-offer { width: 180px; }
+    .headline { 
+        padding-top: 70px;
+        padding-bottom: 200px; 
+    }
+    .offer--contents { 
+        padding: 70px 0;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: -120px;
+        border-radius: 20px;
+        border: 1px solid rgba(145, 114, 196, 0.2); 
+    }
+    .offer--contents ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .offer--contents li {
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .offer--contents--icon {
+        margin-right: 0;
+        padding-left: 15px;
+    }
+
+    .offer--contents--title h4,
+    .offer--contents--title p{
+        text-align: center;
+        width: 9em;
+        margin-top: 20px;
+    }
+
+    .icon-offer { 
+        width: 8em; 
+        height: 8em;
+        margin-bottom: 1em;
+    }
 
     /* --- portfolio --- */
     .portpolio-box { max-height: 80em;}
@@ -160,10 +135,6 @@
     
 
 @media screen and (min-width: 900px) {
-
-     /* --- Heading --- */
-     h1 { font-size: 8em; }
-     h2 { font-size: 3em; }
 
     /* --- Nav --- */
     .nav-container { padding: 1.5em; }
@@ -227,42 +198,12 @@
     /* --- About me --- */
     .about-me--p {
         width: 37em; 
-        font-size: 1.4em;
+        /* font-size: 1.4em; */
     }
 
-    /* --- Skills --- */
-    .skills--logo { 
-        max-width: 47em; 
-    }
-    .skills--logo li { margin: 3.5em; }
-
-    .skills--logo div {
-        width: 70px;
-        height: 70px;
-    }
-
-    [CLASS*='icon-logo'] {
-        height: 65px;
-        width: 55px;
-    }
-
-    .icon-logo--html {
-        width: 66px;
-        height: 63px;
-         
-    }
-    .icon-logo--css { 
-        width: 45.5px;
-        height: 65px;
-        margin-top: -2px;
-    }
-    .icon-logo--jquery { 
-        width: 90px;
-        height: 85px;
-    }
-    .icon-logo--nodejs { 
-        width: 75px;
-        height: 70px;
+    /* --- Offer --- */
+    .headline { 
+        font-size: 1.5em;
     }
 
     /* --- portfolio --- */
@@ -309,25 +250,9 @@
         margin-top: 7px;
         margin-bottom: 7px;
     }
-
-    .contact-message { 
-        margin-top: 7em; 
-        font-size: 1.5em;
-    }
 }
 
 @media screen and (min-width: 1024px) {
-
-    /* --- Nav --- */
-    .main-nav li a { font-size: 1.2em; }
-    .download-link { 
-        font-size: 1.2em; 
-        margin-top: 1.2em;
-        margin-bottom: 1.2em;
-    }
-
-    /* --- Offer --- */
-    .offer--contents li { font-size: 1.6em; }
 
     /* --- Portfolio --- */
     .portpolio-box { max-height: 45em;}
@@ -360,61 +285,32 @@
 
 @media screen and (min-width: 1300px) {
     
-    /* --- Heading --- */
-    h1 { font-size: 9em; }
-    h2 { font-size: 3.4em; }
-    h3 { font-size: 4.3em; }
-    .section-offer h3,
-    .section-portfolio h3 { font-size: 5em;}
-    h4,h5 { font-size: 2.2em}
-
-    /* --- About me --- */
-    .about-me--p { font-size: 1.5em; }
-
-    [CLASS*='icon-'] {
-        height: 3.5em;
-        width: 3.5em;
-    }
+    /* --- Offer --- */
+    .offer--contents { width: 1300px }
 
     /* --- Skills --- */
     [CLASS*='icon-logo'] {
-        width: 65px;
-        height: 75px;
+        height: 65px;
+        width: 55px;
     }
 
-    .skills--logo li { 
-        margin-left: 4em;
-        margin-right: 4em;
-    }
-
-    .skills--logo li .html { margin-left: -12.4px; }
-    .skills--logo li .material-ui { margin-left: -13px;}
     .icon-logo--html {
-        width: 84px;
-        height: 70px;  
+        width: 66px;
+        height: 63px;
+         
     }
     .icon-logo--css { 
-        width: 48.5px;
-        height: 71px;
+        width: 45.5px;
+        height: 65px;
+        margin-top: -2px;
     }
     .icon-logo--jquery { 
-        width: 95px;
-        height: 90px;
+        width: 90px;
+        height: 85px;
     }
     .icon-logo--nodejs { 
-        width: 80px;
-        height: 75px;
-    }
-
-    /* --- Offer --- */
-    .section-offer { 
-        margin-top: 100px;
-        margin-left: 60px;
-        margin-right: 60px;
-    }
-    .icon-offer { 
-        width: 200px; 
-        height: 200px;
+        width: 75px;
+        height: 70px;
     }
 
     /* --- Portfolio --- */
@@ -437,12 +333,51 @@
 
 @media screen and (min-width: 1700px) {
 
-    /* --- Offer --- */
-    .section-offer { 
-        margin-left: 80px;
-        margin-right: 80px;
+    /* --- Nav --- */
+    .main-nav li a { font-size: 1.2em; }
+    .download-link { 
+        font-size: 1.2em; 
+        margin-top: 1.2em;
+        margin-bottom: 1.2em;
     }
-    .offer--contents li { font-size: 1.6em; }
+
+    /* --- About me --- */
+    .about-me--p { font-size: 1.4em; }
+
+    .icon-media--linkedin,
+    .icon-media--github {
+        height: 3em;
+        width: 3em;
+    }
+
+    /* --- Offer --- */
+    .headline { font-size: 1.7em; }
+    .offer--contents--title { font-size: 1.2em;}
+    .offer--contents--icon { padding-left: 30px; }
+
+     /* --- Skill --- */
+    [CLASS*='icon-logo'] {
+        width: 45px;
+        height: 55px;
+    }
+    .icon-logo--html {
+        width: 56px;
+        height: 53px;
+         
+    }
+    .icon-logo--css { 
+        width: 37.5px;
+        height: 55px;
+        margin-top: -2px;
+    }
+    .icon-logo--nodejs {  
+        width: 55px;
+        height: 65px; 
+    }
+    .icon-logo--jquery { 
+        width: 68px;
+        height: 70px;
+    }
 
     /* --- Portfolio --- */
     .portpolio-box { height: 56.5em; }
