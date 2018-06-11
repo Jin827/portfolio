@@ -137,8 +137,7 @@ h5 {
 /* ---------------------------------------- */
 
 header {
-    /* background-image: linear-gradient(rgba(223, 178, 149, 0.3), rgba(223, 178, 149, 0.3)), url(../assets/img/background_1.jpg); */
-    background-image: linear-gradient(rgba(49, 21, 46, 0.55), rgba(49, 21, 46, 0.55)), url(../assets/img/background_2.jpg);
+    background-image: linear-gradient(rgba(49, 21, 46, 0.55), rgba(49, 21, 46, 0.55)), url(../assets/img/background_2-min.jpg);
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -513,15 +512,15 @@ header {
 .main-portfolio {
     z-index: -1;
 }
-.sub-portfolio { 
+.sub-portfolio {
     z-index: 10;
     height: 0;
     transition: all .5s cubic-bezier(0, 1, .5, 1);
-    background: linear-gradient(to bottom right,#f5f6f8, #add0f8);
+    background: linear-gradient(to bottom right,#fbfbfb, #add0f8);
     border-radius: 5px;
-    width: 90vw;
     overflow-y: hidden;
     top: -520px;
+    position: relative;
 }
 .sub-portfolio h4 {
     margin-top: 16px;
@@ -534,9 +533,17 @@ header {
     line-height: 1.43em;
 }
 
-.fade { opacity: .4; }
-.sub-portfolio.open { 
-    position: relative;
+.fade {
+    opacity: .4;
+    transition: opacity .5s ease;
+}
+
+.sub-portfolio {
+    margin: 0 auto;
+    overflow-y: scroll;
+}
+
+.sub-portfolio.open {
     height: 500px;
     margin: 0 auto;
     overflow-y: scroll;

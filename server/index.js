@@ -20,11 +20,14 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 app.post('/', (req, res) => {
-    return myApi.sendEmail(req.body)
+    return   tmyApi.sendEmail(req.body)
         .then( myApi.replyEmail(req.body) )
         .catch( err => console.log(err) )
 });
 
+app.use(express.static(`${process.cwd()}/client`))
+
+// error handlers
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
@@ -32,11 +35,9 @@ app.use(function(req, res, next) {
     next(err);
 });
 
-// error handlers
-
 // development error handler
 // will print stacktrace
-if (app.get('env') === 'development') {
+if (app.get('env') !== 'production') {
     app.use(function(err, req, res, next) {
       res.status(err.status || 500);
       res.json('error', {
@@ -45,12 +46,12 @@ if (app.get('env') === 'development') {
       });
     });
   }
-  
+
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    res.json('error', {
+    res.json({
         message: err.message,
         error: {}
     });
