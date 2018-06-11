@@ -269,8 +269,6 @@
         padding: 4em;
     }
     .fade { opacity: .1; }
-
-    
 }
 
 @media screen and (min-width: 1300px) {
@@ -322,9 +320,9 @@
         margin-bottom: 3em; 
     }
     .main-portfolio--btns { margin-top: 1em;}
-    .sub-portfolio.open { 
+    .sub-portfolio { 
         top: -590px;
-        max-width: 1200px;
+        max-width: 1000px;
     }
 }
 

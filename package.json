@@ -4,7 +4,6 @@
   "description": "Jiah Lee  Protfolio",
   "main": "index.js",
   "scripts": {
-    "start": "http-server -p 8080",
     "server": "nodemon server/index.js"
   },
   "engines": {
