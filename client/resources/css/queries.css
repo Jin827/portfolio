@@ -17,14 +17,8 @@
     /* --- About me --- */
     .about-me--p { font-size: 1.2em; }
 
-    .offer--contents ul {
+    .offer--contents-points ul {
         width: 80%;
-        margin: 0 auto;
-    }
-
-    /* --- Skills --- */
-    .skill--contents { 
-        width: 70%; 
         margin: 0 auto;
     }
 
@@ -72,9 +66,6 @@
 
 @media screen and (min-width: 735px) {
     
-    /* --- Skills --- */
-    .skills--logo li { margin: 3em; }
-
     /* --- Offer --- */
     .section-offer { 
         margin: 0; 
@@ -91,13 +82,13 @@
         border-radius: 20px;
         border: 1px solid rgba(145, 114, 196, 0.2); 
     }
-    .offer--contents ul{
+    .offer--contents-points ul {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
     }
 
-    .offer--contents li {
+    .offer--contents-points li {
         flex-direction: column;
         justify-content: center;
         margin: 0;
@@ -197,8 +188,7 @@
 
     /* --- About me --- */
     .about-me--p {
-        width: 37em; 
-        /* font-size: 1.4em; */
+        width: 40em;
     }
 
     /* --- Offer --- */
@@ -289,19 +279,25 @@
     .offer--contents { width: 1300px }
 
     /* --- Skills --- */
+    .skills--logo li { margin: 2em; }
+
     [CLASS*='icon-logo'] {
         height: 65px;
         width: 55px;
+        padding-bottom: 20px;
     }
 
+    .icon-logo--js { margin-left: -5px; }
+    .icon-logo--redux { margin-left: -3px; }
+    .icon-logo--react { margin-left: -5px; }
     .icon-logo--html {
-        width: 66px;
-        height: 63px;
-         
+        width: 94px;
+        height: 68px;
+        margin-left: -23px;
     }
     .icon-logo--css { 
-        width: 45.5px;
-        height: 65px;
+        width: 35px;
+        height: 70px;
         margin-top: -2px;
     }
     .icon-logo--jquery { 
@@ -312,6 +308,7 @@
         width: 75px;
         height: 70px;
     }
+    .icon-logo--webpack { margin-left: 10px; }
 
     /* --- Portfolio --- */
     .portpolio-box { max-height: 55em;}
@@ -354,30 +351,6 @@
     .headline { font-size: 1.7em; }
     .offer--contents--title { font-size: 1.2em;}
     .offer--contents--icon { padding-left: 30px; }
-
-     /* --- Skill --- */
-    [CLASS*='icon-logo'] {
-        width: 45px;
-        height: 55px;
-    }
-    .icon-logo--html {
-        width: 56px;
-        height: 53px;
-         
-    }
-    .icon-logo--css { 
-        width: 37.5px;
-        height: 55px;
-        margin-top: -2px;
-    }
-    .icon-logo--nodejs {  
-        width: 55px;
-        height: 65px; 
-    }
-    .icon-logo--jquery { 
-        width: 68px;
-        height: 70px;
-    }
 
     /* --- Portfolio --- */
     .portpolio-box { height: 56.5em; }
