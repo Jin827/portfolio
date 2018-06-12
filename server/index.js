@@ -2,12 +2,11 @@ require('dotenv').config();
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const request = require('request');
 const express = require('express');
 
 const app = express();
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8080;
 
 const myApi = require('./api.js');
 const cors = require('cors')
@@ -20,12 +19,12 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 app.post('/', (req, res) => {
-    return   tmyApi.sendEmail(req.body)
+    return myApi.sendEmail(req.body)
         .then( myApi.replyEmail(req.body) )
         .catch( err => console.log(err) )
 });
 
-app.use(express.static(`${process.cwd()}/client`))
+app.use(express.static(`${process.cwd()}/client`));
 
 // error handlers
 // catch 404 and forward to error handler
