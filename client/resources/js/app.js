@@ -81,7 +81,7 @@
         // INJECT CSS
         const css = document.createElement("style");
         css.type = "text/css";
-        css.innerHTML = ".typewrite > .wrap { border-right: 0.04em solid #000; }";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.04em solid #fff; }";
         document.body.appendChild(css);
     };
     

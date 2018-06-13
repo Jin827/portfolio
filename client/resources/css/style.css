@@ -44,7 +44,7 @@ section { padding: 70px 20px; }
 
 :root {
     --main-blue: #4c8ba6;
-    --purple: #b0aac2;
+    --purple: #9068be;
 }
 
 /* ---------------------------------------- */
@@ -293,14 +293,16 @@ header {
     background-color: #fff;
     list-style: none;
     text-align: center;
-    padding: 70px 0 70px 0;
-    margin: 0 15px;
+    padding-bottom: 40px;
     border-bottom: 2px solid rgba(145, 114, 196, 0.4);
 }
+
 .offer--contents-points { 
-    border-bottom: 2px solid rgba(145, 114, 196, 0.4); 
-    padding-bottom: 70px;
+    /* border-bottom: 2px solid rgba(145, 114, 196, 0.4);  */
+    padding: 70px 15px;
+    background-color: #f2efe8;
 }
+
 .offer--contents li {
     display: flex;
     flex-direction: row;
@@ -308,18 +310,22 @@ header {
     font-weight: bold;
     margin-bottom: 30px;
 }
+
+.offer--contents-points ul {
+    width: 90%;
+    margin: 0 auto;
+}
+
 .offer--contents li:last-child { margin-bottom: 0; }
 .offer--contents--icon { 
-    width: 40%; 
     margin-right: 30px;
 }
-.offer--contents--title { 
-    width: 60%; 
-}
+
 .offer--contents h4 { 
-    font-size: 1.1em;
+    font-size: 1.2em;
     text-align: left;
-    margin-top: 10px; 
+    margin-top: 10px;
+    margin-bottom: 10px; 
 }
 
 .offer--contents p { 
@@ -340,13 +346,13 @@ header {
 .skill--contents {
     background-color: #fff;
     text-align: center;
-    padding: 40px 20px;
+    padding: 60px 20px 0 20px;
     margin: 0 auto;
 }
 
 .skill--contents h4 { 
     text-align: center;
-    margin-top: 50px;
+    margin-top: 60px;
     margin-bottom: 25px;
     color: var(--main-blue);
     font-size: 1.5em;
@@ -356,7 +362,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 }
 
 .skills--logo:last-child { margin-bottom: 0; }
@@ -376,18 +382,18 @@ header {
 
 /* --- Icons --- */
 [CLASS*='icon-logo'] {
-    width: 4s0px;
+    width: 40px;
     height: 50px;
 }
 
 .icon-logo--react { margin-left: 3px; }
 .icon-logo--webpack { margin-left: 15px; }
 .icon-logo--scss { margin-left: 8px; }
-.icon-logo--material-ui { margin-left: 14px; }
+.icon-logo--material-ui { margin-left: 20px; }
 .icon-logo--nodejs { margin-top: 2px; }
 .icon-logo--html { 
     width: 45px;
-    margin-left: 5px;
+    margin-left: 3px;
 }
 .icon-logo--css {
     width: 32px;
@@ -565,7 +571,10 @@ header {
     width: 100%;
 }
 
-.section-contact h3 { margin-top: 50px;}
+.section-contact h3 { 
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
 .mail-circle { 
     margin-top: -6.5em; 
     text-align: center;
@@ -574,13 +583,15 @@ header {
 .mail-circle--icon { 
     height: 6em;   
 }
-.map-form { margin: auto 0;}
+/* .map-form { margin: auto 0;}
 #map { 
     height: 400px;
     border-radius: 12px;
-    border: 1px solid #333;
-}
-.download-btn--box { text-align: center; }
+    border-left: 3px solid #333;
+    border-right: 3px solid #333;
+    margin: 40px 0 60px 0;
+} */
+/* .download-btn--box { text-align: center; } */
 .static-btn {
     border: 1px solid var(--main-blue);
     border-radius: 5px;
@@ -595,22 +606,31 @@ header {
     transition: border .3s, background-color .3s;
 }
 
+/* .contact-memo--border { 
+    padding: 40px 10px;
+    border: 2px solid #333;
+    border-radius: 40px;
+}
+
 .contact-memo { 
     font-size: 1.5em;
+    font-weight: bold;
     text-align: center;
-    color: var(--main-blue);
-    padding: 20px 20px;
-    border-radius: 20px;
-    border: 1px solid var(--main-blue);
-    margin: 40px 20px 20px 20px;
+    color: #252839;
+    transition: color .3s;
 }
-.download-resume { 
+
+.contact-memo:hover { color: var(--main-blue); } */
+
+/* .download-resume { 
     display: inline-block;
     text-decoration: none;
-    margin-bottom: 2em;
+    margin-top: 40px;
     padding: 10px 20px;
     height: 45px;
-}
+    text-align: right;
+    border-radius: 20px;
+} */
 
 #name, #email, #subject, #message { 
     width: 100%;
@@ -620,11 +640,11 @@ header {
     padding: 7px 0 7px 14px;
 }
 input { height: 45px;}
-textarea { height: 330px !important; }
+textarea { height: 370px !important; }
 .btn--submit {
     border-radius: 20px;
     padding: 7px 37px;
-    margin: 0;
+    margin-top: 8px;
 }
 
 /* ---------------------------------------- */
@@ -637,13 +657,13 @@ footer {
     text-align: center;
     padding: 2em 0;
     background-color: var(--purple);
-    color: #333;
+    color: #fff;
     line-height: 1.4em;
     font-weight: 200;
 }
 .jh-logo { 
-    stroke: #333; 
-    fill: #333;
+    stroke: #fff; 
+    fill: #fff;
     height: 3.5em;
     width: 3.5em;
     padding-top: 1em;
@@ -656,5 +676,5 @@ footer {
 
 footer a { 
     margin-left: 6px;
-    color: #333;
+    color: #fff;
 }

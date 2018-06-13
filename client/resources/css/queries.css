@@ -17,26 +17,12 @@
     /* --- About me --- */
     .about-me--p { font-size: 1.2em; }
 
-    .offer--contents-points ul {
-        width: 80%;
-        margin: 0 auto;
-    }
-
-    /* --- Offer --- */
-    .offer--contents { 
-        padding-left: 0;
-    }
-
     /* --- Portfolio --- */
     .portpolio-box { max-height: 70em;}
     .main-portfolio--title { width: 80vw;}
     .section-portfolio p { 
         font-size: 1.1em; 
         letter-spacing: 1.2px;
-    }
-    /* --- Contact --- */
-    .contact-memo { 
-        padding: 40px;
     }
 
     /* --- Footer --- */
@@ -74,7 +60,7 @@
 @media screen and (min-width: 735px) {
     /* --- Nav --- */
     .main-nav li a { color: #fff; }
-    
+   
     /* --- Offer --- */
     .section-offer { 
         margin: 0; 
@@ -85,15 +71,23 @@
     }
     .headline { padding-top: 60px; }
     .offer--contents { 
-        padding: 70px 0;
         width: 90%;
         margin: 0 auto;
         margin-top: -120px;
         border-radius: 20px;
         border: 1px solid rgba(145, 114, 196, 0.4); 
-        box-shadow: 3px 3px #ececec;
+        box-shadow: 0 3px #ececec;
     }
-    .offer--contents-points { margin: 0 15px; }
+
+    .offer--contents-points { 
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .offer--contents-points ul {
         display: flex;
         flex-direction: row;
@@ -104,17 +98,16 @@
         flex-direction: column;
         justify-content: center;
         margin: 0;
+        width: 10em;
     }
 
     .offer--contents--icon {
         margin-right: 0;
-        padding-left: 15px;
     }
 
     .offer--contents--title h4,
     .offer--contents--title p{
         text-align: center;
-        width: 9em;
         margin-top: 20px;
     }
 
@@ -123,6 +116,8 @@
         height: 8em;
         margin-bottom: 1em;
     }
+
+    .skill--contents { padding-bottom: 100px; }
 
     /* --- portfolio --- */
     .portpolio-box { max-height: 80em;}
@@ -208,6 +203,8 @@
         font-size: 1.5em;
     }
 
+    .offer--contents-points li  { width: 13em; }
+
     /* --- portfolio --- */
     .portpolio-box { max-height: 83em;}
 
@@ -225,27 +222,19 @@
     .mail-circle--icon {
         height: 8em;
     }
-    .map-form { 
+    /* .map-form { 
         margin: 0 auto;
         width: 30%;
-        padding-top: .9em;
     }
 
     #map { 
         height: 250px;
         min-width: 250px;
-        margin: 0 auto;
-    }
-
-    .download-resume { 
-        margin-top: 10px;
-        margin-bottom: 0;
-    }
+    } */
 
     .contact-form { 
-        width: 60%;
         margin: 0 auto;
-        max-width: 800px;
+        min-width: 850px;
     }
 
     #name, #email, #subject, #message { 
@@ -290,6 +279,7 @@
     
     /* --- Offer --- */
     .offer--contents { width: 1300px }
+    .offer--contents-points li  { width: 17em; }
 
     /* --- Skills --- */
     .skill--contents { width: 700px; }
@@ -364,10 +354,11 @@
     /* --- Offer --- */
     .headline { font-size: 1.7em; }
     .offer--contents--title { font-size: 1.2em;}
-    .offer--contents--icon { padding-left: 30px; }
 
     /* --- Portfolio --- */
     .portpolio-box { height: 56.5em; }
     .main-portfolio--contents { margin: 2em auto; }
     .main-portfolio--contents--skills { width: 30vw; }
+
+    .contact-memo { font-size: 1.7em;}
 }
