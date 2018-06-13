@@ -34,6 +34,10 @@
         font-size: 1.1em; 
         letter-spacing: 1.2px;
     }
+    /* --- Contact --- */
+    .contact-memo { 
+        padding: 40px;
+    }
 
     /* --- Footer --- */
     footer {
@@ -58,6 +62,9 @@
         margin-right: auto;
     }
 
+    /* --- Skills --- */
+    .skill--contents { width: 540px; }
+
     /* --- Contact --- */
     .client-info { display: flex; justify-content: space-between;}
     #name, #email { width: 48%}
@@ -65,24 +72,28 @@
 }
 
 @media screen and (min-width: 735px) {
+    /* --- Nav --- */
+    .main-nav li a { color: #fff; }
     
     /* --- Offer --- */
     .section-offer { 
         margin: 0; 
     }
-    .headline { 
-        padding-top: 70px;
+    .healine-box { 
+        padding-top: 90px;
         padding-bottom: 200px; 
     }
+    .headline { padding-top: 60px; }
     .offer--contents { 
         padding: 70px 0;
         width: 90%;
         margin: 0 auto;
         margin-top: -120px;
         border-radius: 20px;
-        border: 1px solid rgba(145, 114, 196, 0.2); 
-        box-shadow: 5px 5px #ececec;
+        border: 1px solid rgba(145, 114, 196, 0.4); 
+        box-shadow: 3px 3px #ececec;
     }
+    .offer--contents-points { margin: 0 15px; }
     .offer--contents-points ul {
         display: flex;
         flex-direction: row;
@@ -227,7 +238,7 @@
     }
 
     .download-resume { 
-        margin-top: 2.5em;
+        margin-top: 10px;
         margin-bottom: 0;
     }
 
@@ -251,6 +262,9 @@
         display: flex;
     }
     .image--web { width: 50vw; }
+    .image--web:last-child {
+        max-height: 650px;
+    }
     .main-portfolio--contents,
     .main-portfolio--contents--skills { width: 45vw;}
     .main-portfolio--title { 
@@ -258,7 +272,7 @@
         margin-top: 0;
         max-width: 650px;
     }
-    
+
     .even { 
         display: flex;
         flex-direction: row-reverse; 
@@ -278,6 +292,7 @@
     .offer--contents { width: 1300px }
 
     /* --- Skills --- */
+    .skill--contents { width: 700px; }
     .skills--logo li { margin: 2em; }
 
     [CLASS*='icon-logo'] {
