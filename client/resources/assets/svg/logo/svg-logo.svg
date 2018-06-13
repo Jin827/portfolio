@@ -95,5 +95,14 @@
             <polygon fill="#FDAD00" points="0 82.6076 51.846 82.6076 55.855 7.6276"></polygon>
             <polygon fill="#FEEEB7" points="127.9998 0.0002 51.8458 82.6072 204.1538 82.6072"></polygon>
         </symbol>
+        <symbol id="express" viewBox="0 0 68 64" fill="none" fill-rule="evenodd">
+            <text fill="#000" font-family="Futura-Medium, Futura" font-size="12.5" font-weight="400" letter-spacing=".5">
+                <tspan x="2.656" y="36">Express</tspan>
+            </text>
+            <rect width="16" height="16" x="50" y="21" fill="#FC0"/>
+            <text fill="#000" font-family="Futura-Bold, Futura" font-size="9" font-weight="bold" letter-spacing=".333">
+                <tspan x="54.875" y="35">JS</tspan>
+            </text>
+        </symbol>
     </defs>
 </svg>
