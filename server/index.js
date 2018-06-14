@@ -9,10 +9,7 @@ const app = express();
 const port = process.env.PORT || 8080;
 
 const myApi = require('./api.js');
-const cors = require('cors')
 
-app.use(cors());
-app.options('*',cors());
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
