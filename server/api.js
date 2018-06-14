@@ -13,30 +13,34 @@ module.exports = {
     sendEmail: (data) => {
         const { name, email, subject, message } = data;
         const mailOptions = {
-            envolope: {
-                from: `${name} <${email}>`,
-                to: 'jiah.lee827@gmail.com',
-            },
+            from: 'Client via Portfolio <contact.portfolio@gmail.com>',
+            to: 'jiah.lee827@gmail.com',
             subject: subject,
             html: `<p>Name: ${name} <br/> Contact: ${email}<br/><br/>${message}</p>`,
         }
 
         return new Promise((resolve, reject) => {
-            return transporter.sendMail(mailOptions, function(error, info) {
-                error ? 
-                    console.error(`Unable to send the email: ${error}`) : 
-                        console.log(`Email sent: ${info.response}`);
-            })
+            
+            transporter.verify(function(error, success) {
+                if (error) {
+                     console.log(error);
+                } else {
+                    return transporter.sendMail(mailOptions, function(error, info) {
+                        error ? 
+                            console.error(`Unable to send the email: ${error}`) : 
+                                console.log(`Email sent: ${info.response}`);
+                    })
+                }
+             })
         })
         .catch(err => console.error(`sendEmail func err : ${err}`));
-        
     },
 
     replyEmail: (data) => {
         const { name, email } = data;
         const mailOptions = {
-            from: 'jiah.lee827@gmail.com',
-            to: email,
+            from: 'Jiah Lee <donotreply@gmail.com>',
+            to: `${name} <${email}>`,
             subject: 'Auto reply message from Jiah Lee',
             html: `          
                 <p>
