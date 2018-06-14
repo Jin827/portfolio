@@ -294,13 +294,13 @@ header {
     list-style: none;
     text-align: center;
     padding-bottom: 40px;
-    border-bottom: 2px solid rgba(145, 114, 196, 0.4);
+    /* border-bottom: 2px solid rgba(145, 114, 196, 0.4); */
 }
 
 .offer--contents-points { 
     /* border-bottom: 2px solid rgba(145, 114, 196, 0.4);  */
-    padding: 70px 15px;
-    background-color: #f2efe8;
+    padding: 70px 10px;
+    /* background-color: #f2efe838; */
 }
 
 .offer--contents li {
@@ -315,17 +315,17 @@ header {
     width: 90%;
     margin: 0 auto;
 }
-
 .offer--contents li:last-child { margin-bottom: 0; }
 .offer--contents--icon { 
     margin-right: 30px;
+    margin-top: 20px;
 }
 
 .offer--contents h4 { 
-    font-size: 1.2em;
-    text-align: left;
-    margin-top: 10px;
+    font-size: 1.5em;
     margin-bottom: 10px; 
+    text-align: left;
+    font-weight: 300!;
 }
 
 .offer--contents p { 
@@ -346,8 +346,10 @@ header {
 .skill--contents {
     background-color: #fff;
     text-align: center;
-    padding: 60px 20px 0 20px;
-    margin: 0 auto;
+    padding: 70px 10px;
+    margin: 0 10px;
+    border: 2px solid rgba(145, 114, 196, 0.4);
+    border-radius: 20px;
 }
 
 .skill--contents h4 { 
@@ -355,9 +357,10 @@ header {
     margin-top: 60px;
     margin-bottom: 25px;
     color: var(--main-blue);
-    font-size: 1.5em;
+    font-size: 2em;
 }
 
+.skill--contents h4:first-child { margin-top: 0; }
 .skills--logo {
     display: flex;
     flex-wrap: wrap;
@@ -374,10 +377,11 @@ header {
     text-align: center;
 }
 
-.skills--logo div {
+.skills--logo li div {
     width: 45px;
     height: 45px;
     margin-bottom: 10px;
+    margin: 10px auto;
 }
 
 /* --- Icons --- */
@@ -386,24 +390,22 @@ header {
     height: 50px;
 }
 
-.icon-logo--react { margin-left: 3px; }
-.icon-logo--webpack { margin-left: 15px; }
-.icon-logo--scss { margin-left: 8px; }
-.icon-logo--material-ui { margin-left: 20px; }
-.icon-logo--nodejs { margin-top: 2px; }
+.icon-logo--nodejs { 
+    margin-top: -10px; 
+    width: 60px;
+    height: 70px;
+}
 .icon-logo--html { 
     width: 45px;
-    margin-left: 3px;
 }
 .icon-logo--css {
     width: 32px;
     height: 46px;
 }
 .icon-logo--jquery { 
-    width: 55px;
-    height: 65px;
-    margin-top: -2px;
-    margin-left: -6px;
+    width: 60px;
+    height: 80px;
+    margin-top: -10px;
 }
 
 /* ---------------------------------------- */
@@ -421,6 +423,12 @@ header {
 .main-portfolio.reverse { 
     flex-direction: row-reverse;
 }
+.main-portfolio { 
+    opacity: 1; 
+    transition: opacity .5s ease;
+}
+.fade { opacity: .4; }
+
 .section-portfolio h3 { margin-bottom : .5em;}
 .portpolio-box { 
     max-height: 56.5em;
@@ -514,36 +522,15 @@ header {
 
 
 /* --- Sub-portfolio --- */
-.main-portfolio {
-    z-index: -1;
-}
 .sub-portfolio {
     z-index: 10;
     height: 0;
     transition: all .5s cubic-bezier(0, 1, .5, 1);
-    background: linear-gradient(to bottom right,#fbfbfb, #add0f8);
+    background: linear-gradient(to bottom right,#ecf3fa, #add0f8);
     border-radius: 5px;
     overflow-y: hidden;
     top: -520px;
     position: relative;
-}
-.sub-portfolio h4 {
-    margin-top: 16px;
-    margin-bottom: 1.5em;
-}
-
-.sub-portfolio p { 
-    text-align: start; 
-    letter-spacing: 1.1px;
-    line-height: 1.43em;
-}
-
-.fade {
-    opacity: .4;
-    transition: opacity .5s ease;
-}
-
-.sub-portfolio {
     margin: 0 auto;
     overflow-y: scroll;
 }
@@ -558,6 +545,17 @@ header {
 ::-webkit-scrollbar {
     width: 0px;  /* remove scrollbar space */
     background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+.sub-portfolio h4 {
+    margin-top: 16px;
+    margin-bottom: 1.5em;
+}
+
+.sub-portfolio p { 
+    text-align: start; 
+    letter-spacing: 1.1px;
+    line-height: 1.43em;
 }
 
 /* ---------------------------------------- */
@@ -583,15 +581,15 @@ header {
 .mail-circle--icon { 
     height: 6em;   
 }
-/* .map-form { margin: auto 0;}
+.map-form { margin: auto 0;}
 #map { 
     height: 400px;
     border-radius: 12px;
     border-left: 3px solid #333;
     border-right: 3px solid #333;
     margin: 40px 0 60px 0;
-} */
-/* .download-btn--box { text-align: center; } */
+}
+.download-btn--box { text-align: center; }
 .static-btn {
     border: 1px solid var(--main-blue);
     border-radius: 5px;
@@ -606,7 +604,7 @@ header {
     transition: border .3s, background-color .3s;
 }
 
-/* .contact-memo--border { 
+.contact-memo--border { 
     padding: 40px 10px;
     border: 2px solid #333;
     border-radius: 40px;
@@ -620,9 +618,9 @@ header {
     transition: color .3s;
 }
 
-.contact-memo:hover { color: var(--main-blue); } */
+.contact-memo:hover { color: var(--main-blue); } 
 
-/* .download-resume { 
+.download-resume { 
     display: inline-block;
     text-decoration: none;
     margin-top: 40px;
@@ -630,7 +628,7 @@ header {
     height: 45px;
     text-align: right;
     border-radius: 20px;
-} */
+}
 
 #name, #email, #subject, #message { 
     width: 100%;

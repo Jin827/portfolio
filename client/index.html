@@ -84,23 +84,23 @@
                     <ul>
                         <li>
                             <div class="offer--contents--icon"><svg class="icon-offer"><use xlink:href="resources/assets/svg/svg-symbol.svg#mobile" alt="mobile"/></svg></div>
-                            <div class="offer--contents--title">
+                            <div>
                                 <h4>Responsive</h4>
-                                <p>Web pages render well across all devices.</p>
+                                <p>Half of web traffic comes from mobile devices. Responsive design will ensure optimal layout on every device.</p>
                             </div>
                         </li>
                         <li>
                             <div class="offer--contents--icon"><svg class="icon-offer"><use xlink:href="resources/assets/svg/svg-symbol.svg#rocket" alt="rocket"/></svg></div>
-                            <div class="offer--contents--title">
+                            <div>
                                 <h4>Dynamic</h4>
-                                <p>Enhance user experience and your business.</p>
+                                <p>Enhance user experience and your business with Interactive features and great customization options.</p>
                             </div>
                         </li>
                         <li>
                             <div class="offer--contents--icon"><svg class="icon-offer"><use xlink:href="resources/assets/svg/svg-symbol.svg#tool" alt="tool"/></svg></div>
-                            <div class="offer--contents--title">
+                            <div>
                                 <h4>Web Development</h4>
-                                <p>Writing scalable and clean code is an art in itself.</p>
+                                <p>Develope scalable website to scale up your business with Javascript popular library React and SCSS.</p>
                             </div>
                         </li>
                     </ul>
@@ -120,12 +120,15 @@
                     </ul>
                     <h4>Backend</h4>  
                     <ul class="skills--logo">      
-                        <li><div><img class="icon-logo--nodejs" src="resources/assets/svg/logo/nodejs.svg" alt="react" class="nodejs"/></div>Nodejs</li>
-                        <li><div><img class="icon-logo--express" src="resources/assets/svg/logo/svg-logo.svg#express" alt="react" class="express"/></div>Express</li>
+                        <li><div><img class="icon-logo--nodejs" src="resources/assets/svg/logo/nodejs.svg" alt="nodejs" class="nodejs"/></div>Nodejs</li>
+                        <li><div><svg class="icon-logo--express"><use xlink:href="resources/assets/svg/svg-logo.svg#express" alt="express"/></div>Express</li>
+                        <li><div><svg class="icon-logo--mysql"><use xlink:href="resources/assets/svg/svg-logo.svg#mysql" alt="mysql"/></div>mySQL</li>
                     </ul>
                     <h4>Tools</h4>  
                     <ul class="skills--logo">      
                         <li><div><svg class="icon-logo"><use xlink:href="resources/assets/svg/logo/svg-logo.svg#git" alt="git"/></div>Git</li>
+                        <li><div><svg class="icon-logo"><use xlink:href="resources/assets/svg/logo/svg-logo.svg#vscode" alt="sketch"/></div>VS Code</li>
+                        <li><div><svg class="icon-logo"><use xlink:href="resources/assets/svg/logo/svg-logo.svg#heroku" alt="sketch"/></div>Heroku</li>
                         <li><div><svg class="icon-logo"><use xlink:href="resources/assets/svg/logo/svg-logo.svg#sketch" alt="sketch"/></div>Sketch</li>
                     </ul>
                 </div>
@@ -166,10 +169,14 @@
                     <div class="sub-portfolio sub--4">
                         <h4>Behind Story&#35;&#35;</h4>
                         <p>
-                            The most challenge part was &#39;<span class="point-color--purple">Passing search result departure and destination both values together</span>&#39; 
-                            when Storing a search result value into Redux store as an object like below&#46;<br/><br/>
-                            const searchValues = {{ id&#58; 1&#44; departure&#58; YUL&#44; destination&#58; ICN }&#44; {...} }&#59;<br/><br/> For instance&#44; to get &#39;destination value of Trip1&#39; when saving &#39;departure value of Trip2&#39;&#44; I first needed to check if &#39;the object of Id 1&#39; exists in Redux store&#46; If it doesn&#39;t, define the destination value empty&#46;<br/><br/> 
-                            I solved it by using <span class="point-color--purple">normalized data structure</span>&#44; creating an array of &#39;Trip Ids&#39; like below. So that I can quickly check if &#39;Trip1&#39; object exists with <span class="point-color--purple">findIndex() method</span>&#46;<br/><br/>
+                            I focused on writing modular code to be able to reuse code logic and maintain it easier.<br/><br/>
+                            For Reux state organization, I used <span class="point-color--purple">normalized data structure</span>&#46;
+                            So that I could quickly check if an object exists in Redux store.
+                            For instance, to passe search result departure and destination both values together when Storing a search result value into Redux store as an object like below&#46;<br/><br/>
+                            const searchValues = {{ id&#58; 1&#44; departure&#58; YUL&#44; destination&#58; ICN }&#44; {...} }&#59;<br/><br/> 
+                            To get &#39;destination value of Trip1&#39; when saving &#39;departure value of Trip2&#39;&#44; fist, if &#39;the object of Id 1&#39; exists in Redux store need to be checked&#46; 
+                            If it doesn&#39;t, define the destination value empty&#46;<br/><br/> 
+                            By creating an array of &#39;Trip Ids&#39; like below, wheather &#39;Trip1&#39; object exists with <span class="point-color--purple">findIndex() method</span>&#46;<br/><br/>
                             const tripIds = [ 1, 2, ... ]&#59;
                         </p>
                         <a class="on-sub js--btn-to-main" id="4"><svg class="triangle--sub-portfolio"><use xlink:href="resources/assets/svg/svg-symbol.svg#triangle" alt="button"></use></svg></a>
@@ -204,11 +211,9 @@
                     <div class="sub-portfolio sub--3">
                         <h4>Behind Story&#35;&#35;</h4>
                         <p>
-                            I used Vanilla&#46;js in Frontend to improve my JavaScript skills&#46; Vanilla&#46;js is pure JavaScript&#46; I believe that It’s important to have knowledge of the core of the language itself to become a strong developer&#46; 
-                            In Backend&#44; Node&#46;js with Express&#46;js framework is used for API security&#46;<br/><br/>
-                            External APIs are asynchronously integrated using Promise to improve application performance and responsiveness&#46;
-                            Once i had <span class="point-color--purple">&#39;then is not a function&#39; Promise error&#46;</span> With a bit of search online&#44; i learned that function need to return Promise object&#46; 
-                            So i <span class="point-color--purple">solved it by implementing Promise constructor in external APIs integration</span>&#46;<br/><br/>
+                            I used Vanilla&#46;js in Frontend to improve my JavaScript skills&#46; Vanilla&#46;js is pure JavaScript&#46; I believe that It’s important to have knowledge of the core of the language itself to become a strong developer&#46;<br/><br/>
+                            In Backend&#44; Node&#46;js with Express&#46;js framework is used for API security&#46;
+                            External APIs are asynchronously called using Promise to improve application performance and responsiveness&#46;<br/><br/>
                             Last but not least&#44; I love clean and quality code&#46; Throughout this project&#44; i focused on keeping <span class="point-color--purple">the code clean and readable</span>&#46;
                         </p>
                         <a class="on-sub js--btn-to-main" id="3"><svg class="triangle--sub-portfolio"><use xlink:href="resources/assets/svg/svg-symbol.svg#triangle" alt="button"></use></svg></a>
@@ -289,7 +294,7 @@
             </div>
             <h3>Get in touch</h3>
             <div class="section-contact--contents">
-                <!-- <div class="map-form">
+                <div class="map-form">
                    
                     <div class="contact-memo--border">
                         <p class="contact-memo">I am currently available for new project.</p>
@@ -299,7 +304,7 @@
                     </div>
                     <div id="map"></div>
                     
-                </div> -->
+                </div>
                 <div class="contact-form">
                     <form id="contact-form" method="post" action="#">
                         <div class="client-info">
@@ -322,7 +327,7 @@
             </div>
         </footer>
         <!-- google map	-->
-        <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwoUun1nhHQnZljKQmp4nEZP6-uw4L6xM"></script> -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwoUun1nhHQnZljKQmp4nEZP6-uw4L6xM"></script>
 
         <script src="resources/js/app.js"></script>
         <script src="vendors/js/babel.js"></script>
