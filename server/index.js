@@ -19,6 +19,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 app.post('/', (req, res) => {
+
     return myApi.sendEmail(req.body)
         .then( myApi.replyEmail(req.body) )
         .catch( err => console.log(err) )
