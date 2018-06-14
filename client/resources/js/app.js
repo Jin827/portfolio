@@ -129,7 +129,7 @@
         const profileNum = [1, 3, 4];
         profileNum
             .filter( id => id != this.id )
-            .forEach( id => {
+            .map( id => {
                 document.querySelector(`.main--${id}`).classList.remove('fade');
                 document.querySelector(`.sub--${id}`).classList.remove('open');
             })
