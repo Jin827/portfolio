@@ -605,20 +605,18 @@ header {
 }
 
 .contact-memo--border { 
-    padding: 40px 10px;
+    padding: 40px 20px;
     border: 2px solid #333;
     border-radius: 40px;
 }
 
 .contact-memo { 
     font-size: 1.5em;
-    font-weight: bold;
+    font-weight: 400;
     text-align: center;
-    color: #252839;
+    color: var(--main-blue);
     transition: color .3s;
 }
-
-.contact-memo:hover { color: var(--main-blue); } 
 
 .download-resume { 
     display: inline-block;
@@ -643,6 +641,14 @@ textarea { height: 370px !important; }
     border-radius: 20px;
     padding: 7px 37px;
     margin-top: 8px;
+}
+
+.contact-message { 
+    font-size: 1.2em;
+    text-align: center;
+    line-height: 2em;
+    padding: 50px 0;
+    color: #252839;
 }
 
 /* ---------------------------------------- */

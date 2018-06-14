@@ -239,6 +239,8 @@
         margin-top: 7px;
         margin-bottom: 7px;
     }
+
+    .contact-message { padding: 200px 0; }
 }
 
 @media screen and (min-width: 1024px) {
