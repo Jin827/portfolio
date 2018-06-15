@@ -1,7 +1,7 @@
 (function() {
 
     const navIcon = document.querySelector('#js--nav-icon');
-    const navTriangle = document.querySelector('.triangle--main-nav'); 
+    const navTriangle = document.querySelector('.main-nav--box--triangle-shape'); 
     const mainNav = document.querySelector('.main-nav');
 
     const navOpen = 'resources/assets/svg/nav-open.svg';
@@ -23,6 +23,23 @@
     }, false)
 
     /* --- Sticky Nav --- */
+    window.onscroll = function() { getStickyNav() };
+    const navbar = document.getElementById("nav-container");
+    const aboutSection = document.getElementById("about");
+    const links = document.querySelectorAll(".main-nav li a");
+
+    const aboutPosition = aboutSection.offsetTop;
+
+    function getStickyNav() {
+        
+        if ( window.pageYOffset >= aboutPosition ) {
+            navbar.classList.add("sticky");
+            links.forEach( link => link.style.color = "#333" );
+        } else {
+            navbar.classList.remove("sticky");
+            links.forEach( link => link.style.color = "#fff" );
+        }
+    }
 
     /* --- Header Typewriting Animation --- */
     const TxtType = function(el, toRotate, period) {

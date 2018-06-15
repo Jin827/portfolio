@@ -55,8 +55,6 @@
 }
 
 @media screen and (min-width: 735px) {
-    /* --- Nav --- */
-    .main-nav li a { color: #fff; }
 
     /* --- portfolio --- */
     .portpolio-box { max-height: 80em;}
@@ -75,9 +73,10 @@
 
     /* --- Nav --- */
     .nav-container { padding: 1.5em; }
-    .mobile-nav-icon { display: none; }  
-    .main-nav--triangle { display: none; }
-    .triangle--main-nav { display: none; }
+    .mobile-nav-icon { display: none; }
+    .nav-link--box { display: none; }
+    .main-nav li a { color: #fff; }  
+    .main-nav--box--triangle { display: none; }
     .main-nav--box { 
         display: flex;
         justify-content: space-between;
