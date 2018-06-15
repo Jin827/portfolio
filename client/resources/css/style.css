@@ -698,13 +698,12 @@ footer {
     line-height: 1.4em;
     font-weight: 200;
 }
+
 .jh-logo { 
-    stroke: #fff; 
-    fill: #fff;
-    height: 3.5em;
-    width: 3.5em;
-    padding-top: 1em;
+    height: 60px;
+    width: 60px;
 }
+
 .quote { 
     padding: 1.7em;
     font-size: 1.2em;
