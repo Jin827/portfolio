@@ -632,6 +632,16 @@ header {
     transition: border .3s, background-color .3s;
 }
 
+.download-resume { 
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 40px;
+    padding: 12px 36px;
+    height: 45px;
+    text-align: right;
+    border-radius: 20px;
+}
+
 .contact-memo--border { 
     padding: 40px 20px;
     border: 2px solid #333;
@@ -646,14 +656,9 @@ header {
     transition: color .3s;
 }
 
-.download-resume { 
-    display: inline-block;
-    text-decoration: none;
-    margin-top: 40px;
-    padding: 10px 20px;
-    height: 45px;
-    text-align: right;
-    border-radius: 20px;
+.contact-memo:hover { 
+    font-weight: bold;
+    color: rgb(1, 102, 197);
 }
 
 #name, #email, #subject, #message { 
