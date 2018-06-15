@@ -234,8 +234,6 @@ header {
     text-shadow: .2px .2px #333;
 }
 
-
-
 /* ---------------------------------------- */
 
 /* ABOUT ME SECTION */
@@ -372,7 +370,7 @@ header {
 .skills--logo li {
     display: flex;
     flex-direction: column;
-    margin: 1em;
+    margin: 1.2em;
     font-size: .9em;
     text-align: center;
 }
@@ -406,8 +404,21 @@ header {
     width: 60px;
     height: 80px;
     margin-top: -10px;
+    margin-left: -10px;
 }
 
+.icon-logo--express {
+    width: 85px;
+    height: 170px;
+    margin-top: -55px;
+    margin-left: -19px;
+}
+.icon-logo--mysql {
+    width: 120px;
+    height: 70px;
+    margin-top: -15px;
+    margin-left: -36px;
+}
 /* ---------------------------------------- */
 
 /* PORTFOLIO SECTION */
