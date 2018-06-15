@@ -617,7 +617,7 @@ header {
     border-right: 3px solid #333;
     margin: 40px 0 60px 0;
 }
-.download-btn--box { text-align: center; }
+.malito-box { text-align: center; }
 .static-btn {
     border: 1px solid var(--main-blue);
     border-radius: 5px;
@@ -632,7 +632,7 @@ header {
     transition: border .3s, background-color .3s;
 }
 
-.download-resume { 
+.malito { 
     display: inline-block;
     text-decoration: none;
     margin-top: 40px;
