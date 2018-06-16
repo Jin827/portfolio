@@ -154,8 +154,9 @@
 
     function hideSubPortfolio(e) {
         e.preventDefault();
-        document.querySelector(`.main--${this.id}`).classList.remove('fade');
-        document.querySelector(`.sub--${this.id}`).classList.remove('open');
+
+        document.querySelector(`.main--${this.id-100}`).classList.remove('fade');
+        document.querySelector(`.sub--${this.id-100}`).classList.remove('open');
     };
 
     /* --- Contact --- */

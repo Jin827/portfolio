@@ -41,7 +41,7 @@ body {
 section { 
     padding: 70px 20px; 
     position: relative;
-    z-index: -500;
+    /* z-index: -500; */
 }
 
 /* ---------------------------------------- */
@@ -75,8 +75,8 @@ h1 {
     margin-bottom: 60px;
 }
 
-h2 {
-    font-size: 1.4em;
+.h2 {
+    font-size: 1.6em;
     font-weight: 300;
     width: 100vw;
     letter-spacing: 3px;
@@ -504,18 +504,30 @@ header {
     margin-top: 1em;
 }
 
-.main-portfolio--btns button {
+.main-portfolio--btns div { margin-top: 29px; }
+.btn-anchor { 
+    border: 1px solid var(--main-blue);
+    background-color: var(--main-blue);
+    cursor: pointer;
+    color: #fff;
     width: 100px;
-    padding: 6px;
+    padding: 6px 25px;
     border-radius: 20px;
     margin: 20px 12px;
     border-width: 1.5px;
 }
 
+.btn-anchor:hover {
+    border-color: rgb(1, 102, 197);
+    background-color: rgb(1, 102, 197);
+    transition: border-color .3s, background-color .3s;
+}
 .live-site {
     border: 1.5px solid var(--main-blue);
     background-color: #fff;
     color: #333;
+    padding-left: 18px;
+    padding-right: 18px;
 }
 
 .live-site:hover {

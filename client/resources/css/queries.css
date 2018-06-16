@@ -2,7 +2,7 @@
 
     /* --- Heading --- */
     h1 { font-size: 5.8em; }
-    h2 { font-size: 2.2em; }
+    .h2 { font-size: 2em; }
     h3 { font-size: 3.4em; }
     .section-offer h3,
     .section-portfolio h3 { font-size: 3.7em;}
@@ -305,6 +305,7 @@
 }
 
 @media screen and (min-width: 1700px) {
+    .h2 { font-size: 2.4em; }
 
     /* --- Nav --- */
     .main-nav li a { font-size: 1.2em; }
