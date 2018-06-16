@@ -692,7 +692,7 @@ textarea { height: 370px !important; }
 footer {
     min-height: 3em;
     text-align: center;
-    padding: 2em 0;
+    padding: 2.5em 0 2em 0;
     background-color: var(--purple);
     color: #fff;
     line-height: 1.4em;

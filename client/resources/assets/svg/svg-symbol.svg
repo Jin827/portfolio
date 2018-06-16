@@ -29,10 +29,10 @@
         <symbol id="triangle" viewBox="0 0 27 23">
             <polygon fill-rule="evenodd" points="13.5 0 27 23 0 23" />
         </symbol>
-        <symbol id="jh-logo" viewBox="0 0 22 22" fill="none" fill-rule="evenodd" transform="translate(1 1)">
-            <rect width="20" height="20" stroke="#fff" stroke-width="2" rx="4"/>
-            <text fill="#fff" font-family="Futura-Medium, Futura" font-size="10" font-weight="400">
-                <tspan x="5" y="14">Jh</tspan>
+        <symbol id="jh-logo" viewBox="0 0 24 24" fill="none" fill-rule="evenodd">
+             <rect width="22" height="22" x="1" y="1" stroke="#fff" stroke-width="2" rx="4"/>
+            <text fill="#fff" font-family="Futura-Medium, Futura" font-size="10" font-weight="400" letter-spacing=".5">
+                <tspan x="7.208" y="17">Jh</tspan>
             </text>
         </symbol>
     </defs>
