@@ -11,7 +11,12 @@ const transporter = nodemailer.createTransport({
 module.exports = {
 
     sendEmail: (data) => {
-        const { name, email, subject, message } = data;
+        const {
+            name,
+            email,
+            subject,
+            message
+        } = data;
         const mailOptions = {
             from: 'Client via Portfolio <contact.portfolio@gmail.com>',
             to: 'jiah.lee827@gmail.com',
@@ -20,24 +25,27 @@ module.exports = {
         }
 
         return new Promise((resolve, reject) => {
-            
-            transporter.verify(function(error, success) {
-                if (error) {
-                     console.log(error);
-                } else {
-                    return transporter.sendMail(mailOptions, function(error, info) {
-                        error ? 
-                            console.error(`Unable to send the email: ${error}`) : 
+
+                transporter.verify(function (error, success) {
+                    if (error) {
+                        console.log(error);
+                    } else {
+                        return transporter.sendMail(mailOptions, function (error, info) {
+                            error ?
+                                console.error(`Unable to send the email: ${error}`) :
                                 console.log(`Email sent: ${info.response}`);
-                    })
-                }
-             })
-        })
-        .catch(err => console.error(`sendEmail func err : ${err}`));
+                        })
+                    }
+                })
+            })
+            .catch(err => console.error(`sendEmail func err : ${err}`));
     },
 
     replyEmail: (data) => {
-        const { name, email } = data;
+        const {
+            name,
+            email
+        } = data;
         const mailOptions = {
             from: 'Jiah Lee <donotreply@gmail.com>',
             to: `${name} <${email}>`,
@@ -55,12 +63,12 @@ module.exports = {
         }
 
         return new Promise((resolve, reject) => {
-            return transporter.sendMail(mailOptions, function(error, info) {
-                error ? 
-                    console.error(`Unable to send the email: ${error}`) : 
+                return transporter.sendMail(mailOptions, function (error, info) {
+                    error ?
+                        console.error(`Unable to send the email: ${error}`) :
                         console.log(`Email sent: ${info.response}`);
+                })
             })
-        })
-        .catch(err => console.error(`replyEmail func err : ${err}`))
+            .catch(err => console.error(`replyEmail func err : ${err}`))
     }
 }
