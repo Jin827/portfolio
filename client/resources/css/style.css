@@ -4,11 +4,6 @@
 
 /* ---------------------------------------- */
 
-html {
-    min-height: 100%;
-    position: relative;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -43,7 +38,11 @@ body {
     line-height: 1.1em;
 }
 
-section { padding: 70px 20px; }
+section { 
+    padding: 70px 20px; 
+    position: relative;
+    z-index: -500;
+}
 
 /* ---------------------------------------- */
 
@@ -253,6 +252,7 @@ header {
     box-shadow: 0 2px 2px #efefef;
     z-index: 9999;
     margin-top: 18px;
+    overflow: hidden;
 }
 
 /* ---------------------------------------- */
