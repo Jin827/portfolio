@@ -114,13 +114,13 @@
     const gitInline = document.getElementById('github-inline');
 
     linkedin.addEventListener("mouseover", function () {
-        linkedinOutline.style.fill = "#0A278B";
-        linkedinInline.style.stroke = "#0A278B";
+        linkedinOutline.style.stroke = "#0A278B";
+        linkedinInline.style.fill = "#0A278B";
     }, false)
 
     linkedin.addEventListener("mouseleave", function () {
-        linkedinOutline.style.fill = "#0077B5";
-        linkedinInline.style.stroke = "#0077B5";
+        linkedinOutline.style.stroke = "#0077B5";
+        linkedinInline.style.fill = "#0077B5";
     }, false)
 
     github.addEventListener("mouseover", function () {

@@ -344,11 +344,11 @@ header {
 }
 
 #linkedin-outline {
-    fill: #0077B5;
+    stroke: #0077B5;
 }
 
 #linkedin-inline {
-    stroke: #0077B5;
+    fill: #0077B5;
 }
 
 /* ---------------------------------------- */
