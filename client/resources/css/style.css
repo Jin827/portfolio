@@ -288,6 +288,7 @@ header {
     padding: 13px 1em;
     text-transform: uppercase;
     font-size: 1.1em;
+    color: #333;
     text-shadow: .2px .2px #333;
 }
 
@@ -572,13 +573,13 @@ header {
 }
 
 .portpolio-box {
-    max-height: 56.5em;
+    /* max-height: 56.5em; */
     padding: 3em 0;
     position: relative;
 }
 
 .image--web {
-    width: 80vw;
+    width: 90vw;
     height: auto;
 }
 
@@ -710,7 +711,7 @@ header {
     background: linear-gradient(to bottom right, #ecf3fa, #add0f8);
     border-radius: 5px;
     overflow-y: hidden;
-    top: -520px;
+    top: -500px;
     position: relative;
     margin: 0 auto;
     overflow-y: scroll;
