@@ -19,7 +19,7 @@ module.exports = {
         } = data;
         const mailOptions = {
             from: 'Client via Portfolio <contact.portfolio@gmail.com>',
-            to: 'jiah.lee827@gmail.com',
+            to: process.env.MY_EMAIL,
             subject: subject,
             html: `<p>Name: ${name} <br/> Contact: ${email}<br/><br/>${message}</p>`,
         }
