@@ -288,10 +288,9 @@ header {
     padding: 13px 1em;
     text-transform: uppercase;
     font-size: 1.1em;
-    color: #333;
-    text-shadow: .2px .2px #333;
 }
 
+.main-nav li a { color: #333; }
 /* --- Sticky Nav --- */
 
 .sticky {
@@ -505,8 +504,8 @@ header {
 
 .icon-logo--nodejs {
     margin-top: -10px;
-    width: 60px;
-    height: 70px;
+    width: 55px;
+    height: 60px;
 }
 
 .icon-logo--html {
@@ -573,8 +572,7 @@ header {
 }
 
 .portpolio-box {
-    /* max-height: 56.5em; */
-    padding: 3em 0;
+    padding: 4em 0;
     position: relative;
 }
 
