@@ -30,9 +30,7 @@
         font-size: 1.2em;
     }
     /* --- Portfolio --- */
-    .portpolio-box {
-        max-height: 70em;
-    }
+   
     .main-portfolio--title {
         width: 80vw;
     }
@@ -91,12 +89,6 @@
 
 @media screen and (min-width: 735px) {
     /* --- portfolio --- */
-    .portpolio-box {
-        max-height: 80em;
-    }
-    .main-portfolio--title {
-        max-width: 500px;
-    }
     .main-portfolio--contents--skills {
         width: 70vw;
         margin-left: auto;
@@ -108,6 +100,7 @@
 }
 
 @media screen and (min-width: 900px) {
+
     /* --- Nav --- */
     .nav-container {
         padding: 1.5em;
@@ -258,10 +251,7 @@
         padding-top: 100px;
         padding-bottom: 100px;
     }
-    /* --- portfolio --- */
-    .portpolio-box {
-        max-height: 83em;
-    }
+    
     /* --- Contact --- */
     .section-contact--contents {
         display: -webkit-box;
@@ -307,20 +297,22 @@
 
 @media screen and (min-width: 1024px) {
     /* --- Portfolio --- */
-    .portpolio-box {
-        max-height: 45em;
-    }
     .main-portfolio {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
+        overflow: hidden;
     }
+
     .image--web {
         width: 50vw;
+        height: auto;
+        align-self: center;
+        max-height: 1500px;
+        max-width: 900px;
+        margin: 0 auto;
     }
-    .image--web:last-child {
-        max-height: 650px;
-    }
+    
     .main-portfolio--contents,
     .main-portfolio--contents--skills {
         width: 45vw;
@@ -362,10 +354,8 @@
         margin: 1.5em;
         font-size: 1.1em;
     }
+
     /* --- Portfolio --- */
-    .portpolio-box {
-        max-height: 55em;
-    }
     .main-portfolio--title {
         padding: 3em 0;
     }
@@ -381,7 +371,7 @@
         margin-top: 1em;
     }
     .sub-portfolio {
-        top: -590px;
+        top: -700px;
         max-width: 1000px;
     }
 }
@@ -413,16 +403,23 @@
         font-size: 1.5em;
     }
     /* --- Portfolio --- */
-    .portpolio-box {
-        height: 56.5em;
+    .section-portfolio p {
+        font-size: 1.4em;
     }
     .main-portfolio--contents {
-        margin: 2em auto;
+        margin: auto;
     }
     .main-portfolio--contents--skills {
-        width: 30vw;
+        width: 40vw;
     }
+    .image--web {
+        max-height: 1600px;
+        max-width: 1000px;
+    }
+    /* --- Contact --- */
     .contact-memo {
         font-size: 1.7em;
     }
+
+   
 }
