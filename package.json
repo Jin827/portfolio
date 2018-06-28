@@ -1,8 +1,8 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "Jiah Lee  Protfolio",
-  "main": "index.js",
+  "description": "Jiah Lee Protfolio",
+  "main": "server/index.js",
   "scripts": {
     "start": "nodemon server/index.js"
   },
@@ -29,5 +29,23 @@
     "nodemailer": "^4.6.5",
     "nodemon": "^1.17.5",
     "request": "^2.87.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.24.4",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^3.0.1",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-jshint": "^2.1.0",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-size": "^3.0.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-strip-debug": "^3.0.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-uglify-es": "^1.0.4",
+    "jshint": "^2.9.5",
+    "jshint-stylish": "^2.2.1",
+    "pump": "^3.0.0"
   }
 }
