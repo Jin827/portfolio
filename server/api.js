@@ -22,7 +22,7 @@ module.exports = {
             to: process.env.MY_EMAIL,
             subject: subject,
             html: `<p>Name: ${name} <br/> Contact: ${email}<br/><br/>${message}</p>`,
-        }
+        };
 
         return new Promise((resolve, reject) => {
 
@@ -34,9 +34,9 @@ module.exports = {
                             error ?
                                 console.error(`Unable to send the email: ${error}`) :
                                 console.log(`Email sent: ${info.response}`);
-                        })
+                        });
                     }
-                })
+                });
             })
             .catch(err => console.error(`sendEmail func err : ${err}`));
     },
@@ -60,15 +60,15 @@ module.exports = {
                     Jiah Lee
                 </p>   
             `
-        }
+        };
 
         return new Promise((resolve, reject) => {
                 return transporter.sendMail(mailOptions, function (error, info) {
                     error ?
                         console.error(`Unable to send the email: ${error}`) :
                         console.log(`Email sent: ${info.response}`);
-                })
+                });
             })
-            .catch(err => console.error(`replyEmail func err : ${err}`))
+            .catch(err => console.error(`replyEmail func err : ${err}`));
     }
-}
+};
