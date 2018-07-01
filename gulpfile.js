@@ -2,26 +2,27 @@ const gulp = require('gulp');
 
 // Minification dependencies
 const minifyHTML = require('gulp-minify-html');
-const csso = require('gulp-csso');
-const uglify = require('gulp-uglify-es').default;
-const concat = require('gulp-concat');
-const imagemin = require('gulp-imagemin');
+      csso = require('gulp-csso');
+      uglify = require('gulp-uglify-es').default;
+      concat = require('gulp-concat');
+      imagemin = require('gulp-imagemin');
 
 // Other dependencies
 const browserSync = require('browser-sync').create();
-const sourcemaps = require('gulp-sourcemaps');
-const autoprefixer = require('gulp-autoprefixer');
-const pump = require('pump');
-const jshint = require('gulp-jshint');
-const stylish = require('jshint-stylish');
-const size = require('gulp-size');
-const notify = require('gulp-notify');
-const stripDebug = require('gulp-strip-debug');
+      sourcemaps = require('gulp-sourcemaps');
+      autoprefixer = require('gulp-autoprefixer');
+      pump = require('pump');
+      jshint = require('gulp-jshint');
+      stylish = require('jshint-stylish');
+      size = require('gulp-size');
+      notify = require('gulp-notify');
+      stripDebug = require('gulp-strip-debug');
+      watch = require('gulp-watch');
 
 source = 'development/';
 dist = 'production/';
 
-gulp.task('imageoptim', () => {
+gulp.task('images', () => {
   gulp.src('client/resources/assets/img/*.{jpeg}')
     .pipe(imagemin([
       imagemin.gifsicle({interlaced: true}),
@@ -86,14 +87,14 @@ gulp.task('javascript', (cb) => {
     cb
   ); 
 
-  pump([
-    gulp.src('client/vendors/js/*.js'),
-    stripDebug(),
-    uglify({}),
-    gulp.dest(dist + 'client/vendors/js')
-    ],
-    cb
-  ); 
+  // pump([
+  //   gulp.src('client/vendors/js/*.js'),
+  //   stripDebug(),
+  //   uglify({}),
+  //   gulp.dest(dist + 'client/vendors/js')
+  //   ],
+  //   cb
+  // ); 
 
   pump([
     gulp.src('server/*.js'),
@@ -107,6 +108,7 @@ gulp.task('javascript', (cb) => {
     cb
   ); 
 });
+
 
 // Scans JS files for errors
 gulp.task("jshint", () => {
@@ -130,10 +132,41 @@ gulp.task('size', () => {
     }))
 });
 
-gulp.task('browsersync', () => {
-  browserSync.init({
-    proxy: {
-      target: 'localhost:8080'
-    }
-  })
-})
+gulp.task('re-load', (done) => {
+  browserSync.reload();
+  done();
+});
+
+gulp.task('watch', () => {
+  gulp.watch('client/resources/assets/**/*', gulp.parallel('images', 're-load'));
+
+  gulp
+    .watch('client/*.html', gulp.series('html', 're-load'))
+    .on('change', (event) => {
+      console.log(`File ${event.path} was ${event.type}, running tasks....`);
+    });
+
+  gulp.watch("client/resources/css/*.css", gulp.series('css')).on('change', browserSync.reload);
+
+  gulp
+    .watch(['client/resources/js/*.js', 'server/*.js'], gulp.series('javascript'))
+    .on('change', (event) => {
+      console.log(`File ${event.path} was ${event.type}, running tasks....`);
+      browserSync.reload();
+    });
+});
+
+gulp.task('browser-sync', () => {
+    browserSync.init({
+      server: {
+        baseDir: './production'
+      }
+      // proxy: {
+      //   target: 'localhost:8080'
+      // }
+    })
+});
+
+// // Default task (runs at initiation: gulp --verbose)
+gulp.task('serve', gulp.series('browser-sync', 'watch'));
+gulp.task('default', gulp.series('serve'));
