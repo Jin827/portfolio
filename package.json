@@ -2,9 +2,9 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "Jiah Lee Protfolio",
-  "main": "server/index.js",
+  "main": "development/server/index.js",
   "scripts": {
-    "start": "nodemon server/index.js"
+    "start": "nodemon development/server/index.js"
   },
   "engines": {
     "node": "8.11.1"

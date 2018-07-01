@@ -24,7 +24,7 @@ app.post('/', (req, res) => {
         .catch(err => console.log(err));
 });
 
-app.use(express.static(`${process.cwd()}/client`));
+app.use(express.static(`${process.cwd()}/development/client`));
 
 // error handlers
 // catch 404 and forward to error handler
