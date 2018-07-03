@@ -1,0 +1,161 @@
+/* ---------------------------------------- */
+
+/* BASIC SETUP */
+
+/* ---------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    background: #fff;
+    height: 100%;
+    color: #333;
+}
+
+.clearfix {
+    zoom: 1
+}
+
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+*:focus {
+    outline: none;
+}
+
+* {
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 1.1em;
+}
+
+section {
+    padding: 70px 20px;
+    position: relative;
+    /* z-index: -500; */
+}
+
+/* ---------------------------------------- */
+
+/* VARIABLES */
+
+/* ---------------------------------------- */
+
+:root {
+    --main-blue: #4c8ba6;
+    --purple: #9068be;
+}
+
+/* ---------------------------------------- */
+
+/* REUSABLE COMPONENTS */
+
+/* ---------------------------------------- */
+
+/* --- Heading --- */
+
+h1 {
+    font-size: 3.6em;
+    line-height: 1.5em;
+    letter-spacing: 5px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 0 0 1px rgb(168, 166, 166);
+    -webkit-font-smoothing: antialiased;
+    margin-top: 0;
+    margin-bottom: 60px;
+}
+
+.h2 {
+    font-size: 1.6em;
+    font-weight: 300;
+    width: 100vw;
+    letter-spacing: 3px;
+    color: #fff;
+    text-shadow: .4px .4px rgb(168, 166, 166);
+}
+
+h3 {
+    font-size: 2.3em;
+    font-weight: 300;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+h4 {
+    color: var(--main-blue);
+    margin-top: 20px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+h5 {
+    color: rgb(9, 25, 43);
+    margin-top: 16px;
+    margin-bottom: 1.5em;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/* --- Span colors --- */
+
+.point-color--blue {
+    color: var(--main-blue);
+}
+
+.point-color--purple {
+    color: var(--purple);
+}
+
+.point-color--grey {
+    color: rgb(212, 191, 245);
+}
+
+.point-font-bold {
+    font-weight: bold;
+}
+
+/* --- Buttons --- */
+
+.btn {
+    border: 1px solid var(--main-blue);
+    border-radius: 5px;
+    background-color: var(--main-blue);
+    cursor: pointer;
+    color: #fff;
+    padding: 4px;
+    margin: 20px 20px 10px 0px;
+}
+
+.btn:hover {
+    border: 1px solid rgb(1, 102, 197);
+    background-color: rgb(1, 102, 197);
+    -webkit-transition: border .3s, background-color .3s;
+    transition: border .3s, background-color .3s;
+}
+
+/* --- Icons --- */
+
+[CLASS*='triangle'] {
+    height: 18px;
+    width: 24PX;
+    cursor: pointer;
+}

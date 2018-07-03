@@ -1,0 +1,33 @@
+@import '_base.css';
+
+/* ---------------------------------------- */
+
+/* FOOTER */
+
+/* ---------------------------------------- */
+
+footer {
+    min-height: 3em;
+    text-align: center;
+    padding: 2.5em 0 2em 0;
+    background-color: var(--purple);
+    color: #fff;
+    line-height: 1.4em;
+    font-weight: 200;
+}
+
+.jh-logo {
+    height: 60px;
+    width: 60px;
+}
+
+.quote {
+    padding: 1.7em;
+    font-size: 1.2em;
+    line-height: 1.3em;
+}
+
+footer a {
+    margin-left: 6px;
+    color: #fff;
+}
