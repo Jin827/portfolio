@@ -1,29 +1,50 @@
-const gulp = require('gulp');
-
+const gulp = require('gulp'),
 // Minification dependencies
-const minifyHTML = require('gulp-minify-html');
-      csso = require('gulp-csso');
-      uglify = require('gulp-uglify-es').default;
-      concat = require('gulp-concat');
-      imagemin = require('gulp-imagemin');
-
+      htmlmin = require('gulp-htmlmin'),
+      csso = require('gulp-csso'),
+      uglify = require('gulp-uglify-es').default,
+      imagemin = require('gulp-imagemin'),
+      svgSprite = require('gulp-svg-sprites'),
 // Other dependencies
-const browserSync = require('browser-sync').create();
-      sourcemaps = require('gulp-sourcemaps');
-      autoprefixer = require('gulp-autoprefixer');
-      pump = require('pump');
-      jshint = require('gulp-jshint');
-      stylish = require('jshint-stylish');
-      size = require('gulp-size');
-      notify = require('gulp-notify');
-      stripDebug = require('gulp-strip-debug');
-      watch = require('gulp-watch');
+      filter = require('gulp-filter'),
+      svg2png = require('gulp-svg2png'),
+      sourcemaps = require('gulp-sourcemaps'),
+      autoprefixer = require('gulp-autoprefixer'),
+      pump = require('pump'),
+      jshint = require('gulp-jshint'),
+      stylish = require('jshint-stylish'),
+      size = require('gulp-size'),
+      notify = require('gulp-notify'),
+      stripDebug = require('gulp-strip-debug'),
+      watch = require('gulp-watch'),
+      browserSync = require('browser-sync').create(),
+      reload = browserSync.reload,
+      rev = require('gulp-rev'),
+      revReplace = require('gulp-rev-replace'),
+      revDel = require('rev-del'),
+      
+      limbo = 'limbo/',
+      source = 'development/',
+      dest = 'production/';
 
-source = 'development/';
-dist = 'production/';
+function errorLog(error) {
+  console.error.bind(error);
+  this.emit('end');
+}
 
 gulp.task('images', () => {
-  gulp.src('client/resources/assets/img/*.{jpeg}')
+  const svgConfig = { 
+    mode: {
+      symbol: true
+    },
+    svg : {
+      xmlDeclaration: false,
+      doctypeDeclaration: false,
+      namespaceIDs: false,
+      namespaceClassnames: false
+    }
+  }
+  gulp.src(source + 'client/resources/assets/img/*.{jpeg,JPEG}')
     .pipe(imagemin([
       imagemin.gifsicle({interlaced: true}),
       imagemin.jpegtran({progressive: true}),
@@ -31,9 +52,9 @@ gulp.task('images', () => {
     ], {
       verbose: true
     }))
-    .pipe(gulp.dest(dist + 'client/resources/assets/img'))
+    .pipe(gulp.dest(dest))
 
-  gulp.src('client/resources/assets/svg/**/*.svg')
+  gulp.src(source + 'client/resources/assets/svg/**/*.svg')
     .pipe(imagemin([
       imagemin.svgo({
         plugins: [
@@ -44,77 +65,111 @@ gulp.task('images', () => {
     ], {
       verbose: true
     }))
-    .pipe(gulp.dest(dist + 'client/resources/assets/svg'))
+    // .pipe(svgSprite(svgConfig))
+    // .pipe(gulp.dest(dest))
+    // .pipe(filter('**/*.svg'))
+    // .pipe(svg2png())
+    // .pipe(gulp.dest(dest))
 })
 
 gulp.task('html', () => {
-  gulp.src('client/*.html')
-    .pipe(minifyHTML())
-    .pipe(gulp.dest(dist + 'client'));
+  const htmlConfig = {
+    collapseWhitespace: true,
+    minifyJS: true,
+    removeComments: true
+  }
+
+  gulp.src(source + 'client/*.html')
+    .pipe(htmlmin(htmlConfig))
+    .on('error', errorLog)
+    .pipe(gulp.dest(limbo));
 });
 
 gulp.task('css', () => {
-  gulp.src('client/resources/css/*.css')
+  const cssConfig = {
+    restructure: false,
+    sourceMap: true,
+    debug: true 
+  }
+
+  gulp.src(source + 'client/resources/css/*.css')
     .pipe(sourcemaps.init())
     .pipe(autoprefixer())
-    .pipe(csso({
-      restructure: false,
-      sourceMap: true,
-      debug: true
-    }))
+    .pipe(csso(cssConfig))
     .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest(dist + 'client/resources/css'))
-  
-  gulp.src('client/vendors/css/*.css')
+    .on('error', errorLog)
+    .pipe(gulp.dest(limbo))
+    .pipe(reload({stream: true}))
+
+  gulp.src(source + 'client/vendors/css/*.css')
     .pipe(autoprefixer())
     .pipe(csso({
       restructure: false,
       sourceMap: true,
       debug: true
     }))
-    .pipe(gulp.dest(dist + 'client/vendors/css'))
+    .pipe(gulp.dest(limbo))
+
 })
+
+// Scans JS files for errors
+gulp.task("jshint", () => {
+  return gulp.src([source + 'client/resources/js/*.js', source + 'server/*.js'])
+    .pipe(jshint())
+    .pipe(jshint.reporter('jshint-stylish'), {beep: true});
+});
 
 gulp.task('javascript', (cb) => {
   pump([
-    gulp.src('client/resources/js/*.js'),
+    gulp.src(source + 'client/resources/js/*.js'),
     sourcemaps.init(),
     stripDebug(),
     uglify(),
     sourcemaps.write('./maps'),
-    gulp.dest(dist + 'client/resources/js')
+    gulp.dest(limbo)
     ],
     cb
   ); 
 
-  // pump([
-  //   gulp.src('client/vendors/js/*.js'),
-  //   stripDebug(),
-  //   uglify({}),
-  //   gulp.dest(dist + 'client/vendors/js')
-  //   ],
-  //   cb
-  // ); 
-
   pump([
-    gulp.src('server/*.js'),
+    gulp.src(source + 'server/*.js'),
     sourcemaps.init(),
     stripDebug(),
     uglify({}),
-    concat('all.js'),
     sourcemaps.write('./maps'),
-    gulp.dest(dist + 'server')
+    gulp.dest(limbo)
+    ],
+    cb
+  ); 
+
+  pump([
+    gulp.src('client/vendors/js/*.js'),
+    stripDebug(),
+    uglify({}),
+    gulp.dest(limbo)
     ],
     cb
   ); 
 });
 
+// Rename assets based on content cache
+gulp.task('revision', gulp.parallel('html','css','javascript'), () => {
+  return gulp.src(limbo + '**/*.{js,css}')
+  .pipe(rev())
+  .pipe(gulp.dest(dest))
+  .pipe(rev.manifest())
+  .pipe(revDel({dest: dest}))
+  .pipe(gulp.dest(dest));
+});
 
-// Scans JS files for errors
-gulp.task("jshint", () => {
-  return gulp.src(['client/resources/js/*.js', 'server/*.js'])
-    .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'), {beep: true});
+// Replace URLs with hashed ones based on rev manifest.
+// Runs immediately after revision:
+gulp.task('revreplace', gulp.series('revision'), () => {
+  const manifest = gulp.src(dest + 'rev-manifest.json');
+
+  return gulp.src(limbo + '**/*.html')
+  .pipe(revReplace({manifest: manifest}))
+  .pipe(gulp.dest(dest));
 });
 
 gulp.task('size', () => {
@@ -123,50 +178,35 @@ gulp.task('size', () => {
     pretty: true
   });
 
-  gulp.src(dist + '/**/*')
+  gulp.src(dest + '/**/*')
     .pipe(s)
-    .pipe(gulp.dest(dist))
+    .pipe(gulp.dest(dest))
     .pipe(notify({
       onLast: true,
       message: () => `Total size ${s.prettySize}`
     }))
 });
 
-gulp.task('re-load', (done) => {
-  browserSync.reload();
-  done();
-});
-
 gulp.task('watch', () => {
-  gulp.watch('client/resources/assets/**/*', gulp.parallel('images', 're-load'));
+  gulp.watch(source + '**/*.{html, css, js}', gulp.series('revreplace'), reload)
+      .on('change', (event) => {
+        console.log(`File ${event.path} was ${event.type}, running tasks....`);
+      });
+  gulp.watch(source + 'client/resources/assets/**/*', gulp.series('images'), reload);
 
-  gulp
-    .watch('client/*.html', gulp.series('html', 're-load'))
-    .on('change', (event) => {
-      console.log(`File ${event.path} was ${event.type}, running tasks....`);
-    });
-
-  gulp.watch("client/resources/css/*.css", gulp.series('css')).on('change', browserSync.reload);
-
-  gulp
-    .watch(['client/resources/js/*.js', 'server/*.js'], gulp.series('javascript'))
-    .on('change', (event) => {
-      console.log(`File ${event.path} was ${event.type}, running tasks....`);
-      browserSync.reload();
-    });
 });
 
 gulp.task('browser-sync', () => {
-    browserSync.init({
-      server: {
-        baseDir: './production'
-      }
-      // proxy: {
-      //   target: 'localhost:8080'
-      // }
-    })
+  browserSync.init({
+    server: {
+      baseDir: dest
+    }
+    // proxy: {
+    //   target: 'localhost:8080'
+    // }
+  })
 });
 
 // // Default task (runs at initiation: gulp --verbose)
-gulp.task('serve', gulp.series('browser-sync', 'watch'));
+gulp.task('serve', gulp.parallel('images', 'revreplace', 'size', 'watch', 'browser-sync'));
 gulp.task('default', gulp.series('serve'));

@@ -1,30 +1,4 @@
-@media screen and (min-width: 500px) {
-    /* --- Heading --- */
-    h1 {
-        font-size: 5.8em;
-    }
-    .h2 {
-        font-size: 2em;
-    }
-    h3 {
-        font-size: 3.4em;
-    }
-    .section-offer h3,
-    .section-portfolio h3 {
-        font-size: 3.7em;
-    }
-    h4,
-    h5 {
-        font-size: 2em;
-    }
-    /* --- buttons --- */
-    .btn {
-        padding: 6px;
-    }
-    /* --- Nav --- */
-    .mobile-nav-icon img {
-        height: 20px;
-    }
+@media screen and (min-width: 500px) {   
     /* --- About me --- */
     .about-me--p {
         font-size: 1.2em;
@@ -55,10 +29,6 @@
 }
 
 @media screen and (min-width: 640px) {
-    /* --- Heading --- */
-    h1 {
-        font-size: 7em;
-    }
     /* --- About me --- */
     .about-me--p {
         width: 28.5em;
@@ -87,6 +57,7 @@
 }
 
 @media screen and (min-width: 735px) {
+ 
     /* --- portfolio --- */
     .main-portfolio--contents--skills {
         width: 70vw;
@@ -99,79 +70,6 @@
 }
 
 @media screen and (min-width: 900px) {
-    /* --- Nav --- */
-    .nav-container {
-        padding: 1.5em;
-    }
-    .mobile-nav-icon {
-        display: none;
-    }
-    .nav-link--box {
-        display: none;
-    }
-    .main-nav li a {
-        color: #fff;
-    }
-    .main-nav--box--triangle {
-        display: none;
-    }
-    .main-nav--box {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-        background-color: transparent;
-    }
-    .main-nav {
-        display: block;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-pack: distribute;
-        justify-content: space-around;
-        list-style: none;
-        padding: 13px 1em;
-        text-transform: uppercase;
-        font-size: 1.1em;
-        text-shadow: .2px .2px #333;
-    }
-    .main-nav li {
-        margin-right: 45px;
-    }
-    .main-nav li:first-child,
-    .main-nav li:nth-child(2) {
-        border: 2px solid transparent;
-        padding: 12px 5px;
-    }
-    .main-nav li:last-child {
-        border: 3px solid var(--main-blue);
-        padding: 12px 10px 8px 10px;
-        margin-right: 0;
-    }
-    .main-nav li:last-child:hover {
-        border-color: rgb(1, 102, 197);
-        -webkit-transition: fill .3s;
-        transition: fill .3s;
-    }
-    .main-nav li:first-child a:hover,
-    .main-nav li:nth-child(2) a:hover {
-        border-bottom: 2px solid var(--main-blue);
-        padding-bottom: 10px;
-    }
-    .download-link-mobile {
-        display: none;
-    }
-    .download-link {
-        display: inline-block;
-        text-decoration: none;
-        margin: 1.4em 1em 1.4em 1em;
-        padding: 6px;
-        -webkit-box-shadow: .5px .5px rgb(34, 69, 109);
-        box-shadow: .5px .5px rgb(34, 69, 109);
-        color: #000;
-    }
     /* --- About me --- */
     .about-me--p {
         width: 40em;
@@ -372,18 +270,6 @@
 }
 
 @media screen and (min-width: 1700px) {
-    .h2 {
-        font-size: 2.4em;
-    }
-    /* --- Nav --- */
-    .main-nav li a {
-        font-size: 1.2em;
-    }
-    .download-link {
-        font-size: 1.2em;
-        margin-top: 1.2em;
-        margin-bottom: 1.2em;
-    }
     /* --- About me --- */
     .about-me--p {
         font-size: 1.4em;
