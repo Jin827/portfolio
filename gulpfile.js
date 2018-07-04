@@ -22,10 +22,11 @@ const gulp = require('gulp'),
       rev = require('gulp-rev'),
       revReplace = require('gulp-rev-replace'),
       revDel = require('rev-del'),
+      path = require('gulp-path');
       
       limbo = 'limbo/',
       source = 'development/',
-      dest = 'production/';
+      dist = 'production/';
 
 function errorLog(error) {
   console.error.bind(error);
@@ -52,7 +53,7 @@ gulp.task('images', () => {
     ], {
       verbose: true
     }))
-    .pipe(gulp.dest(dest))
+    .pipe(gulp.dest(dist + 'img'))
 
   gulp.src(source + 'client/resources/assets/svg/**/*.svg')
     .pipe(imagemin([
@@ -66,10 +67,10 @@ gulp.task('images', () => {
       verbose: true
     }))
     // .pipe(svgSprite(svgConfig))
-    // .pipe(gulp.dest(dest))
+    // .pipe(gulp.dest(dist + 'img))
     // .pipe(filter('**/*.svg'))
     // .pipe(svg2png())
-    // .pipe(gulp.dest(dest))
+    // .pipe(gulp.dest(dist + 'img))
 })
 
 gulp.task('html', () => {
@@ -96,9 +97,9 @@ gulp.task('css', () => {
     .pipe(sourcemaps.init())
     .pipe(autoprefixer())
     .pipe(csso(cssConfig))
-    .pipe(sourcemaps.write('./maps'))
+    .pipe(sourcemaps.write('./maps/css'))
     .on('error', errorLog)
-    .pipe(gulp.dest(limbo))
+    .pipe(gulp.dest(limbo + 'css'))
     .pipe(reload({stream: true}))
 
   gulp.src(source + 'client/vendors/css/*.css')
@@ -108,7 +109,7 @@ gulp.task('css', () => {
       sourceMap: true,
       debug: true
     }))
-    .pipe(gulp.dest(limbo))
+    .pipe(gulp.dest(limbo + 'css'))
 
 })
 
@@ -125,8 +126,8 @@ gulp.task('javascript', (cb) => {
     sourcemaps.init(),
     stripDebug(),
     uglify(),
-    sourcemaps.write('./maps'),
-    gulp.dest(limbo)
+    sourcemaps.write('./maps/js'),
+    gulp.dest(limbo + 'js')
     ],
     cb
   ); 
@@ -136,8 +137,8 @@ gulp.task('javascript', (cb) => {
     sourcemaps.init(),
     stripDebug(),
     uglify({}),
-    sourcemaps.write('./maps'),
-    gulp.dest(limbo)
+    sourcemaps.write('./maps/js'),
+    gulp.dest(limbo + 'js')
     ],
     cb
   ); 
@@ -146,30 +147,30 @@ gulp.task('javascript', (cb) => {
     gulp.src('client/vendors/js/*.js'),
     stripDebug(),
     uglify({}),
-    gulp.dest(limbo)
+    gulp.dest(limbo + 'js')
     ],
     cb
   ); 
 });
 
 // Rename assets based on content cache
-gulp.task('revision', gulp.parallel('html','css','javascript'), () => {
-  return gulp.src(limbo + '**/*.{js,css}')
+gulp.task('revision', gulp.parallel('html', 'css','javascript'), () => {
+  return gulp.src(limbo + '**/*.{js, css}')
   .pipe(rev())
-  .pipe(gulp.dest(dest))
+  .pipe(gulp.dest(dist))
   .pipe(rev.manifest())
-  .pipe(revDel({dest: dest}))
-  .pipe(gulp.dest(dest));
+  .pipe(revDel({dest: dist}))
+  .pipe(gulp.dest(dist));
 });
 
 // Replace URLs with hashed ones based on rev manifest.
 // Runs immediately after revision:
 gulp.task('revreplace', gulp.series('revision'), () => {
-  const manifest = gulp.src(dest + 'rev-manifest.json');
+  const manifest = gulp.src(dist + 'rev-manifest.json');
 
   return gulp.src(limbo + '**/*.html')
   .pipe(revReplace({manifest: manifest}))
-  .pipe(gulp.dest(dest));
+  .pipe(gulp.dest(dist));
 });
 
 gulp.task('size', () => {
@@ -178,9 +179,9 @@ gulp.task('size', () => {
     pretty: true
   });
 
-  gulp.src(dest + '/**/*')
+  gulp.src(dist + '/**/*')
     .pipe(s)
-    .pipe(gulp.dest(dest))
+    .pipe(gulp.dest(dist))
     .pipe(notify({
       onLast: true,
       message: () => `Total size ${s.prettySize}`
@@ -199,7 +200,7 @@ gulp.task('watch', () => {
 gulp.task('browser-sync', () => {
   browserSync.init({
     server: {
-      baseDir: dest
+      baseDir: dist
     }
     // proxy: {
     //   target: 'localhost:8080'
