@@ -19,6 +19,7 @@ const gulp = require('gulp'),
       watch = require('gulp-watch'),
       browserSync = require('browser-sync').create(),
       reload = browserSync.reload,
+      webserver = require('gulp-webserver'),
       rev = require('gulp-rev'),
       revReplace = require('gulp-rev-replace'),
       revDel = require('rev-del'),
@@ -53,7 +54,7 @@ gulp.task('images', () => {
     ], {
       verbose: true
     }))
-    .pipe(gulp.dest(dist + 'img'))
+    .pipe(gulp.dest(dist + 'images'))
 
   gulp.src(source + 'client/resources/assets/svg/**/*.svg')
     .pipe(imagemin([
@@ -67,10 +68,10 @@ gulp.task('images', () => {
       verbose: true
     }))
     // .pipe(svgSprite(svgConfig))
-    // .pipe(gulp.dest(dist + 'img))
+    // .pipe(gulp.dest(dist + 'images'))
     // .pipe(filter('**/*.svg'))
     // .pipe(svg2png())
-    // .pipe(gulp.dest(dist + 'img))
+    // .pipe(gulp.dest(dist + 'images'))
 })
 
 gulp.task('html', () => {
@@ -100,7 +101,7 @@ gulp.task('css', () => {
     .pipe(sourcemaps.write('./maps/css'))
     .on('error', errorLog)
     .pipe(gulp.dest(limbo + 'css'))
-    .pipe(reload({stream: true}))
+    // .pipe(reload({stream: true}))
 
   gulp.src(source + 'client/vendors/css/*.css')
     .pipe(autoprefixer())
@@ -164,7 +165,6 @@ gulp.task('revision', gulp.parallel('html', 'css','javascript'), () => {
 });
 
 // Replace URLs with hashed ones based on rev manifest.
-// Runs immediately after revision:
 gulp.task('revreplace', gulp.series('revision'), () => {
   const manifest = gulp.src(dist + 'rev-manifest.json');
 
@@ -188,26 +188,38 @@ gulp.task('size', () => {
     }))
 });
 
+// gulp.task('re-load', gulp.series('revreplace'), (done) => {
+//   browserSync.reload();
+//   done();
+// })
+
 gulp.task('watch', () => {
-  gulp.watch(source + '**/*.{html, css, js}', gulp.series('revreplace'), reload)
+  gulp.watch(source + '**/*.{html, css, js}', gulp.series('revreplace'))
       .on('change', (event) => {
         console.log(`File ${event.path} was ${event.type}, running tasks....`);
       });
-  gulp.watch(source + 'client/resources/assets/**/*', gulp.series('images'), reload);
-
+  gulp.watch(source + 'client/resources/assets/**/*', gulp.series('images'));
 });
 
-gulp.task('browser-sync', () => {
-  browserSync.init({
-    server: {
-      baseDir: dist
-    }
-    // proxy: {
-    //   target: 'localhost:8080'
-    // }
-  })
+gulp.task('webserver', function() {
+  gulp.src(dist)
+  .pipe(webserver({
+      livereload: true,
+      open: true
+  }));
 });
+
+// gulp.task('browser-sync', () => {
+//   browserSync.init({
+//     server: {
+//       baseDir: dist
+//     },
+//     // proxy: {
+//     //   target: 'localhost:8080'
+//     // }
+//   })
+// });
 
 // // Default task (runs at initiation: gulp --verbose)
-gulp.task('serve', gulp.parallel('images', 'revreplace', 'size', 'watch', 'browser-sync'));
+gulp.task('serve', gulp.parallel('images', 'revreplace', 'size', 'watch', 'webserver'));
 gulp.task('default', gulp.series('serve'));
