@@ -121,7 +121,7 @@ gulp.task("jshint", () => {
     .pipe(jshint.reporter('jshint-stylish'), {beep: true});
 });
 
-gulp.task('javascript', (cb) => {
+gulp.task('javascript', gulp.series('jshint'), (cb) => {
   pump([
     gulp.src(source + 'client/resources/js/*.js'),
     sourcemaps.init(),
