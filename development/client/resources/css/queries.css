@@ -102,10 +102,10 @@
     .main-portfolio--contents--skills {
         width: 70vw;
         margin-left: auto;
-        margin-right: auto;
+        margin-right: auto
     }
     .sub-portfolio.open {
-        padding: 4em 3.5em;
+        padding: 4em 5em;
     }
 }
 
@@ -328,7 +328,10 @@
         max-width: 900px;
         margin: 0 auto;
     }
-    .main-portfolio--contents,
+    .main-portfolio--contents {
+        margin: auto;
+        width: 45vw;
+    }
     .main-portfolio--contents--skills {
         width: 45vw;
     }
@@ -346,11 +349,12 @@
         -ms-flex-direction: row-reverse;
         flex-direction: row-reverse;
     }
+    .sub-portfolio {
+        max-width: 70vw; 
+    }
     .sub-portfolio.open {
-        top: -500px;
-        max-width: 1000px;
-        padding: 4em;
-        min-height: 500px;
+        top: -550px;
+        height: 600px;
     }
     .fade {
         opacity: .1;
@@ -424,9 +428,6 @@
     .section-portfolio p {
         font-size: 1.4em;
     }
-    .main-portfolio--contents {
-        margin: auto;
-    }
     .main-portfolio--contents--skills {
         width: 40vw;
     }
@@ -434,9 +435,14 @@
         max-height: 1600px;
         max-width: 1000px;
     }
+    .sub-portfolio {
+        max-width: 90em; 
+    }
     .sub-portfolio.open {
-        top: -620px;
-        min-height: 600px;
+        top: -700px;
+        height: 650px;
+        padding-left: 7em;
+        padding-right: 8em;
     }
     /* --- Contact --- */
     .contact-memo {

@@ -35,8 +35,6 @@
     function getStickyNav() {
 
         if (window.pageYOffset > aboutPosition) {
-            console.log('aboutPosition: ', aboutPosition);
-            console.log('window.pageYOffset: ', window.pageYOffset);
             navbar.classList.add("sticky");
             links.forEach(link => link.style.color = "#333");
         } else {
