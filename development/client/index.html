@@ -330,23 +330,6 @@
                 <a href="#about">Front-End Web Developer</a>
             </div>
         </footer>
-        <noscript id="deferred-styles">
-            <!-- <link rel="stylesheet" type="text/css" href="resources/css/section.css" media="all">
-            <link rel="stylesheet" type="text/css" href="resources/css/footer.css" media="all"> -->
-        </noscript>
-        <script>
-          const loadDeferredStyles = function() {
-            const addStylesNode = document.getElementById("deferred-styles");
-            const replacement = document.createElement("div");
-            replacement.innerHTML = addStylesNode.textContent;
-            document.body.appendChild(replacement)
-            addStylesNode.parentElement.removeChild(addStylesNode);
-          };
-          const raf = requestAnimationFrame || mozRequestAnimationFrame ||
-              webkitRequestAnimationFrame || msRequestAnimationFrame;
-          if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
-          else window.addEventListener('load', loadDeferredStyles);
-        </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwoUun1nhHQnZljKQmp4nEZP6-uw4L6xM" defer></script>
         <script src="resources/js/header.js" async></script>
         <script src="resources/js/section.js" async></script>
