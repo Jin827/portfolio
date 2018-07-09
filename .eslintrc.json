@@ -25,6 +25,10 @@
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "no-nested-ternary": "off",
+        "no-plusplus": "off",
+        "class-methods-use-this": "off",
+        "no-underscore-dangle": "off"
     }
 }
