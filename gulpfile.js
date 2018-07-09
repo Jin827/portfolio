@@ -2,224 +2,177 @@ const gulp = require('gulp'),
 // Minification dependencies
       htmlmin = require('gulp-htmlmin'),
       csso = require('gulp-csso'),
-      uglify = require('gulp-uglify-es').default,
+      uglify = require('gulp-uglify'),
       imagemin = require('gulp-imagemin'),
-      svgSprite = require('gulp-svg-sprites'),
+      // svgSprite = require('gulp-svg-sprites'),
 // Other dependencies
-      filter = require('gulp-filter'),
-      svg2png = require('gulp-svg2png'),
+      // filter = require('gulp-filter'),
+      // svg2png = require('gulp-svg2png'),
       sourcemaps = require('gulp-sourcemaps'),
       autoprefixer = require('gulp-autoprefixer'),
       pump = require('pump'),
-      jshint = require('gulp-jshint'),
-      stylish = require('jshint-stylish'),
       size = require('gulp-size'),
       notify = require('gulp-notify'),
-      stripDebug = require('gulp-strip-debug'),
-      watch = require('gulp-watch'),
       browserSync = require('browser-sync').create(),
-      reload = browserSync.reload,
-      webserver = require('gulp-webserver'),
-      rev = require('gulp-rev'),
-      revReplace = require('gulp-rev-replace'),
-      revDel = require('rev-del'),
-      path = require('gulp-path');
-      
-      limbo = 'limbo/',
-      source = 'development/',
+      livereload = require('gulp-livereload'),
+      babel = require('gulp-babel');
+
+      paths = {
+        dev: 'development/**/*',
+        devHTML: 'development/client/*.html',
+        devCSS: {
+          srcCSS: 'development/client/resources/css/*.css',
+          venCSS: 'development/client/vendors/css/*.css',
+        },
+        devJS: {
+          srcJS: 'development/client/resources/js/*.js',
+          venJS: 'development/client/vendors/js/*.js',
+          serverJS: 'development/server/*.js'
+        },
+        devIMG: 'development/client/resources/assets/**/*.{jpeg,JPEG,svg,SVG}'
+      };
       dist = 'production/';
 
-function errorLog(error) {
-  console.error.bind(error);
-  this.emit('end');
-}
-
-gulp.task('images', () => {
-  const svgConfig = { 
-    mode: {
-      symbol: true
-    },
-    svg : {
-      xmlDeclaration: false,
-      doctypeDeclaration: false,
-      namespaceIDs: false,
-      namespaceClassnames: false
-    }
-  }
-  gulp.src(source + 'client/resources/assets/img/*.{jpeg,JPEG}')
-    .pipe(imagemin([
+gulp.task('images', (cb) => {
+  pump([
+    gulp.src(paths.devIMG),
+    imagemin([
       imagemin.gifsicle({interlaced: true}),
       imagemin.jpegtran({progressive: true}),
       imagemin.optipng({optimizationLevel: 5}),
+      imagemin([
+        imagemin.svgo({
+          plugins: [
+            {removeViewBox: true},
+            {cleanupIDs: false}
+          ]
+        })
+      ])
     ], {
       verbose: true
-    }))
-    .pipe(gulp.dest(dist + 'images'))
-
-  gulp.src(source + 'client/resources/assets/svg/**/*.svg')
-    .pipe(imagemin([
-      imagemin.svgo({
-        plugins: [
-          {removeViewBox: true},
-          {cleanupIDs: false}
-        ]
-      })
-    ], {
-      verbose: true
-    }))
-    // .pipe(svgSprite(svgConfig))
-    // .pipe(gulp.dest(dist + 'images'))
-    // .pipe(filter('**/*.svg'))
-    // .pipe(svg2png())
-    // .pipe(gulp.dest(dist + 'images'))
+    }),
+    gulp.dest(dist),
+    livereload()
+  ], cb)
 })
 
-gulp.task('html', () => {
+// gulp.task('svg', () => {
+  // const svgConfig = {
+  //   mode: {
+  //     symbol: true
+  //   },
+  //   svg : {
+  //     xmlDeclaration: false,
+  //     doctypeDeclaration: false,
+  //     namespaceIDs: false,
+  //     namespaceClassnames: false
+  //   }
+  // }
+  // .pipe(svgSprite(svgConfig))
+  // .pipe(gulp.dest(dist + 'images'))
+  // .pipe(filter('**/*.svg'))
+  // .pipe(svg2png())
+  // .pipe(gulp.dest(dist + 'images'))
+// })
+
+gulp.task('html', (cb) => {
   const htmlConfig = {
     collapseWhitespace: true,
     minifyJS: true,
     removeComments: true
   }
 
-  gulp.src(source + 'client/*.html')
-    .pipe(htmlmin(htmlConfig))
-    .on('error', errorLog)
-    .pipe(gulp.dest(limbo));
+  pump([
+    gulp.src(paths.devHTML),
+    htmlmin(htmlConfig),
+    gulp.dest(dist),
+    livereload()
+  ], cb)
 });
 
-gulp.task('css', () => {
+gulp.task('css', (cb) => {
   const cssConfig = {
     restructure: false,
     sourceMap: true,
-    debug: true 
+    debug: true
   }
 
-  gulp.src(source + 'client/resources/css/*.css')
-    .pipe(sourcemaps.init())
-    .pipe(autoprefixer())
-    .pipe(csso(cssConfig))
-    .pipe(sourcemaps.write('./maps/css'))
-    .on('error', errorLog)
-    .pipe(gulp.dest(limbo + 'css'))
-    // .pipe(reload({stream: true}))
+  pump([
+    gulp.src(paths.devCSS.venCSS),
+    gulp.dest(dist + 'css'),
+    livereload()
+  ], cb)
 
-  gulp.src(source + 'client/vendors/css/*.css')
-    .pipe(autoprefixer())
-    .pipe(csso({
-      restructure: false,
-      sourceMap: true,
-      debug: true
-    }))
-    .pipe(gulp.dest(limbo + 'css'))
-
+  pump([
+    gulp.src(paths.devCSS.srcCSS),
+    sourcemaps.init(),
+    autoprefixer('last 2 versions'),
+    csso(cssConfig),
+    sourcemaps.write('./maps'),
+    gulp.dest(dist + 'css'),
+    livereload()
+  ], cb)
 })
 
-// Scans JS files for errors
-gulp.task("jshint", () => {
-  return gulp.src([source + 'client/resources/js/*.js', source + 'server/*.js'])
-    .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'), {beep: true});
-});
-
-gulp.task('javascript', gulp.series('jshint'), (cb) => {
+gulp.task('javascript', (cb) => {
   pump([
-    gulp.src(source + 'client/resources/js/*.js'),
+    gulp.src([
+      paths.devJS.srcJS,
+      paths.devJS.serverJS
+    ]),
     sourcemaps.init(),
-    stripDebug(),
+    babel({presets: ['env']}),
     uglify(),
-    sourcemaps.write('./maps/js'),
-    gulp.dest(limbo + 'js')
+    sourcemaps.write('./maps'),
+    gulp.dest(dist + 'js'),
+    livereload()
     ],
     cb
-  ); 
+  );
 
   pump([
-    gulp.src(source + 'server/*.js'),
-    sourcemaps.init(),
-    stripDebug(),
-    uglify({}),
-    sourcemaps.write('./maps/js'),
-    gulp.dest(limbo + 'js')
+    gulp.src(paths.devJS.venJS),
+    gulp.dest(dist + 'js'),
+    livereload()
     ],
     cb
-  ); 
-
-  pump([
-    gulp.src('client/vendors/js/*.js'),
-    stripDebug(),
-    uglify({}),
-    gulp.dest(limbo + 'js')
-    ],
-    cb
-  ); 
+  );
 });
 
-// Rename assets based on content cache
-gulp.task('revision', gulp.parallel('html', 'css','javascript'), () => {
-  return gulp.src(limbo + '**/*.{js, css}')
-  .pipe(rev())
-  .pipe(gulp.dest(dist))
-  .pipe(rev.manifest())
-  .pipe(revDel({dest: dist}))
-  .pipe(gulp.dest(dist));
-});
-
-// Replace URLs with hashed ones based on rev manifest.
-gulp.task('revreplace', gulp.series('revision'), () => {
-  const manifest = gulp.src(dist + 'rev-manifest.json');
-
-  return gulp.src(limbo + '**/*.html')
-  .pipe(revReplace({manifest: manifest}))
-  .pipe(gulp.dest(dist));
-});
-
-gulp.task('size', () => {
+gulp.task('size', (cb) => {
   const s = size({
-    showFiles: true, 
+    showFiles: true,
     pretty: true
   });
 
-  gulp.src(dist + '/**/*')
-    .pipe(s)
-    .pipe(gulp.dest(dist))
-    .pipe(notify({
+  pump([
+    gulp.src(dist + '/**/*'),
+    s,
+    gulp.dest(dist),
+    notify({
       onLast: true,
       message: () => `Total size ${s.prettySize}`
-    }))
+    })
+  ], cb)
 });
 
-// gulp.task('re-load', gulp.series('revreplace'), (done) => {
-//   browserSync.reload();
-//   done();
-// })
+/*
+'watch is not starting...'
+The following tasks did not complete: default, size
+Did you forget to signal async completion?
+*/
+gulp.task('default', gulp.series(gulp.parallel('images', 'html', 'css', 'javascript'), 'size'), () => {});
 
-gulp.task('watch', () => {
-  gulp.watch(source + '**/*.{html, css, js}', gulp.series('revreplace'))
-      .on('change', (event) => {
-        console.log(`File ${event.path} was ${event.type}, running tasks....`);
-      });
-  gulp.watch(source + 'client/resources/assets/**/*', gulp.series('images'));
+gulp.task('watch', gulp.series('default'), () => {
+  /*  Error: Cannot find module './production/server/index.js' */
+  require('./development/server/index.js');
+  livereload.listen();
+  gulp.watch(paths.devIMG, gulp.series('images'));
+  gulp.watch(paths.devHTML, gulp.series('html'));
+  gulp.watch([paths.devCSS.srcCSS, paths.devCSS.venCSS], gulp.series('css'));
+  gulp.watch([paths.devJS.srcJS, paths.devJS.venJS, paths.devJS.serverJS], gulp.series('javascript'));
 });
 
-gulp.task('webserver', function() {
-  gulp.src(dist)
-  .pipe(webserver({
-      livereload: true,
-      open: true
-  }));
-});
-
-// gulp.task('browser-sync', () => {
-//   browserSync.init({
-//     server: {
-//       baseDir: dist
-//     },
-//     // proxy: {
-//     //   target: 'localhost:8080'
-//     // }
-//   })
+// browserSync.init({
+  //   server: dist
 // });
-
-// // Default task (runs at initiation: gulp --verbose)
-gulp.task('serve', gulp.parallel('images', 'revreplace', 'size', 'watch', 'webserver'));
-gulp.task('default', gulp.series('serve'));

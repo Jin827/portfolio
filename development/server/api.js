@@ -50,7 +50,7 @@ module.exports = {
             from: 'Jiah Lee <donotreply@gmail.com>',
             to: `${name} <${email}>`,
             subject: 'Auto reply message from Jiah Lee',
-            html: `          
+            html: `
                 <p>
                     Hello ${name},<br/><br/>
                     Thank you for getting in touch.<br/>
@@ -58,7 +58,7 @@ module.exports = {
                     Thank you.<br/><br/>
                     Best,<br/><br/>
                     Jiah Lee
-                </p>   
+                </p>
             `
         };
 
