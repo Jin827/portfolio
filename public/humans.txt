@@ -1,0 +1,7 @@
+/* TEAM */
+  Jiah Lee
+
+
+/* SITE */
+Last updated : 2018/July/10
+Technology colophon: HTML5, CSS3, Javascript, VanillaJS, NodeJS, Gulp
