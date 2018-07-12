@@ -3,7 +3,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express = require('express');
-const path= require("path")
+const path = require("path")
 const app = express();
 
 const port = process.env.PORT || 8080;
@@ -17,16 +17,19 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-// app.get("/",(req,res)=>res.sendFile())
+console.log(path.join(__dirname, "../", "client/resources"))
+app.use("/vendors", express.static(`${process.cwd()}/vendors`));
+app.use(express.static(`${process.cwd()}/static`));
+app.use("/resources", express.static(path.join(__dirname, "../", "client/resources")));
+
+app.get("/", (req, res) => res.sendFile(path.join(__dirname, "/views/index.html")))
 
 app.post('/', (req, res) => {
 	return myApi.sendEmail(req.body)
 		.then(myApi.replyEmail(req.body))
-		.catch(err => {console.log(err);});
+		.catch(err => { console.log(err); });
 });
 
-app.use(express.static(`${process.cwd()}/vendors`));
-app.use(express.static(`${process.cwd()}/development/client`));
 // if(process.env.NODE_ENV =="production" ){
 //   app.use(express.static(path.join(__dirname,)));
 // }
@@ -44,32 +47,36 @@ app.use(function (req, res, next) {
 if (app.get('env') !== 'production') {
 	app.use(function (err, req, res, next) {
 		res.status(err.status || 500);
-		res.status('error', {
+		res.json({
 			message: err.message,
 			error: err
 		});
 	});
+} else {
+	// production error handler
+	// no stacktraces leaked to user
+	app.use(function (err, req, res, next) {
+		res.status(err.status || 500);
+		res.json({
+			message: err.message,
+			error: {}
+		});
+	});
 }
 
-// production error handler
-// no stacktraces leaked to user
-app.use(function (err, req, res, next) {
-	res.status(err.status || 500);
-	res.json({
-		message: err.message,
-		error: {}
-	});
-});
 
-app.use ((req, res, next) => {
-	if (!/https/.test(req.protocol)) {
-		// request was via https, so do no special handling
-		next();
-	} else {
-		// request was via http, so redirect to https
-		res.redirect('https://' + req.headers.host + req.url);
-	}
-});
+
+if (process.env.NODE_ENV === "production") {
+	app.use((req, res, next) => {
+		if (!/https/.test(req.protocol)) {
+			// request was via https, so do no special handling
+			next();
+		} else {
+			// request was via http, so redirect to https
+			res.redirect('https://' + req.headers.host + req.url);
+		}
+	});
+}
 
 app.listen(port, () => {
 	console.log(`Server is up on port ${port}!`);
