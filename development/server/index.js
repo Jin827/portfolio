@@ -21,7 +21,7 @@ app.post('/', (req, res) => {
 
 	return myApi.sendEmail(req.body)
 		.then(myApi.replyEmail(req.body))
-		.catch(err => {console.log(err)});
+		.catch(err => {console.log(err);});
 });
 
 app.use(express.static(`${process.cwd()}/development/client`));
@@ -54,6 +54,16 @@ app.use(function (err, req, res, next) {
 		message: err.message,
 		error: {}
 	});
+});
+
+app.use ((req, res, next) => {
+	if (!/https/.test(req.protocol)) {
+		// request was via https, so do no special handling
+		next();
+	} else {
+		// request was via http, so redirect to https
+		res.redirect('https://' + req.headers.host + req.url);
+	}
 });
 
 app.listen(port, () => {
