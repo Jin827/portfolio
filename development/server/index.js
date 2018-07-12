@@ -3,7 +3,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express = require('express');
-
+const path= require("path")
 const app = express();
 
 const port = process.env.PORT || 8080;
@@ -17,14 +17,18 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-app.post('/', (req, res) => {
+// app.get("/",(req,res)=>res.sendFile())
 
+app.post('/', (req, res) => {
 	return myApi.sendEmail(req.body)
 		.then(myApi.replyEmail(req.body))
 		.catch(err => {console.log(err);});
 });
 
-app.use(express.static(`${process.cwd()}/development/client`));
+// app.use(express.static(`${process.cwd()}/vendor`));
+// if(process.env.NODE_ENV =="production" ){
+//   app.use(express.static(path.join(__dirname,)));
+// }
 
 // error handlers
 // catch 404 and forward to error handler
