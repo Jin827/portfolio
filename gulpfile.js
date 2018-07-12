@@ -165,9 +165,7 @@ gulp.task('size', (cb) => {
 });
 
 gulp.task('clean', () => {
-	return del.sync([
-		dist
-	]);
+	return del([ dist ]);
 });
 /*
 'watch is not starting...'
