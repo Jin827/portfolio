@@ -15,12 +15,11 @@ const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const pump = require('pump');
 const size = require('gulp-size');
-const notify = require('gulp-notify');
 // const browserSync = require('browser-sync').create();
 const livereload = require('gulp-livereload');
 const babel = require('gulp-babel');
 const del = require('del');
-const zip = require('gulp-zip');
+
 
 // File path
 const paths = {
@@ -123,6 +122,7 @@ gulp.task('css', (cb) => {
 });
 
 gulp.task('javascript', (cb) => {
+
 	pump([
 		gulp.src([
 			paths.devJS.srcJS,
@@ -156,36 +156,22 @@ gulp.task('size', (cb) => {
 	pump([
 		gulp.src(dist + '**/*'),
 		s,
-		gulp.dest(dist),
-		notify({
-			onLast: true,
-			message: () => `Total size ${s.prettySize}`
-		})
+		gulp.dest(dist)
 	], cb);
 });
 
 gulp.task('clean', () => {
 	return del([ dist ]);
 });
-/*
-'watch is not starting...'
-The following tasks did not complete: default, clean, size
-Did you forget to signal async completion?
-*/
-gulp.task('default', gulp.series('clean', gulp.parallel('images', 'html', 'css', 'javascript'), 'size'), () => {});
-gulp.task('export', (cb) => {
-	pump([
-		gulp.src(dist + '**/*'),
-		zip('website.zip'),
-		gulp.dest('./')
-	], cb);
-});
-gulp.task('watch', gulp.series('default'), () => {
-	/*  Error: Cannot find module './production/server/index.js' */
-	require('./development/server/index.js');
+
+gulp.task('default', gulp.series('clean', gulp.parallel('images', 'html', 'css', 'javascript'), 'size'));
+
+gulp.task('just-watch',() => {
 	livereload.listen();
 	gulp.watch(paths.devIMG, gulp.series('images'));
 	gulp.watch(paths.devHTML, gulp.series('html'));
 	gulp.watch([paths.devCSS.srcCSS, paths.devCSS.venCSS], gulp.series('css'));
 	gulp.watch([paths.devJS.srcJS, paths.devJS.venJS, paths.devJS.serverJS], gulp.series('javascript'));
 });
+
+gulp.task('watch', gulp.series('default', 'just-watch'));

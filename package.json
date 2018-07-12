@@ -4,7 +4,10 @@
   "description": "Jiah Lee Protfolio",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon development/server/index.js"
+    "prestart":"npm run build",
+    "start": "NODE_ENV=production node production/js/index.js",
+    "dev":"NODE_ENV=development nodemon --watch development/server development/server & gulp watch",
+    "build":"gulp"
   },
   "engines": {
     "node": "8.11.1"
