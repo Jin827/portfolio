@@ -4,10 +4,10 @@
   "description": "Jiah Lee Protfolio",
   "main": "index.js",
   "scripts": {
-    "prestart":"npm run build",
-    "start": "NODE_ENV=production node production/js/index.js",
-    "dev":"NODE_ENV=development nodemon --watch development/server development/server & gulp watch",
-    "build":"gulp",
+    "prestart": "npm run build",
+    "start": "NODE_ENV=production PORT=9002 node production/server/js/index.js",
+    "dev": "NODE_ENV=development PORT=9001 nodemon --watch src/server src/server & gulp watch",
+    "build": "gulp",
     "server:dev": "nodemon development/server/index.js"
   },
   "engines": {
@@ -45,7 +45,7 @@
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.13.0",
-    "gulp": "^4.0.0",
+    "gulp": "4.0.0",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-babel": "^7.0.1",
     "gulp-csso": "^3.0.1",
