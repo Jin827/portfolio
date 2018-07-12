@@ -25,7 +25,8 @@ app.post('/', (req, res) => {
 		.catch(err => {console.log(err);});
 });
 
-// app.use(express.static(`${process.cwd()}/vendor`));
+app.use(express.static(`${process.cwd()}/vendors`));
+app.use(express.static(`${process.cwd()}/development/client`));
 // if(process.env.NODE_ENV =="production" ){
 //   app.use(express.static(path.join(__dirname,)));
 // }

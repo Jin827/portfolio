@@ -7,7 +7,8 @@
     "prestart":"npm run build",
     "start": "NODE_ENV=production node production/js/index.js",
     "dev":"NODE_ENV=development nodemon --watch development/server development/server & gulp watch",
-    "build":"gulp"
+    "build":"gulp",
+    "server:dev": "nodemon development/server/index.js"
   },
   "engines": {
     "node": "8.11.1"
