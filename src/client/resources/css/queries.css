@@ -1,4 +1,4 @@
-@media screen and (min-width: 500px) {   
+@media screen and (min-width: 500px) {
     /* --- Heading --- */
     h1 {
         font-size: 5.8em;
@@ -17,10 +17,6 @@
     h5 {
         font-size: 2em;
     }
-    /* --- buttons --- */
-    /* .btn {
-        padding: 6px;
-    } */
     /* --- Nav --- */
     .mobile-nav-icon img {
         height: 20px;
@@ -94,7 +90,7 @@
 }
 
 @media screen and (min-width: 735px) {
- 
+
     /* --- portfolio --- */
     .portpolio-box {
         max-height: 1300px;
@@ -110,6 +106,9 @@
 }
 
 @media screen and (min-width: 900px) {
+    header {
+      padding-top: 20px;
+    }
     /* --- Nav --- */
     .nav-container {
         padding: 1.5em;
@@ -136,6 +135,7 @@
         background-color: transparent;
         padding-left: 10px;
         padding-right: 10px;
+        height: 60px;
     }
     .main-nav {
         margin: auto 0;
@@ -160,7 +160,7 @@
     }
     .main-nav li:last-child a{
         border: 3px solid var(--main-blue);
-        padding: 15px 12px;
+        padding: 10px;
         margin-right: 0;
     }
     .main-nav li:last-child:hover a {
@@ -181,8 +181,8 @@
     .download-link {
         display: inline-block;
         text-decoration: none;
-        margin: 1.4em 1em;
-        padding: 10px 12px;
+        margin: auto 0;
+        padding: 7px 9px;
         -webkit-box-shadow: .5px .5px rgb(34, 69, 109);
         box-shadow: .5px .5px rgb(34, 69, 109);
     }
@@ -353,7 +353,7 @@
         flex-direction: row-reverse;
     }
     .sub-portfolio {
-        max-width: 70vw; 
+        max-width: 70vw;
     }
     .sub-portfolio.open {
         top: -550px;
@@ -402,15 +402,6 @@
     .h2 {
         font-size: 2.4em;
     }
-    /* --- Nav --- */
-    .main-nav li a {
-        font-size: 1.2em;
-    }
-    .download-link {
-        font-size: 1.2em;
-        margin-top: 1.2em;
-        margin-bottom: 1.2em;
-    }
     /* --- About me --- */
     .about-me--p {
         font-size: 1.4em;
@@ -439,7 +430,7 @@
         max-width: 1000px;
     }
     .sub-portfolio {
-        max-width: 90em; 
+        max-width: 90em;
     }
     .sub-portfolio.open {
         top: -700px;
