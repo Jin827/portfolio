@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prestart": "npm run build",
-    "start": "NODE_ENV=production PORT=9002 node production/server/js/index.js",
+    "start": "NODE_ENV=production PORT=9002 node production/server/index.js",
     "dev": "NODE_ENV=development PORT=9001 nodemon --watch src/server src/server & gulp watch",
     "build": "gulp",
     "server:dev": "nodemon development/server/index.js"
