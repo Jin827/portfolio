@@ -40,10 +40,6 @@ const paths = {
     devSVG: 'production/client/resources/assets/svg/**/*.{svg}',
     dist: 'production/',
     distHTML: 'production/server/views/',
-    distCSS: 'production/client/resources/css/',
-    distJS: 'production/',
-    distIMG: 'production/client/resources/assets/img/',
-    distSVG: 'production/client/resources/assets/svg/'
 };
 
 gulp.task('images', (cb) => {
@@ -66,8 +62,32 @@ gulp.task('images', (cb) => {
         ], {
                 verbose: true
             }),
-        gulp.dest('production/img'),
-        livereload()
+        gulp.dest(paths.distIMG),
+    ], cb);
+});
+
+
+gulp.task('svg', (cb) => {
+    pump([
+        gulp.src(paths.devSVG),
+        imagemin([
+            imagemin.gifsicle({ interlaced: true }),
+            imagemin.jpegtran(),
+            imagemin.optipng({ optimizationLevel: 5 }),
+            imagemin([
+                imagemin.svgo({
+                    plugins: [
+                        { removeViewBox: true },
+                        { cleanupIDs: false }
+                    ]
+                })
+            ]),
+            imageminJpegRecompress(),
+            imageminPngquant()
+        ], {
+                verbose: true
+            }),
+        gulp.dest(paths.distSVG),
     ], cb);
 });
 
@@ -101,7 +121,6 @@ gulp.task('html', (cb) => {
         gulp.src(paths.devHTML),
         gulpif(env === 'production',htmlmin(htmlConfig)),
         gulp.dest(paths.distHTML),
-        livereload()
     ], cb);
 });
 
@@ -119,7 +138,6 @@ gulp.task('css', (cb) => {
         gulpif(env === 'production',csso(cssConfig)),
         sourcemaps.write('./maps'),
         gulp.dest(paths.distCSS),
-        livereload()
     ], cb);
 });
 
@@ -134,7 +152,23 @@ gulp.task('javascript', (cb) => {
         gulpif(env === 'production',uglify()),
         sourcemaps.write('./maps'),
         gulp.dest(paths.distJS),
-        livereload()
+    ],
+        cb
+    );
+});
+
+
+gulp.task('serverJs', (cb) => {
+
+    pump([
+        gulp.src(
+            paths.devServerjs
+        ),
+        sourcemaps.init(),
+        babel({ presets: ['env'] }),
+        uglify(),
+        sourcemaps.write('./maps'),
+        gulp.dest(paths.distServerjs),
     ],
         cb
     );
@@ -157,15 +191,19 @@ gulp.task('clean', () => {
     return del([paths.dist]);
 });
 
-gulp.task('default', gulp.series('clean', gulp.parallel('images', 'html', 'css', 'javascript'), 'size'));
+gulp.task('default', gulp.series('clean', gulp.parallel('images', 'svg', 'html', 'css', 'javascript', 'serverJs'), 'size'));
 
-gulp.task('just-watch', () => {
+gulp.task('reload', (cb) => {
+    pump([
+        gulp.src(paths.devHTML),
+        livereload()
+    ], cb)
+})
+
+gulp.task('watch', () => {
     livereload.listen();
-    gulp.watch([paths.devIMG, paths.devSVG], gulp.series('images'));
-    gulp.watch(paths.devHTML, gulp.series('html'));
-    gulp.watch(paths.devCSS.srcCSS, gulp.series('css'));
-    gulp.watch(paths.devJS, gulp.series('javascript'));
+    gulp.watch([paths.devIMG, paths.devSVG,
+    paths.devHTML,
+    paths.devCSS,
+    paths.devJS], gulp.series("reload"))
 });
-
-gulp.task('watch', gulp.series('default', 'just-watch'));
-
