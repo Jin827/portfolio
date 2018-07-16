@@ -6,7 +6,7 @@
   "scripts": {
     "prestart": "npm run build",
     "start": "NODE_ENV=production PORT=9002 node production/server/index.js",
-    "dev": "NODE_ENV=development PORT=9003 nodemon --watch src/server src/server & gulp watch",
+    "dev": "NODE_ENV=development PORT=9003 nodemon --watch src/server src/server & gulp dev",
     "build": "gulp"
   },
   "engines": {
