@@ -18,11 +18,9 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-console.log(path.join(__dirname, "../", "client/resources"))
 app.use("/vendors", express.static(`${process.cwd()}/vendors`));
-app.use(express.static(`${process.cwd()}/static`));
 app.use("/resources", express.static(path.join(__dirname, "../", "client/resources")));
-
+app.use(express.static(`${process.cwd()}/static`));
 app.get("/", (req, res) => res.sendFile(path.join(__dirname, "/views/index.html")))
 
 app.post('/', (req, res) => {
@@ -30,10 +28,6 @@ app.post('/', (req, res) => {
 		.then(myApi.replyEmail(req.body))
 		.catch(err => { console.log(err); });
 });
-
-// if(process.env.NODE_ENV =="production" ){
-//   app.use(express.static(path.join(__dirname,)));
-// }
 
 // error handlers
 // catch 404 and forward to error handler
@@ -64,8 +58,6 @@ if (app.get('env') !== 'production') {
 		});
 	});
 }
-
-
 
 if (process.env.NODE_ENV === "production") {
 	app.use((req, res, next) => {
