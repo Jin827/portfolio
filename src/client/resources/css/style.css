@@ -205,7 +205,7 @@ header {
 
 .mobile-nav-icon {
     display: inline-block;
-    margin-top: 5px;
+    margin-top: 6px;
 }
 
 /* --- Buttons --- */
@@ -877,6 +877,10 @@ footer {
     font-weight: 200;
 }
 
+.jh-logo--link {
+  margin-left: 6px;
+}
+
 .jh-logo {
     height: 60px;
     width: 60px;
@@ -886,9 +890,4 @@ footer {
     padding: 1.7em;
     font-size: 1.2em;
     line-height: 1.3em;
-}
-
-footer a {
-    margin-left: 6px;
-    color: #fff;
 }
