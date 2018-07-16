@@ -19,17 +19,27 @@ const size = require('gulp-size');
 const livereload = require('gulp-livereload');
 const babel = require('gulp-babel');
 const del = require('del');
+const gulpif = require('gulp-if');
+let env,
+    outputDir,
 
+env = process.env.NODE_ENV || 'development';
+
+if (env !== 'production') {
+  outputDir = 'src/';
+} else {
+  outputDir = 'production/';
+}
 
 // File path
 const paths = {
-    devHTML: 'src/client/*.html',
+    devHTML: 'src/server/views/*.html',
     devCSS: 'src/client/resources/css/*.css',
     devJS: 'src/**/*js',
     devIMG: 'production/client/resources/assets/**/*.{png,jpeg,jpg,svg,gif}',
     devSVG: 'production/client/resources/assets/svg/**/*.{svg}',
     dist: 'production/',
-    distHTML: 'production/client/',
+    distHTML: 'production/server/views/',
     distCSS: 'production/client/resources/css/',
     distJS: 'production/',
     distIMG: 'production/client/resources/assets/img/',
@@ -89,7 +99,7 @@ gulp.task('html', (cb) => {
 
     pump([
         gulp.src(paths.devHTML),
-        htmlmin(htmlConfig),
+        gulpif(env === 'production',htmlmin(htmlConfig)),
         gulp.dest(paths.distHTML),
         livereload()
     ], cb);
@@ -106,7 +116,7 @@ gulp.task('css', (cb) => {
         gulp.src(paths.devCSS),
         sourcemaps.init(),
         autoprefixer('last 2 versions'),
-        csso(cssConfig),
+        gulpif(env === 'production',csso(cssConfig)),
         sourcemaps.write('./maps'),
         gulp.dest(paths.distCSS),
         livereload()
@@ -121,7 +131,7 @@ gulp.task('javascript', (cb) => {
         ),
         sourcemaps.init(),
         babel({ presets: ['env'] }),
-        uglify(),
+        gulpif(env === 'production',uglify()),
         sourcemaps.write('./maps'),
         gulp.dest(paths.distJS),
         livereload()
