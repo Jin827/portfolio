@@ -1,26 +1,51 @@
 if( 'function' === typeof importScripts) {
 	importScripts('/vendors/js/cache-polyfill.js');
 
-	self.addEventListener('install', function(e) {
+	self.addEventListener('install', (e) => {
 		e.waitUntil(
-			caches.open('airhorner').then(function(cache) {
-				return cache.addAll([
-					'/',
-					'/index.html',
-					'/index.html?homescreen=1',
-					'/?homescreen=1',
-					'/resources/css/style.css',
-					'/resources/css/queries.css',
-					'/resources/js/header.js',
-					'/resources/js/section.js',
-					'/resources/js/footer.js',
-				]);
-			})
+			caches.open('my-site-cache-v1')
+				.then((cache) => {
+					console.log('Opened cache');
+					return cache.addAll([
+						'/',
+						'/server/views/index.html',
+						'/resources/css/style.css',
+						'/resources/css/queries.css',
+						'/resources/js/app.js',
+					]);
+				})
 		);
 	});
 }
 
-self.addEventListener('fetch', function(event) {
-	console.log(event.request.url);
-});
+// self.addEventListener('fetch', (e) => {
+// 	console.log(`eventRequestUrl: ${e.request.url}`);
+// 	e.respondWith(
+// 		caches.match(e.request)
+// 			.then((response) => {
+// 				// Cache hit - return response
+// 				if (response) {
+// 					return response;
+// 				}
+// 				return fetch(e.request);
+// 			}
+// 			)
+// 	);
+// });
 
+// self.addEventListener('activate', (e) => {
+
+// 	const cacheWhitelist = ['my-site-cache-v1'];
+
+// 	e.waitUntil(
+// 		caches.keys().then((cacheNames) => {
+// 			return Promise.all(
+// 				cacheNames.map((cacheName) => {
+// 					if (cacheWhitelist.indexOf(cacheName) === -1) {
+// 						return caches.delete(cacheName);
+// 					}
+// 				})
+// 			);
+// 		})
+// 	);
+// });

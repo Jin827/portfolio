@@ -21,7 +21,7 @@ app.use(cookieParser());
 app.use('/vendors', express.static(`${process.cwd()}/vendors`));
 app.use('/resources', express.static(path.join(__dirname, '../', 'client/resources')));
 app.use(express.static(`${process.cwd()}/static`));
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/views/index.html')))
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/views/index.html')));
 
 app.post('/', (req, res) => {
 	return myApi.sendEmail(req.body)

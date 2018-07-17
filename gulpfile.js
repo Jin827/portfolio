@@ -205,5 +205,3 @@ gulp.task('watch', () => {
 		gulp.series('reload')
 	);
 });
-
-gulp.task('dev', gulp.series(['default', 'watch']));
