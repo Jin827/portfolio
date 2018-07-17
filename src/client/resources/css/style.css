@@ -151,7 +151,7 @@ h5 {
 
 /* --- Icons --- */
 
-[CLASS*='triangle'] {
+[class*='triangle'] {
     height: 18px;
     width: 24PX;
     cursor: pointer;
@@ -328,7 +328,7 @@ header {
 
 /* --- Icons --- */
 
-[CLASS*='icon-media'] {
+[class*='icon-media'] {
     margin-left: 1.2em;
     margin-right: 1.2em;
     height: 2.5em;
@@ -497,7 +497,7 @@ header {
 
 /* --- Icons --- */
 
-[CLASS*='icon-logo'] {
+[class*='icon-logo'] {
     width: 40px;
     height: 50px;
 }
