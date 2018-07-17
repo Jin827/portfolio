@@ -22,23 +22,29 @@
 	}, false);
 
 	/* --- Sticky Nav --- */
-	window.onscroll = function () {
-		getStickyNav();
-	};
 	const navbar = document.getElementById('nav-container');
+	const mapEl = document.querySelector('main--1');
 	const aboutSection = document.getElementById('about');
-	const links = document.querySelectorAll('.main-nav li a');
-
 	const aboutPosition = aboutSection.offsetTop;
+	const mapPosition = mapEl.offsetTop;
+	let googleMapsWasLoaded = false;
+
+	function checkScrollPosition () {
+		getStickyNav();
+		if (!googleMapsWasLoaded && (window.pageYOffset > mapPosition)) {
+			loadGoogleMaps();
+			googleMapsWasLoaded = true;
+		}
+	}
+
+	window.onscroll = checkScrollPosition;
+	checkScrollPosition();
 
 	function getStickyNav() {
-
 		if (window.pageYOffset > aboutPosition) {
 			navbar.classList.add('sticky');
-			links.forEach(link => link.style.color = '#333');
 		} else {
 			navbar.classList.remove('sticky');
-			links.forEach(link => link.style.color = '#fff');
 		}
 	}
 
@@ -202,22 +208,31 @@
 	}
 
 	/* --- Map --- */
-	const googleMap = document.getElementById('map');
-	const location = {
-		montreal: {
-			lat: 45.5081804,
-			lng: -73.57
-		}
-	};
+	function loadGoogleMaps () {
+		var scriptEl = document.createElement('script');
+		scriptEl.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCwoUun1nhHQnZljKQmp4nEZP6-uw4L6xM';
 
-	const map = new google.maps.Map(googleMap, {
-		center: location.montreal,
-		zoom: 11.5
-	});
+		scriptEl.onload = function () {
+			const googleMap = document.getElementById('map');
+			const location = {
+				montreal: {
+					lat: 45.5081804,
+					lng: -73.57
+				}
+			};
 
-	new google.maps.Marker({
-		map: map,
-		position: location.montreal,
-		title: 'Montreal'
-	});
+			const map = new google.maps.Map(googleMap, {
+				center: location.montreal,
+				zoom: 11.5
+			});
+
+			new google.maps.Marker({
+				map: map,
+				position: location.montreal,
+				title: 'Montreal'
+			});
+		};
+
+		document.body.appendChild(scriptEl);
+	}
 })();
