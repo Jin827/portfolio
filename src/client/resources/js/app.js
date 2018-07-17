@@ -225,6 +225,7 @@
 				center: location.montreal,
 				zoom: 11.5
 			});
+<<<<<<< HEAD
 
 			new google.maps.Marker({
 				map: map,
@@ -233,6 +234,16 @@
 			});
 		};
 
+=======
+
+			new google.maps.Marker({
+				map: map,
+				position: location.montreal,
+				title: 'Montreal'
+			});
+    };
+
+>>>>>>> 93ac5c6243f8130d66bd985cfcc4ee6f8c78bfd6
 		document.body.appendChild(scriptEl);
 	}
 })();

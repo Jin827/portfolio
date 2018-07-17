@@ -9,6 +9,10 @@ if( 'function' === typeof importScripts) {
 					console.log('Opened cache');
 					return cache.addAll([
 						'/',
+<<<<<<< HEAD
+=======
+						//'/server/views/index.html',
+>>>>>>> 93ac5c6243f8130d66bd985cfcc4ee6f8c78bfd6
 						'/resources/css/style.css',
 						'/resources/css/queries.css',
 						'/resources/js/app.js',
