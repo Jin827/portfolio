@@ -23,8 +23,8 @@
 
 	/* --- Sticky Nav --- */
 	const navbar = document.getElementById('nav-container');
-	const mapEl = document.querySelector('main--1');
 	const aboutSection = document.getElementById('about');
+	const mapEl = document.getElementById('map');
 	const aboutPosition = aboutSection.offsetTop;
 	const mapPosition = mapEl.offsetTop;
 	let googleMapsWasLoaded = false;
@@ -225,7 +225,6 @@
 				center: location.montreal,
 				zoom: 11.5
 			});
-<<<<<<< HEAD
 
 			new google.maps.Marker({
 				map: map,
@@ -234,16 +233,6 @@
 			});
 		};
 
-=======
-
-			new google.maps.Marker({
-				map: map,
-				position: location.montreal,
-				title: 'Montreal'
-			});
-    };
-
->>>>>>> 93ac5c6243f8130d66bd985cfcc4ee6f8c78bfd6
 		document.body.appendChild(scriptEl);
 	}
 })();

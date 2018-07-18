@@ -1,41 +1,37 @@
 
-if( 'function' === typeof importScripts) {
-	importScripts('/vendors/js/cache-polyfill.js');
+// if( 'function' === typeof importScripts) {
+// 	importScripts('/vendors/js/cache-polyfill.js');
 
-	self.addEventListener('install', (e) => {
-		e.waitUntil(
-			caches.open('my-site-cache-v1')
-				.then((cache) => {
-					console.log('Opened cache');
-					return cache.addAll([
-						'/',
-<<<<<<< HEAD
-=======
-						//'/server/views/index.html',
->>>>>>> 93ac5c6243f8130d66bd985cfcc4ee6f8c78bfd6
-						'/resources/css/style.css',
-						'/resources/css/queries.css',
-						'/resources/js/app.js',
-					]);
-				}, err => console.error(err))
-		);
-	});
-}
+// 	self.addEventListener('install', (e) => {
+// 		e.waitUntil(
+// 			caches.open('my-site-cache-v1')
+// 				.then((cache) => {
+// 					console.log('Opened cache');
+// 					return cache.addAll([
+// 						'/',
+// 						'/resources/css/style.css',
+// 						'/resources/css/queries.css',
+// 						'/resources/js/app.js',
+// 					]);
+// 				}, err => console.error(err))
+// 		);
+// 	});
+// }
 
-self.addEventListener('fetch', (e) => {
-	console.log(`eventRequestUrl: ${e.request.url}`);
-	e.respondWith(
-		caches.match(e.request)
-			.then((response) => {
-				// Cache hit - return response
-				if (response) {
-					return response;
-				}
-				return fetch(e.request);
-			}
-			)
-	);
-});
+// self.addEventListener('fetch', (e) => {
+// 	// console.log(`eventRequestUrl: ${e.request.url}`);
+// 	e.respondWith(
+// 		caches.match(e.request)
+// 			.then((response) => {
+// 				// Cache hit - return response
+// 				if (response) {
+// 					return response;
+// 				}
+// 				return fetch(e.request);
+// 			}
+// 			)
+// 	);
+// });
 
 // self.addEventListener('activate', (e) => {
 
