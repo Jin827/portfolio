@@ -593,6 +593,18 @@ z-index: 1000;
   height: auto;
 }
 
+/* lazyload, show the images while they load, Prevents img without src to appear */
+.image--web:not([src]) {
+  visibility: hidden;
+}
+
+/* Fixes Firefox anomaly during image load */
+@-moz-document url-prefix() {
+  .image--web:-moz-loading {
+    visibility: hidden;
+  }
+}
+
 /* --- Contents --- */
 
 .main-portfolio--contents {

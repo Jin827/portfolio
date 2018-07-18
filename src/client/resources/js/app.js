@@ -1,53 +1,5 @@
 (function () {
 
-	const navIcon = document.querySelector('#js--nav-icon');
-	const navTriangle = document.querySelector('.main-nav--box--triangle-shape');
-	const mainNav = document.querySelector('.main-nav');
-
-	const navOpen = 'resources/assets/svg/icon/nav-open.svg';
-	const navClose = 'resources/assets/svg/icon/nav-close.svg';
-	/* --- Nav Icon & Toggle box --- */
-	navIcon.addEventListener('click', function (e) {
-		e.preventDefault();
-
-		if (!mainNav.classList.contains('open')) {
-			navTriangle.classList.add('open');
-			mainNav.classList.add('open');
-			this.src = navClose;
-		} else {
-			navTriangle.classList.remove('open');
-			mainNav.classList.remove('open');
-			this.src = navOpen;
-		}
-	}, false);
-
-	/* --- Sticky Nav --- */
-	const navbar = document.getElementById('nav-container');
-	const aboutSection = document.getElementById('about');
-	const mapEl = document.getElementById('map');
-	const aboutPosition = aboutSection.offsetTop;
-	const mapPosition = mapEl.offsetTop;
-	let googleMapsWasLoaded = false;
-
-	function checkScrollPosition () {
-		getStickyNav();
-		if (!googleMapsWasLoaded && (window.pageYOffset > mapPosition)) {
-			loadGoogleMaps();
-			googleMapsWasLoaded = true;
-		}
-	}
-
-	window.onscroll = checkScrollPosition;
-	checkScrollPosition();
-
-	function getStickyNav() {
-		if (window.pageYOffset > aboutPosition) {
-			navbar.classList.add('sticky');
-		} else {
-			navbar.classList.remove('sticky');
-		}
-	}
-
 	/* --- Header Typewriting Animation --- */
 	const TxtType = function (el, toRotate, period) {
 		this.toRotate = toRotate;
@@ -109,6 +61,102 @@
 		css.innerHTML = '.typewrite > .wrap { border-right: 0.04em solid #fff; }';
 		document.body.appendChild(css);
 	};
+
+	/* --- Nav Icon & Toggle box --- */
+	const navIcon = document.querySelector('#js--nav-icon');
+	const navTriangle = document.querySelector('.main-nav--box--triangle-shape');
+	const mainNav = document.querySelector('.main-nav');
+
+	const navOpen = 'resources/assets/svg/icon/nav-open.svg';
+	const navClose = 'resources/assets/svg/icon/nav-close.svg';
+
+	navIcon.addEventListener('click', function (e) {
+		e.preventDefault();
+
+		if (!mainNav.classList.contains('open')) {
+			navTriangle.classList.add('open');
+			mainNav.classList.add('open');
+			this.src = navClose;
+		} else {
+			navTriangle.classList.remove('open');
+			mainNav.classList.remove('open');
+			this.src = navOpen;
+		}
+	}, false);
+
+	/* --- Scroll Events --- */
+	const navbar = document.getElementById('nav-container');
+	const aboutSection = document.getElementById('about');
+	const mapEl = document.getElementById('map');
+	const aboutPosition = aboutSection.offsetTop;
+	const mapPosition = mapEl.offsetTop;
+	let imagesWasLoaded = false;
+	let googleMapsWasLoaded = false;
+
+	function checkScrollPosition () {
+		getStickyNav();
+
+		if (!googleMapsWasLoaded && (window.pageYOffset > mapPosition)) {
+			loadGoogleMaps();
+			googleMapsWasLoaded = true;
+		}
+
+		if (!imagesWasLoaded && (window.pageYOffset > aboutPosition)) {
+			lazyLoadImages();
+			imagesWasLoaded = true;
+		}
+	}
+
+	window.onscroll = checkScrollPosition;
+	checkScrollPosition();
+
+	/* Sticky Nav */
+	function getStickyNav() {
+		if (window.pageYOffset > aboutPosition) {
+			navbar.classList.add('sticky');
+		} else {
+			navbar.classList.remove('sticky');
+		}
+	}
+
+	/* Lazyload Images */
+	function lazyLoadImages() {
+		const b = document.getElementsByTagName('body')[0];
+		const s = document.createElement('script'); s.async = true;
+		const v = !('IntersectionObserver' in window) ? '8.8.0' : '10.9.0';
+		s.src = 'https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/' + v + '/lazyload.min.js';
+		window.lazyLoadOptions = {}; // Your options here. See "recipes" for more information about async.
+		b.appendChild(s);
+	}
+
+	/* --- Map --- */
+	function loadGoogleMaps () {
+		const scriptEl = document.createElement('script');
+		scriptEl.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCwoUun1nhHQnZljKQmp4nEZP6-uw4L6xM';
+
+		scriptEl.onload = function () {
+			const googleMap = document.getElementById('map');
+			const location = {
+				montreal: {
+					lat: 45.5081804,
+					lng: -73.57
+				}
+			};
+
+			const map = new google.maps.Map(googleMap, {
+				center: location.montreal,
+				zoom: 11.5
+			});
+
+			new google.maps.Marker({
+				map: map,
+				position: location.montreal,
+				title: 'Montreal'
+			});
+		};
+
+		document.body.appendChild(scriptEl);
+	}
 
 	/* --- Media icons hover effect --- */
 	const linkedin = document.querySelector('.icon-media--linkedin');
@@ -206,33 +254,9 @@
 			xhr.send(data);
 		});
 	}
-
-	/* --- Map --- */
-	function loadGoogleMaps () {
-		var scriptEl = document.createElement('script');
-		scriptEl.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCwoUun1nhHQnZljKQmp4nEZP6-uw4L6xM';
-
-		scriptEl.onload = function () {
-			const googleMap = document.getElementById('map');
-			const location = {
-				montreal: {
-					lat: 45.5081804,
-					lng: -73.57
-				}
-			};
-
-			const map = new google.maps.Map(googleMap, {
-				center: location.montreal,
-				zoom: 11.5
-			});
-
-			new google.maps.Marker({
-				map: map,
-				position: location.montreal,
-				title: 'Montreal'
-			});
-		};
-
-		document.body.appendChild(scriptEl);
-	}
 })();
+
+
+
+
+
