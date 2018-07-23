@@ -11,17 +11,24 @@ const transporter = nodemailer.createTransport({
 module.exports = {
 
 	sendEmail: (data) => {
-		const {
+    const {
 			name,
-			email,
-			subject,
-			message
+			email
 		} = data;
 		const mailOptions = {
-			from: 'Client via Portfolio <contact.portfolio@gmail.com>',
-			to: process.env.MY_EMAIL,
-			subject: subject,
-			html: `<p>Name: ${name} <br/> Contact: ${email}<br/><br/>${message}</p>`,
+			from: 'Jiah Lee <donotreply@gmail.com>',
+			to: `${name} <${email}>`,
+			subject: 'Auto reply message from Jiah Lee',
+			html: `
+                <p>
+                    Hello ${name},<br/><br/>
+                    Thank you for getting in touch.<br/>
+                    I will reply to you as soon as possible.<br/>
+                    Thank you.<br/><br/>
+                    Best,<br/><br/>
+                    Jiah Lee
+                </p>
+            `
 		};
 
 		return new Promise((resolve, reject) => {
@@ -42,24 +49,18 @@ module.exports = {
 	},
 
 	replyEmail: (data) => {
-		const {
+
+    const {
 			name,
-			email
+			email,
+			subject,
+			message
 		} = data;
 		const mailOptions = {
-			from: 'Jiah Lee <donotreply@gmail.com>',
-			to: `${name} <${email}>`,
-			subject: 'Auto reply message from Jiah Lee',
-			html: `
-                <p>
-                    Hello ${name},<br/><br/>
-                    Thank you for getting in touch.<br/>
-                    I will reply to you as soon as possible.<br/>
-                    Thank you.<br/><br/>
-                    Best,<br/><br/>
-                    Jiah Lee
-                </p>
-            `
+			from: 'Client via Portfolio <contact.portfolio@gmail.com>',
+			to: process.env.MY_EMAIL,
+			subject: subject,
+			html: `<p>Name: ${name} <br/> Contact: ${email}<br/><br/>${message}</p>`,
 		};
 
 		return new Promise((resolve, reject) => {
