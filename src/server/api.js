@@ -11,12 +11,12 @@ const transporter = nodemailer.createTransport({
 module.exports = {
 
 	sendEmail: (data) => {
-    const {
+		const {
 			name,
 			email
 		} = data;
 		const mailOptions = {
-			from: 'Jiah Lee <donotreply@gmail.com>',
+			from: `Jiah Lee <${process.env.GOOGLE_EMAIL}>`,
 			to: `${name} <${email}>`,
 			subject: 'Auto reply message from Jiah Lee',
 			html: `
@@ -50,14 +50,14 @@ module.exports = {
 
 	replyEmail: (data) => {
 
-    const {
+		const {
 			name,
 			email,
 			subject,
 			message
 		} = data;
 		const mailOptions = {
-			from: 'Client via Portfolio <contact.portfolio@gmail.com>',
+			from: `Client via Portfolio <${process.env.GOOGLE_EMAIL}>`,
 			to: process.env.MY_EMAIL,
 			subject: subject,
 			html: `<p>Name: ${name} <br/> Contact: ${email}<br/><br/>${message}</p>`,
