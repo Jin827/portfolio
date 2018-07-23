@@ -35,17 +35,17 @@ module.exports = {
 
 			transporter.verify(function (error, success) {
 				if (error) {
-					console.log(error);
+					console.error(`Nodemail verification error: ${error}`);
 				} else {
 					return transporter.sendMail(mailOptions, function (error, info) {
 						error ?
-							console.error(`Unable to send the email: ${error}`) :
-							console.log(`Email sent: ${info.response}`);
+							console.error(`Unable to send the email to the client: ${error}`) :
+							console.log(`Email's sent to the client: ${info.response}`);
 					});
 				}
 			});
 		})
-			.catch(err => console.error(`sendEmail func err : ${err}`));
+			.catch(err => console.error(`sendEmail function error : ${err}`));
 	},
 
 	replyEmail: (data) => {
@@ -66,10 +66,10 @@ module.exports = {
 		return new Promise((resolve, reject) => {
 			return transporter.sendMail(mailOptions, function (error, info) {
 				error ?
-					console.error(`Unable to send the email: ${error}`) :
-					console.log(`Email sent: ${info.response}`);
+					console.error(`Unable to send the email to Jiah Lee: ${error}`) :
+					console.log(`Email's sent back to Jiah Lee: ${info.response}`);
 			});
 		})
-			.catch(err => console.error(`replyEmail func err : ${err}`));
+			.catch(err => console.error(`replyEmail function error : ${err}`));
 	}
 };

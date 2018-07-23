@@ -587,15 +587,15 @@
     <script src="http://localhost:35729/livereload.js" async></script>
     <script src="/vendors/js/cache-polyfill.js" defer></script>
     <script>
-      if ('serviceWorker' in navigator) {
-          window.addEventListener('load', function() {
-            navigator.serviceWorker
-                .register('./sw.js')
-                .then(function () { console.log("Service Worker Registered"); });
-        }, function(err) {
-          console.log(`Service Worker registration failed: ${err}`)
-        })
-      }
+      // if ('serviceWorker' in navigator) {
+      //     window.addEventListener('load', function() {
+      //       navigator.serviceWorker
+      //           .register('./sw.js')
+      //           .then(function () { console.log("Service Worker Registered"); });
+      //   }, function(err) {
+      //     console.log(`Service Worker registration failed: ${err}`)
+      //   })
+      // }
     </script>
 </body>
 

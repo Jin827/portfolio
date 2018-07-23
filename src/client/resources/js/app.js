@@ -226,9 +226,11 @@
 			subject: form.subject.value,
 			message: form.message.value
 		};
-		xhrPostRequest(formContents);
-		form.innerHTML = `<P class="contact-message">Hello ${form.name.value}, <br/>Your message has been sent.<br/> Thank you &#128420;</P>`;
-		form.reset();
+
+		xhrPostRequest(formContents)
+			.then(form.innerHTML = `<P class="contact-message">Hello ${form.name.value}, <br/>Your message has been sent.<br/> Thank you &#128420;</P>`)
+			.then(form.reset())
+			.catch(err => console.error(`Node Mailer request failed: ${err}`));
 	};
 
 	function xhrPostRequest(formContents) {
