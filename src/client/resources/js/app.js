@@ -228,7 +228,9 @@
 		};
 
 		xhrPostRequest(formContents)
-			.then(form.innerHTML = `<P class="contact-message">Hello ${form.name.value}, <br/>Your message has been sent.<br/> Thank you &#128420;</P>`)
+      .then(res =>
+        {console.log('res: ', res);
+        return form.innerHTML = `<P class="contact-message">Hello ${form.name.value}, <br/>Your message has been sent.<br/> Thank you &#128420;</P>`})
 			.then(form.reset())
 			.catch(err => console.error(`SendGrid API request failed: ${err}`));
 	};
