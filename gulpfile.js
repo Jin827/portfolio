@@ -3,6 +3,7 @@ const gulp = require('gulp');
 const htmlmin = require('gulp-htmlmin');
 const csso = require('gulp-csso');
 const uglify = require('gulp-uglify');
+const stripDebug = require('gulp-strip-debug');
 const imagemin = require('gulp-imagemin');
 const imageminJpegRecompress = require('imagemin-jpeg-recompress');
 const imageminPngquant = require('imagemin-pngquant');
@@ -150,6 +151,7 @@ gulp.task('javascript', cb => {
 			gulp.src(paths.devJS),
 			sourcemaps.init(),
 			babel({ presets: ['env'] }),
+			stripDebug(),
 			uglify(),
 			sourcemaps.write('./maps'),
 			gulp.dest(paths.distJS)
@@ -164,6 +166,7 @@ gulp.task('serverJs', cb => {
 			gulp.src(paths.devServerjs),
 			sourcemaps.init(),
 			babel({ presets: ['env'] }),
+			stripDebug(),
 			uglify(),
 			sourcemaps.write('./maps'),
 			gulp.dest(paths.distServerjs)
