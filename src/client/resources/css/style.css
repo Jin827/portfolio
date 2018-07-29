@@ -12,7 +12,7 @@
 }
 
 body {
-  font-size: 16px;
+  font-size: 15px;
   font-family: 'Quicksand', sans-serif;
   font-weight: 400;
   text-rendering: optimizeLegibility;
@@ -69,7 +69,7 @@ section {
 /* --- Heading --- */
 
 h1 {
-  font-size: 3.6em;
+  font-size: 3em;
   line-height: 1.5em;
   letter-spacing: 5px;
   color: white;
@@ -82,7 +82,7 @@ h1 {
 }
 
 .h2 {
-  font-size: 1.6em;
+  font-size: 1.5em;
   font-weight: 300;
   width: 100vw;
   letter-spacing: 3px;
@@ -91,7 +91,7 @@ h1 {
 }
 
 h3 {
-  font-size: 2.3em;
+  font-size: 2em;
   font-weight: 300;
   letter-spacing: 1.4px;
   text-transform: uppercase;
@@ -102,7 +102,7 @@ h3 {
 h4 {
   color: var(--main-blue);
   margin-top: 20px;
-  font-size: 1.5em;
+  font-size: 1.3em;
   text-align: center;
 }
 
@@ -385,7 +385,7 @@ z-index: 1000;
 
 .headline {
   padding-top: 40px;
-  font-size: 1.3em;
+  font-size: 1.15em;
 }
 
 .offer--contents {
@@ -460,7 +460,7 @@ z-index: 1000;
 
 .skill--contents h4 {
   text-align: center;
-  margin-top: 60px;
+  margin-top: 30px;
   margin-bottom: 25px;
   color: var(--main-blue);
   font-size: 2em;
@@ -479,7 +479,7 @@ z-index: 1000;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
 }
 
 .skills--logo:last-child {
@@ -514,9 +514,9 @@ z-index: 1000;
 }
 
 .icon-logo--nodejs {
-  margin-top: -10px;
+  margin-left: -5px;
   width: 55px;
-  height: 60px;
+  height: 45px;
 }
 
 .icon-logo--html {
@@ -806,12 +806,16 @@ z-index: 1000;
   text-align: center;
 }
 
-.static-btn {
+.static-btn,
+.malito {
   border: 1px solid var(--main-blue);
   border-radius: 5px;
   background-color: var(--main-blue);
-  cursor: pointer;
   color: #fff;
+}
+
+.static-btn {
+  cursor: pointer;
 }
 
 .static-btn:hover {

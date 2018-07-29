@@ -33,7 +33,7 @@ module.exports = {
 			name,
 			email
 		} = data;
-
+console.log('EMAIL',email);
 		const mailOptions = {
 			to: email,
 			from: 'noreply@jiahlee.webdeveloper',
