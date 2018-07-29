@@ -558,7 +558,7 @@ z-index: 1000;
 .section-portfolio {
   text-align: center;
   padding-bottom: 0;
-  padding-top: 120px;
+  padding-top: 60px;
 }
 
 .main-portfolio.reverse {
@@ -583,7 +583,7 @@ z-index: 1000;
 }
 
 .portpolio-box {
-  padding: 4em 0;
+  padding: 2.5em 0;
   position: relative;
   max-height: 950px;
 }
@@ -615,7 +615,7 @@ z-index: 1000;
   border-top: 1px solid var(--main-blue);
   border-bottom: 1px solid var(--main-blue);
   padding: 2em 0;
-  margin: 60px auto 0 auto;
+  margin: 30px auto 0 auto;
 }
 
 .main-portfolio--title p {
@@ -777,8 +777,7 @@ z-index: 1000;
 }
 
 .section-contact h3 {
-  margin-top: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 35px;
 }
 
 .mail-circle {
@@ -795,7 +794,7 @@ z-index: 1000;
 }
 
 #map {
-  height: 400px;
+  height: 250px;
   border-radius: 12px;
   border-left: 3px solid #333;
   border-right: 3px solid #333;
@@ -829,8 +828,7 @@ z-index: 1000;
   display: inline-block;
   text-decoration: none;
   margin-top: 40px;
-  padding: 12px 36px;
-  height: 45px;
+  padding: 10px 30px;
   text-align: right;
   border-radius: 20px;
 }
@@ -842,7 +840,7 @@ z-index: 1000;
 }
 
 .contact-memo {
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: 400;
   text-align: center;
   color: var(--main-blue);
@@ -864,19 +862,16 @@ z-index: 1000;
   border-radius: 5px;
   border: .8px solid;
   padding: 7px 0 7px 14px;
-}
-
-input {
-  height: 45px;
+  height: 40px;
 }
 
 textarea {
-  height: 370px !important;
+  height: 300px !important;
 }
 
 .btn--submit {
   border-radius: 20px;
-  padding: 7px 37px;
+  padding: 8px 30px;
   margin-top: 8px;
 }
 
