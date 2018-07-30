@@ -253,6 +253,7 @@
 				reject(Error('Network Error'));
 			};
 			xhr.setRequestHeader('Content-type', 'application/json');
+			xhr.setRequestHeader('Access-Control-Allow-Headers', '*');
 			xhr.send(data);
 		});
 	}
