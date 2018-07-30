@@ -5,12 +5,14 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
 const app = express();
 
 const port = process.env.PORT || 8080;
 
 const myApi = require('./api.js');
 
+app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({
 	extended: true
