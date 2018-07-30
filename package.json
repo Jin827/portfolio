@@ -4,9 +4,7 @@
   "description": "Jiah Lee Protfolio",
   "main": "index.js",
   "scripts": {
-    "prestart": "npm run build",
     "start": "node production/server/index",
-    "startp": "pm2-runtime start ecosystem.config.js --env production",
     "dev": "NODE_ENV=development PORT=9003 nodemon --watch src/server src/server & gulp watch",
     "build": "gulp"
   },
