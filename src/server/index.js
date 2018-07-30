@@ -43,7 +43,7 @@ app.use(function (req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') !== 'production') {
-	app.use(function (err, req, res, next) {
+	app.use(function (err, req, res) {
 		res.status(err.status || 500);
 		res.json({
 			message: err.message,
@@ -53,7 +53,7 @@ if (app.get('env') !== 'production') {
 } else {
 	// production error handler
 	// no stacktraces leaked to user
-	app.use(function (err, req, res, next) {
+	app.use(function (err, req, res) {
 		res.status(err.status || 500);
 		res.json({
 			message: err.message,
@@ -61,18 +61,6 @@ if (app.get('env') !== 'production') {
 		});
 	});
 }
-
-// if (process.env.NODE_ENV === "production") {
-// 	app.use((req, res, next) => {
-// 		if (!/https/.test(req.protocol)) {
-// 			// request was via https, so do no special handling
-// 			next();
-// 		} else {
-// 			// request was via http, so redirect to https
-// 			res.redirect('https://' + req.headers.host + req.url);
-// 		}
-// 	});
-// }
 
 app.listen(port, () => {
 	console.log(`Server is up on port ${port}!`);
