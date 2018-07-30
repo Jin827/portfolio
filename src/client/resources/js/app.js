@@ -232,7 +232,7 @@
 			.then(form.reset())
 			.catch(err => {
 				console.error(`SendGrid API request failed: ${err}`);
-				form.innerHTML = `<P class="contact-message">Hello ${form.name.value}, <br/>I am sorry. The email was NOT sent. Please contact via linkedin.<br/> Linkedin: https://www.linkedin.com/in/jiah827/<br/>Thank you &#128420;</P>`;
+				form.innerHTML = '<P class="contact-message">I am sorry. The email was NOT sent. Please contact via linkedin.<br/> Linkedin: https://www.linkedin.com/in/jiah827/<br/>Thank you &#128420;</P>';
 			});
 
 	};
@@ -245,7 +245,7 @@
 
 			const xhr = new XMLHttpRequest();
 
-			xhr.open('POST', '/api/contact', true);
+			xhr.open('POST', 'https://jiah-lee.herokuapp.com/api/contact', true);
 			xhr.onload = function () {
 				if (this.status >= 200 && this.status < 300) {
 					resolve(xhr.response);

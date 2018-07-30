@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const app = express();
 
 const port = process.env.PORT || 8080;
@@ -19,15 +20,22 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-// app.use('/vendors', express.static(`${process.cwd()}/vendors`));
-// app.use('/resources', express.static(path.join(__dirname, '../', 'client/resources')));
-// app.use(express.static(`${process.cwd()}/static`));
-// app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/views/index.html')));
+if (process.env.NODE_ENV !== 'production') {
+	app.use('/vendors', express.static(`${process.cwd()}/vendors`));
+	app.use('/resources', express.static(path.join(__dirname, '../', 'client/resources')));
+	app.use(express.static(`${process.cwd()}/static`));
+}
+
 app.get('/', (req, res) => {
-	res.redirect('https://jin827.github.io');
+	if (app.get('env') !== 'production') {
+		res.sendFile(path.join(__dirname, '/views/index.html'));
+	} else {
+		// Not to reach Heroku limit
+		res.redirect('https://jin827.github.io');
+	}
 });
 
-app.post('https://jin827.github.io/api/contact', (req, res) => {
+app.post('/api/contact', (req, res) => {
 	return myApi.sendEmail(req.body)
 		.then(() => {
 			myApi.replyEmail(req.body).then(() => {
@@ -73,6 +81,5 @@ if (app.get('env') !== 'production') {
 app.listen(port, () => {
 	console.log(`Server is up on port ${port}!`);
 });
-console.log(`NODE_ENV : ${process.env.NODE_ENV} mode`);
 
 
