@@ -19,6 +19,12 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(cookieParser());
 
+app.use(function(req, res, next) {
+	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+	next();
+});
+
 // app.use('/vendors', express.static(`${process.cwd()}/vendors`));
 // app.use('/resources', express.static(path.join(__dirname, '../', 'client/resources')));
 // app.use(express.static(`${process.cwd()}/static`));
