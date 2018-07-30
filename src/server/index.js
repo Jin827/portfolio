@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 	res.redirect('https://jin827.github.io');
 });
 
-app.post('/api/contact', (req, res) => {
+app.post('https://jin827.github.io/api/contact', (req, res) => {
 	return myApi.sendEmail(req.body)
 		.then(() => {
 			myApi.replyEmail(req.body).then(() => {
