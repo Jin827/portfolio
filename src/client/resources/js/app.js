@@ -225,7 +225,7 @@
 			email: form.email.value,
 			subject: form.subject.value,
 			message: form.message.value
-		};
+    };
 
 		xhrPostRequest(formContents)
 			.then(form.innerHTML = `<P class="contact-message">Hello ${form.name.value}, <br/>Your message has been sent.<br/> Thank you &#128420;</P>`)
