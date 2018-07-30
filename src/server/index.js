@@ -20,19 +20,19 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-if (process.env.NODE_ENV !== 'production') {
-	app.use('/vendors', express.static(`${process.cwd()}/vendors`));
-	app.use('/resources', express.static(path.join(__dirname, '../', 'client/resources')));
-	app.use(express.static(`${process.cwd()}/static`));
-}
+// if (process.env.NODE_ENV !== 'production') {
+// 	app.use('/vendors', express.static(`${process.cwd()}/vendors`));
+// 	app.use('/resources', express.static(path.join(__dirname, '../', 'client/resources')));
+// 	app.use(express.static(`${process.cwd()}/static`));
+// }
 
 app.get('/', (req, res) => {
-	if (app.get('env') !== 'production') {
-		res.sendFile(path.join(__dirname, '/views/index.html'));
-	} else {
-		// Not to reach Heroku limit
-		res.redirect('https://jin827.github.io');
-	}
+	// if (app.get('env') !== 'production') {
+	// 	res.sendFile(path.join(__dirname, '/views/index.html'));
+	// } else {
+	// Not to reach Heroku limit
+	res.redirect('https://jin827.github.io');
+	// }
 });
 
 app.post('/api/contact', (req, res) => {
