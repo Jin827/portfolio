@@ -225,12 +225,16 @@
 			email: form.email.value,
 			subject: form.subject.value,
 			message: form.message.value
-    };
+		};
 
 		xhrPostRequest(formContents)
 			.then(form.innerHTML = `<P class="contact-message">Hello ${form.name.value}, <br/>Your message has been sent.<br/> Thank you &#128420;</P>`)
 			.then(form.reset())
-			.catch(err => console.error(`SendGrid API request failed: ${err}`));
+			.catch(err => {
+				console.error(`SendGrid API request failed: ${err}`);
+				form.innerHTML = `<P class="contact-message">Hello ${form.name.value}, <br/>Your message has NOT been sent.<br/> Thank you &#128420;</P>`;
+			});
+
 	};
 
 	function xhrPostRequest(formContents) {
