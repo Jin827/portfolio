@@ -241,7 +241,7 @@
 
 			const xhr = new XMLHttpRequest();
 
-			xhr.open('POST', '/', true);
+			xhr.open('POST', 'https://jiah-lee.herokuapp.com/api/contact', true);
 			xhr.onload = function () {
 				if (this.status >= 200 && this.status < 300) {
 					resolve(xhr.response);
