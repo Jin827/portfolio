@@ -237,25 +237,56 @@
 
 	};
 
+	function createCORSRequest(method, url) {
+		let xhr = new XMLHttpRequest();
+		if ('withCredentials' in xhr) {
+			// XHR for Chrome/Firefox/Opera/Safari.
+			xhr.open(method, url, true);
+		} else if (typeof XDomainRequest != 'undefined') {
+			// XDomainRequest for IE.
+			xhr = new XDomainRequest();
+			xhr.open(method, url);
+		} else {
+			// CORS not supported.
+			xhr = null;
+		}
+		return xhr;
+	}
+
+	// Helper method to parse the title tag from the response.
+	function getTitle(text) {
+		return text.match('<title>(.*)?</title>')[1];
+	}
+
 	function xhrPostRequest(formContents) {
 
 		const data = JSON.stringify(formContents);
 
 		return new Promise((resolve, reject) => {
 
-			const xhr = new XMLHttpRequest();
+			const url = 'https://jiah-lee.herokuapp.com/api/contact';
+			const xhr = createCORSRequest('POST', url);
+			if (!xhr) {
+				alert('CORS not supported');
+				return;
+			}
 
-			xhr.open('POST', 'https://jiah-lee.herokuapp.com/api/contact', true);
 			xhr.onload = function () {
 				if (this.status >= 200 && this.status < 300) {
 					resolve(xhr.response);
 				} else {
 					reject(Error(xhr.statusText));
 				}
+
+				const text = xhr.responseText;
+				const title = getTitle(text);
+				alert('Response from CORS request to ' + url + ': ' + title);
 			};
 			xhr.onerror = function () {
 				reject(Error('Network Error'));
+				alert('Woops, there was an error making the request.');
 			};
+			xhr.setRequestHeader('X-Custom-Header', 'value');
 			xhr.setRequestHeader('Content-type', 'application/json');
 			xhr.setRequestHeader('Access-Control-Allow-Headers', '*');
 			xhr.send(data);
