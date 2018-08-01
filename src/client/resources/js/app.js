@@ -263,9 +263,10 @@
 		const data = JSON.stringify(formContents);
 
 		return new Promise((resolve, reject) => {
-
+      const proxyurl = "https://cors-anywhere.herokuapp.com/";
 			const url = 'https://jiah-lee.herokuapp.com/api/contact';
-			const xhr = createCORSRequest('POST', url);
+      const xhr = createCORSRequest('POST', proxyurl + url);
+      console.log('proxyurl + url: ', proxyurl + url);
 			if (!xhr) {
 				alert('CORS not supported');
 				return;
@@ -288,7 +289,6 @@
 			};
 			xhr.setRequestHeader('X-Custom-Header', 'value');
 			xhr.setRequestHeader('Content-type', 'application/json');
-			xhr.setRequestHeader('Access-Control-Allow-Headers', '*');
 			xhr.send(data);
 		});
 	}
