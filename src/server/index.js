@@ -16,11 +16,14 @@ const corsOptions = {
 	optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
-app.use(cors(corsOptions));
+// I will comment this out
+// app.use(cors(corsOptions));
 app.use(logger('dev'));
+
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
+
 app.use(bodyParser.json());
 app.use(cookieParser());
 
@@ -88,3 +91,4 @@ app.listen(port, () => {
 });
 console.log(`NODE_ENV : ${process.env.NODE_ENV} mode`);
 
+/* Welcome to FireEdit! */
