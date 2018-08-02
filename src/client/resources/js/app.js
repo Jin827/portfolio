@@ -226,13 +226,14 @@
 			subject: form.subject.value,
 			message: form.message.value
 		};
-
+		const linkedin = 'https://www.linkedin.com/in/jiah827/';
 		xhrPostRequest(formContents)
 			.then(form.innerHTML = `<P class="contact-message">Hello ${form.name.value}, <br/>Your message has been sent.<br/> Thank you &#128420;</P>`)
 			.then(form.reset())
 			.catch(err => {
 				console.error(`SendGrid API request failed: ${err}`);
-				form.innerHTML = '<P class="contact-message">I am sorry.<br/>Your message has NOT been sent.<br/> Please contact me via <a herf="https://www.linkedin.com/in/jiah827/" target="_blank" rel="noopener">Linkedin</a>.<br/>Thank you &#128420;</P>';
+				form.innerHTML = `<P class="contact-message">I am sorry.<br/>Your message has NOT been sent.<br/> Please contact me via <a herf=
+          "${linkedin}" target="_blank" rel="noopener">Linkedin</a>.<br/>Thank you &#128420;</P>`;
 			});
 
 	};
@@ -245,7 +246,7 @@
 		} else if (typeof XDomainRequest != 'undefined') {
 			// XDomainRequest for IE.
 			xhr = new XDomainRequest();
-			xhr.open(method, url, true);
+			xhr.open(method, url);
 		} else {
 			// CORS not supported.
 			xhr = null;
