@@ -263,9 +263,9 @@
 		const data = JSON.stringify(formContents);
 
 		return new Promise((resolve, reject) => {
-      const proxyurl = "https://cors-anywhere.herokuapp.com/";
+      // const proxyurl = "https://cors-anywhere.herokuapp.com/";
 			const url = 'https://jiah-lee.herokuapp.com/api/contact';
-      const xhr = createCORSRequest('POST', proxyurl + url);
+      const xhr = createCORSRequest('POST', url);
       console.log('proxyurl + url: ', proxyurl + url);
 			if (!xhr) {
 				alert('CORS not supported');
