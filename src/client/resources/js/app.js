@@ -158,6 +158,7 @@
 				title: 'Montreal'
 			});
 		};
+
 		document.body.appendChild(scriptEl);
 	}
 
