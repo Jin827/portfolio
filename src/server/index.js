@@ -44,11 +44,8 @@ app.get('/', (req, res) => {
 app.post('/api/contact', (req, res) => {
 	return myApi.sendEmail(req.body)
 		.then(() => myApi.replyEmail(req.body))
-		.then(() => res.send('Email Sent Successfully!'))
-		.catch(err => {
-			res.status(500).send('Email not sent!');
-			console.log(err);
-		});
+		.then(() => res.status(201).send('Email Sent Successfully!'))
+		.catch(err => res.status(400).json(err));
 });
 
 // function sendMessage (req, res, next) {
