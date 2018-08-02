@@ -12,7 +12,7 @@ const port = process.env.PORT || 8080;
 const myApi = require('./api.js');
 
 const corsOptions = {
-	origin: true,
+	origin: 'https://jin827.github.io',
 	optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
