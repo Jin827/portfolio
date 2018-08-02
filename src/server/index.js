@@ -29,7 +29,8 @@ app.use((req, res, next) => {
 	res.header('Access-Control-Allow-Methods', 'GET, OPTIONS, PATCH, POST, DELETE');
 	res.header('Access-Control-Allow-Credentials', true);
 	res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-	next();
+	// next();
+	res.end();
 });
 
 // app.use('/vendors', express.static(`${process.cwd()}/vendors`));
@@ -42,16 +43,23 @@ app.get('/', (req, res) => {
 
 app.post('/api/contact', (req, res) => {
 	return myApi.sendEmail(req.body)
-		.then(() => {
-			myApi.replyEmail(req.body).then(() => {
-				res.send('Email Sent Successfully!');
-			});
-		})
+		.then(() => myApi.replyEmail(req.body))
+		.then(() => res.send('Email Sent Successfully!'))
 		.catch(err => {
 			res.status(500).send('Email not sent!');
 			console.log(err);
 		});
 });
+
+// function sendMessage (req, res, next) {
+// 	myApi.sendEmail(req.body);
+// 	return next();
+// }
+
+// function sendAutoReply (req, res, next) {
+// 	myApi.replyEmail(req.body);
+// 	return next();
+// }
 
 // error handlers
 // catch 404 and forward to error handler
