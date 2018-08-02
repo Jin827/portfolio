@@ -245,7 +245,7 @@
 		} else if (typeof XDomainRequest != 'undefined') {
 			// XDomainRequest for IE.
 			xhr = new XDomainRequest();
-			xhr.open(method, url);
+			xhr.open(method, url, true);
 		} else {
 			// CORS not supported.
 			xhr = null;
@@ -266,7 +266,7 @@
 			// const proxyurl = "https://cors-anywhere.herokuapp.com/";
 			const url = 'https://jiah-lee.herokuapp.com/api/contact';
 			const xhr = createCORSRequest('POST', url);
-			console.log('proxyurl + url: ', proxyurl + url);
+
 			if (!xhr) {
 				alert('CORS not supported');
 				return;
