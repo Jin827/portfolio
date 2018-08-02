@@ -41,22 +41,33 @@ app.get('/', (req, res) => {
 	res.redirect('https://jin827.github.io');
 });
 
-app.post('/api/contact', (req, res) => {
-	return myApi.sendEmail(req.body)
-		.then(() => myApi.replyEmail(req.body))
-		.then(() => res.status(201).send('Email Sent Successfully!'))
-		.catch(err => res.status(400).json(err));
-});
+app.post('/api/contact', sendMessage, sendAutoReply);
+// (req, res) => {
+	// return myApi.sendEmail(req.body)
+	// 	.then(() => myApi.replyEmail(req.body))
+	// 	.then(() => res.status(201).send('Email Sent Successfully!'))
+	// 	.catch(err => res.status(400).json(err));
+// });
 
-// function sendMessage (req, res, next) {
-// 	myApi.sendEmail(req.body);
-// 	return next();
-// }
+function sendMessage (req, res, next) {
+	try {
+		myApi.sendEmail(req.body);
+		next();
+	}
+	catch (err) {
+		next(err);
+	}
+}
 
-// function sendAutoReply (req, res, next) {
-// 	myApi.replyEmail(req.body);
-// 	return next();
-// }
+function sendAutoReply (req, res, next) {
+	try {
+		myApi.replyEmail(req.body);
+		next();
+	}
+	catch (err) {
+		next(err);
+	}
+}
 
 // error handlers
 // catch 404 and forward to error handler
