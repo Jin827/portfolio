@@ -134,7 +134,7 @@
 		const scriptEl = document.createElement('script');
 		scriptEl.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCwoUun1nhHQnZljKQmp4nEZP6-uw4L6xM';
 
-		scriptEl.onload = function () {
+		// scriptEl.onload = function () {
 			const googleMap = document.getElementById('map');
 			const location = {
 				montreal: {
@@ -153,7 +153,7 @@
 				position: location.montreal,
 				title: 'Montreal'
 			});
-		};
+		// };
 
 		document.body.appendChild(scriptEl);
 	}
