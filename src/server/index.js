@@ -27,10 +27,9 @@ app.use(cookieParser());
 app.use((req, res, next) => {
 	res.header('Access-Control-Allow-Origin', '*');
 	res.header('Access-Control-Allow-Methods', 'GET, OPTIONS, PATCH, POST, DELETE');
-	res.header('Access-Control-Allow-Credentials', true);
-	res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+	res.header('Access-Control-Allow-Headers', 'Content-Type');
+	// res.header('Access-Control-Allow-Credentials', true);
 	next();
-	// res.end();
 });
 
 // app.use('/vendors', express.static(`${process.cwd()}/vendors`));
@@ -47,26 +46,6 @@ app.post('/api/contact', (req, res) => {
 		.then(() => res.status(201).send('Email Sent Successfully!'))
 		.catch(err => res.status(400).json(err));
 });
-
-// function sendMessage (req, res, next) {
-// 	try {
-// 		myApi.sendEmail(req.body);
-// 		next();
-// 	}
-// 	catch (err) {
-// 		next(err);
-// 	}
-// }
-
-// function sendAutoReply (req, res, next) {
-// 	try {
-// 		myApi.replyEmail(req.body);
-// 		next();
-// 	}
-// 	catch (err) {
-// 		next(err);
-// 	}
-// }
 
 // error handlers
 // catch 404 and forward to error handler
