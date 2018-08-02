@@ -29,8 +29,8 @@ app.use((req, res, next) => {
 	res.header('Access-Control-Allow-Methods', 'GET, OPTIONS, PATCH, POST, DELETE');
 	res.header('Access-Control-Allow-Credentials', true);
 	res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-	// next();
-	res.end();
+	next();
+	// res.end();
 });
 
 // app.use('/vendors', express.static(`${process.cwd()}/vendors`));
