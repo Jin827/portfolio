@@ -1,5 +1,9 @@
 (function () {
 
+	// if the url contains ?debug=true
+	const IS_DEBUG_MODE = !!~location.href.indexOf('localhost');
+	const BACKEND_HOST = IS_DEBUG_MODE ? 'http://localhost:9003' : 'https://jiah-lee.herokuapp.com';
+
 	/* --- Header Typewriting Animation --- */
 	const TxtType = function (el, toRotate, period) {
 		this.toRotate = toRotate;
@@ -133,28 +137,25 @@
 	function loadGoogleMaps () {
 		const scriptEl = document.createElement('script');
 		scriptEl.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCwoUun1nhHQnZljKQmp4nEZP6-uw4L6xM';
+		const googleMap = document.getElementById('map');
 
-		// scriptEl.onload = function () {
-			const googleMap = document.getElementById('map');
-			const location = {
-				montreal: {
-					lat: 45.5081804,
-					lng: -73.57
-				}
-			};
+		const location = {
+			montreal: {
+				lat: 45.5081804,
+				lng: -73.57
+			}
+		};
 
-			const map = new google.maps.Map(googleMap, {
-				center: location.montreal,
-				zoom: 11.5
-			});
+		const map = new google.maps.Map(googleMap, {
+			center: location.montreal,
+			zoom: 11.5
+		});
 
-			new google.maps.Marker({
-				map: map,
-				position: location.montreal,
-				title: 'Montreal'
-			});
-		// };
-
+		new google.maps.Marker({
+			map: map,
+			position: location.montreal,
+			title: 'Montreal'
+		});
 		document.body.appendChild(scriptEl);
 	}
 
@@ -258,7 +259,7 @@
 		const data = JSON.stringify(formContents);
 
 		return new Promise((resolve, reject) => {
-			const url = 'https://jiah-lee.herokuapp.com/api/contact';
+			const url = `${BACKEND_HOST}/api/contact`;
 			const xhr = createCORSRequest('POST', url);
 
 			if (!xhr) {
@@ -277,7 +278,7 @@
 				reject(Error('Network Error'));
 				alert('Woops, there was an error making the request.');
 			};
-			xhr.setRequestHeader('X-Custom-Header', 'value');
+			// xhr.setRequestHeader('X-Custom-Header', 'value');
 			xhr.setRequestHeader('Content-type', 'application/json');
 			xhr.send(data);
 		});

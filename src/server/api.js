@@ -18,14 +18,7 @@ module.exports = {
 			html: `<p>Name: ${name} <br/> Contact: ${email}<br/><br/>${message}</p>`,
 		};
 
-		return new Promise((resolve, reject) => {
-			return sgMail.send(mailOptions, (error) => {
-				error ?
-					reject(`Unable to send the email to Jiah Lee: ${error}`) :
-					resolve('Email was sent back to Jiah Lee');
-			});
-		})
-			.catch(err => console.error(`sendEmail function error : ${err}`));
+		return sgMail.send(mailOptions);
 	},
 
 	replyEmail: (data) => {
@@ -48,13 +41,6 @@ module.exports = {
               `
 		};
 
-		return new Promise((resolve, reject) => {
-			return sgMail.send(mailOptions, function (error) {
-				error ?
-					reject(`Unable to send the email to Jiah Lee: ${error}`) :
-					resolve('Email was sent back to the client');
-			});
-		})
-			.catch(err => console.error(`replyEmail function error : ${err}`));
+		return sgMail.send(mailOptions);
 	}
 };
