@@ -254,17 +254,11 @@
 		return xhr;
 	}
 
-	// Helper method to parse the title tag from the response.
-	function getTitle(text) {
-		return text.match('<title>(.*)?</title>')[1];
-	}
-
 	function xhrPostRequest(formContents) {
 
 		const data = JSON.stringify(formContents);
 
 		return new Promise((resolve, reject) => {
-			// const proxyurl = "https://cors-anywhere.herokuapp.com/";
 			const url = 'https://jiah-lee.herokuapp.com/api/contact';
 			const xhr = createCORSRequest('POST', url);
 
@@ -279,10 +273,6 @@
 				} else {
 					reject(Error(xhr.statusText));
 				}
-
-				const text = xhr.responseText;
-				const title = getTitle(text);
-				alert('Response from CORS request to ' + url + ': ' + title);
 			};
 			xhr.onerror = function () {
 				reject(Error('Network Error'));
