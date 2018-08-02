@@ -232,7 +232,7 @@
 			.then(form.reset())
 			.catch(err => {
 				console.error(`SendGrid API request failed: ${err}`);
-				form.innerHTML = `<P class="contact-message">Hello ${form.name.value}, <br/>Your message has NOT been sent.<br/> Thank you &#128420;</P>`;
+				form.innerHTML = '<P class="contact-message">I am sorry.<br/>Your message has NOT been sent.<br/> Please contact me via <a herf="https://www.linkedin.com/in/jiah827/" target="_blank" rel="noopener">Linkedin</a>.<br/>Thank you &#128420;</P>';
 			});
 
 	};
@@ -263,10 +263,10 @@
 		const data = JSON.stringify(formContents);
 
 		return new Promise((resolve, reject) => {
-      // const proxyurl = "https://cors-anywhere.herokuapp.com/";
+			// const proxyurl = "https://cors-anywhere.herokuapp.com/";
 			const url = 'https://jiah-lee.herokuapp.com/api/contact';
-      const xhr = createCORSRequest('POST', url);
-      console.log('proxyurl + url: ', proxyurl + url);
+			const xhr = createCORSRequest('POST', url);
+			console.log('proxyurl + url: ', proxyurl + url);
 			if (!xhr) {
 				alert('CORS not supported');
 				return;
