@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const express = require('express');
 const cors = require('cors');
 const app = express();
+const path = require('path');
 
 const port = process.env.PORT || 8080;
 
@@ -40,7 +41,9 @@ if (app.get('env') === 'production') {
 	app.use('/vendors', express.static(`${process.cwd()}/vendors`));
 	app.use('/resources', express.static(path.join(__dirname, '../', 'client/resources')));
 	app.use(express.static(`${process.cwd()}/static`));
-	app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/views/index.html')));
+	app.get('/', (req, res) => {
+		res.sendFile(path.join(__dirname, '/views/index.html'));
+	});
 }
 
 app.post('/api/contact', (req, res) => {
