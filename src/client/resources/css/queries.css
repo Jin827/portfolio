@@ -265,14 +265,14 @@
 @media screen and (min-width: 1024px) {
   /* --- Heading --- */
   h1 {
-    font-size: 5em;
+    font-size: 4em;
     margin-bottom : 30px;
   }
   .h2 {
       font-size: 2em;
   }
   h3 {
-      font-size: 3em;
+      font-size: 2.6em;
   }
   h4,
   h5 {
@@ -284,12 +284,12 @@
   }
   /* --- Offer --- */
   .headline {
-      font-size: 1.42em;
+      font-size: 1.35em;
       padding-top: 60px;
   }
   /* --- Portfolio --- */
   .section-portfolio p {
-    font-size: 1.1em;
+    font-size: 1.2em;
   }
   .portpolio-box {
       max-height: 800px;
@@ -351,7 +351,6 @@
 }
 
 @media screen and (min-width: 1300px) {
-
   /* --- Header --- */
   header {
     padding-top: 20px;
@@ -361,8 +360,14 @@
       height: 20px;
   }
   /* --- Offer --- */
+  .offer--contents li {
+    font-size: 1.2em;
+  }
   .offer--contents-points li {
       width: 18em;
+  }
+  .headline {
+    font-size: 1.5em;
   }
   /* --- Skills --- */
   .skills--logo li {
@@ -372,9 +377,6 @@
   /* --- Portfolio --- */
   .portpolio-box {
       max-height: 850px;
-  }
-  .section-portfolio p {
-    font-size: 1.1em;
   }
   .main-portfolio--title {
       padding: 3em 0;
@@ -397,32 +399,23 @@
   .section-contact {
       margin-top: 8em;
   }
+  .contact-memo {
+      font-size: 1.5em;
+  }
 }
 
 @media screen and (min-width: 1700px) {
-  .h2 {
-      font-size: 2.4em;
-  }
   /* --- About me --- */
-  .about-me--p {
-      font-size: 1.4em;
-  }
   .icon-media--linkedin,
   .icon-media--github {
-      height: 3em;
-      width: 3em;
+      height: 2.7em;
+      width: 2.7em;
   }
   /* --- Offer --- */
   .offer--contents {
       width: 1400px;
   }
-  .headline {
-      font-size: 1.7em;
-  }
   /* --- Portfolio --- */
-  .section-portfolio p {
-      font-size: 1.4em;
-  }
   .main-portfolio--contents--skills {
       width: 40vw;
   }
@@ -443,8 +436,5 @@
   .section-contact--contents {
     max-width: 90%;
     margin: 0 auto;
-  }
-  .contact-memo {
-      font-size: 1.7em;
   }
 }

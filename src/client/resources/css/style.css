@@ -41,7 +41,7 @@ body {
 * {
   text-decoration: none;
   letter-spacing: 1px;
-  line-height: 1.2em;
+  line-height: 1.15em;
 }
 
 section {
@@ -193,7 +193,6 @@ header {
 }
 
 /* --- Mobile Nav --- */
-
 .nav-link--box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -208,7 +207,6 @@ header {
   display: inline-block;
   margin-top: 6px;
 }
-
 #nav-container.sticky {
 z-index: 1000;
 }
@@ -659,6 +657,7 @@ z-index: 1000;
 }
 
 .btn-anchor {
+  font-size: .9em;
   border: 1px solid var(--main-blue);
   background-color: var(--main-blue);
   cursor: pointer;
@@ -732,14 +731,14 @@ z-index: 1000;
   background: linear-gradient(to bottom right, #ecf3fa, #add0f8);
   border-radius: 5px;
   overflow-y: hidden;
-  top: -500px;
+  top: -430px;
   position: relative;
   margin: 0 auto;
   overflow-y: scroll;
 }
 
 .sub-portfolio.open {
-  height: 500px;
+  height: 435px;
   margin: 0 auto;
   overflow-y: scroll;
   padding: 2em;
@@ -806,6 +805,7 @@ z-index: 1000;
 
 .static-btn,
 .malito {
+  font-size: .9em;
   border: 1px solid var(--main-blue);
   border-radius: 5px;
   background-color: var(--main-blue);
@@ -827,7 +827,7 @@ z-index: 1000;
   display: inline-block;
   text-decoration: none;
   margin-top: 40px;
-  padding: 10px 30px;
+  padding: 9px 28px;
   text-align: right;
   border-radius: 20px;
 }
