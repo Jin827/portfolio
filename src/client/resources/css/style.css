@@ -41,7 +41,7 @@ body {
 * {
   text-decoration: none;
   letter-spacing: 1px;
-  line-height: 1.1em;
+  line-height: 1.2em;
 }
 
 section {
@@ -67,7 +67,6 @@ section {
 /* ---------------------------------------- */
 
 /* --- Heading --- */
-
 h1 {
   font-size: 3em;
   line-height: 1.5em;
@@ -78,11 +77,11 @@ h1 {
   text-shadow: 0 0 1px rgb(168, 166, 166);
   -webkit-font-smoothing: antialiased;
   margin-top: 0;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 .h2 {
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: 300;
   width: 100vw;
   letter-spacing: 3px;
@@ -234,7 +233,7 @@ z-index: 1000;
 
 .triangle--header {
   position: absolute;
-  top: 95%;
+  top: 93%;
   left: 50%;
   -webkit-transform: translate(-95%, -45%);
   transform: translate(-95%, -45%);
