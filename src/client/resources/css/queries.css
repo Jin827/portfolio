@@ -93,7 +93,7 @@
       background-color: transparent;
       padding-left: 10px;
       padding-right: 10px;
-      height: 60px;
+      height: 53px;
   }
   .main-nav {
       margin: auto 0;
@@ -105,7 +105,6 @@
       list-style: none;
       padding: 13px 1em;
       text-transform: uppercase;
-      font-size: 1.1em;
       text-shadow: .2px .2px #333;
   }
   .main-nav li {
@@ -140,7 +139,7 @@
       display: inline-block;
       text-decoration: none;
       margin: auto 0;
-      padding: 7px 9px;
+      padding: 5px 9px;
       -webkit-box-shadow: .5px .5px rgb(34, 69, 109);
       box-shadow: .5px .5px rgb(34, 69, 109);
   }
