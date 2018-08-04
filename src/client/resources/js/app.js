@@ -281,7 +281,6 @@
 				reject(Error('Network Error'));
 				alert('Woops, there was an error making the request.');
 			};
-			// xhr.setRequestHeader('X-Custom-Header', 'value');
 			xhr.setRequestHeader('Content-type', 'application/json');
 			xhr.send(data);
 		});
