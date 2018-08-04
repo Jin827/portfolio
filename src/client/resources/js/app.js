@@ -236,7 +236,7 @@
 			.then(form.reset())
 			.catch(err => {
 				console.error(`SendGrid API request failed: ${err}`);
-				form.innerHTML = '<P class="contact-message">I am sorry.<br/>Your message has NOT been sent.<br/> Please contact me via Linkedin.<br/>Thank you &#128420;</P>';
+				form.innerHTML = `<P class="contact-message">I am sorry.<br/>Your message has NOT been sent.<br/> Please contact me via <a href="${linkedin}">Linkedin</a>.<br/>Thank you &#128420;</P>`;
 			});
 
 	};
