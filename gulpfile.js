@@ -28,6 +28,7 @@ const paths = {
 	devCSS: 'src/client/resources/css/**/*.css',
 	devJS: 'src/client/resources/js/**/*js',
 	devIMG: 'src/client/resources/assets/img/**/*.{png,jpeg,jpg,gif}',
+	devStatic: 'static/**/*.{png,jpeg,jpg,gif,svg}',
 	devSVG: 'src/client/resources/assets/svg/**/*.svg',
 	devServerjs: 'src/server/**/*.js',
 	dist: 'production/',
@@ -35,6 +36,7 @@ const paths = {
 	distCSS: 'production/client/resources/css',
 	distJS: 'production/client/resources/js',
 	distIMG: 'production/client/resources/assets/img',
+	distStatic: 'production/static/',
 	distSVG: 'production/client/resources/assets/svg',
 	distServerjs: 'production/server'
 };
@@ -61,6 +63,33 @@ gulp.task('images', cb => {
 				}
 			),
 			gulp.dest(paths.distIMG)
+		],
+		cb
+	);
+});
+
+gulp.task('static-images', cb => {
+	pump(
+		[
+			gulp.src(paths.devStatic),
+			imagemin(
+				[
+					imagemin.gifsicle({ interlaced: true }),
+					imagemin.jpegtran(),
+					imagemin.optipng({ optimizationLevel: 5 }),
+					imagemin([
+						imagemin.svgo({
+							plugins: [{ removeViewBox: true }, { cleanupIDs: false }]
+						})
+					]),
+					imageminJpegRecompress(),
+					imageminPngquant()
+				],
+				{
+					verbose: true
+				}
+			),
+			gulp.dest(paths.distStatic)
 		],
 		cb
 	);
@@ -192,7 +221,7 @@ gulp.task(
 	'default',
 	gulp.series(
 		'clean',
-		gulp.parallel('images', 'svg', 'html', 'css', 'javascript', 'serverJs'),
+		gulp.parallel('images', 'svg', 'static-images', 'html', 'css', 'javascript', 'serverJs'),
 		'size'
 	)
 );
