@@ -36,8 +36,7 @@ module.exports = {
                 Thank you for getting in touch.<br/>
                 I will reply to you as soon as possible.<br/>
                 Thank you.<br/><br/>
-                Best,<br/><br/>
-                Jiah Lee
+                Best,<br/>
               `
 		};
 
