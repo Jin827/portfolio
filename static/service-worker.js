@@ -5,7 +5,6 @@ const cacheFiles = [
 	'/resources/css/queries.css',
 	'/resources/js/app.js',
 	'https://fonts.googleapis.com/css?family=Quicksand:300,400',
-	'https://maps.googleapis.com/maps/api/js?key=AIzaSyCwoUun1nhHQnZljKQmp4nEZP6-uw4L6xM',
 	'/resources/assets/img/background.jpeg',
 	'/resources/assets/img/flightnook.jpeg',
 	'/resources/assets/img/omnifood.jpeg',
@@ -22,20 +21,20 @@ const cacheFiles = [
 ];
 
 if( 'function' === typeof importScripts) {
-	importScripts('/vendors/js/cache-polyfill.js');
-
-	self.addEventListener('install', (e) => {
-		console.log('[Service Worker] Installed');
-		e.waitUntil(
-			caches.open(cacheName)
-				.then(cache => {
-					console.log('[Service Worker] Caching cacheFiles');
-					return cache.addAll(cacheFiles);
-				})
-				.catch(err => console.error(`[Service Worker] Caching cacheFiles: ${err}`))
-		);
-	});
+	importScripts('/vendors/js/serviceworker-cache-polyfill.js');
 }
+
+self.addEventListener('install', (e) => {
+	console.log('[Service Worker] Installed');
+	e.waitUntil(
+		caches.open(cacheName)
+			.then(cache => {
+				console.log('[Service Worker] Caching cacheFiles');
+				return cache.addAll(cacheFiles);
+			})
+			.catch(err => console.error(`[Service Worker] Caching cacheFiles: ${err}`))
+	);
+});
 
 self.addEventListener('activate', (e) => {
 	console.log('[Service Worker] Activated');

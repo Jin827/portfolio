@@ -59,7 +59,7 @@
                 <a class="mobile-nav-icon">
                     <img id="js--nav-icon" src="/resources/assets/svg/icon/nav-open.svg" alt="nav icon" role="img">
                 </a>
-                <a class="btn download-link-mobile" href="https://drive.google.com/open?id=1sTJx-3YPmUdEN-eEmAdX_3LhYYl063-_" target="_blank"
+                <a class="btn download-link-mobile" href="https://drive.google.com/open?id=1z_TJeSeKJr5aReRNQU54xZU1vRr-XtD_" target="_blank"
                     rel="noopener">Download Resume</a>
             </div>
             <div class="main-nav--box--triangle">
@@ -77,7 +77,7 @@
                         <a href="#contact">contact</a>
                     </li>
                 </ul>
-                <a class="btn download-link" href="https://drive.google.com/open?id=1sTJx-3YPmUdEN-eEmAdX_3LhYYl063-_" target="_blank" rel="noopener">Download Resume</a>
+                <a class="btn download-link" href="https://drive.google.com/open?id=1z_TJeSeKJr5aReRNQU54xZU1vRr-XtD_" target="_blank" rel="noopener">Download Resume</a>
             </div>
         </nav>
         <div class="header-text--box">
@@ -584,13 +584,14 @@
     </footer>
     <script src="/resources/js/app.js" async></script>
     <script src="http://localhost:35729/livereload.js" async></script>
-    <script src="/vendors/js/cache-polyfill.js" defer></script>
     <script>
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker
+        window.addEventListener('load', () => {
+          navigator.serviceWorker
           .register('./service-worker.js')
           .then(() => console.log("[Service Worker] Registered"))
           .catch((err) => console.log(`[Service Worker] Registration failed: ${err}`))
+        });
       }
     </script>
 </body>
