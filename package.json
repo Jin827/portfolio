@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node production/server/index",
-    "dev": "NODE_ENV=development PORT=9003 nodemon --watch src/server src/server & gulp watch",
+    "dev": "NODE_ENV=development nodemon --watch src/server src/server & gulp watch",
+    "server": "nodemon src/server",
     "build": "gulp"
   },
   "engines": {

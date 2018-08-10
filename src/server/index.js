@@ -8,7 +8,7 @@ const cors = require('cors');
 const app = express();
 const path = require('path');
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 9003;
 
 const myApi = require('./api.js');
 
@@ -24,18 +24,19 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 app.use(cookieParser());
-
+console.log(`${process.cwd()}/src/server/views/index.html`);
 if (app.get('env') === 'production') {
 	app.get('/', (req, res) => {
 		res.redirect('https://jin827.github.io');
 	});
 } else {
+	app.get('/', (req, res) => {
+		res.sendFile(path.join(__dirname, '/views/index.html'));
+		// res.sendFile(`${process.cwd()}/src/server/views/index.html`);
+	});
 	app.use('/vendors', express.static(`${process.cwd()}/vendors`));
 	app.use('/resources', express.static(path.join(__dirname, '../', 'client/resources')));
 	app.use(express.static(`${process.cwd()}/static`));
-	app.get('/', (req, res) => {
-		res.sendFile(path.join(__dirname, '/views/index.html'));
-	});
 }
 
 app.post('/api/contact', (req, res) => {
@@ -50,8 +51,8 @@ app.post('/api/contact', (req, res) => {
 
 // error handlers
 // catch 404 and forward to error handler
-app.use(function (next) {
-	var err = new Error('Not Found');
+app.use(function (err, req, res, next) {
+	new Error('Not Found');
 	err.status = 404;
 	next(err);
 });
@@ -61,7 +62,7 @@ app.use(function (next) {
 if (app.get('env') === 'production') {
 	// production error handler
 	// no stacktraces leaked to user
-	app.use(function (err, req, res) {
+	app.use((err, req, res) => {
 		console.error(err);
 		res.status(err.status || 500);
 		res.json({
@@ -70,7 +71,7 @@ if (app.get('env') === 'production') {
 		});
 	});
 } else {
-	app.use(function (err, req, res) {
+	app.use((err, req, res) => {
 		console.error(err);
 		res.status(err.status || 500);
 		res.json({
