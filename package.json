@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node production/server/index",
     "dev": "NODE_ENV=development nodemon --watch src/server src/server & gulp watch",
-    "server": "nodemon src/server",
+    "server": "NODE_ENV=development nodemon src/server",
     "build": "gulp"
   },
   "engines": {

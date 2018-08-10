@@ -327,10 +327,10 @@
                     <p>
                       &#42;&#42; The website is not officially out online&#46; &#42;&#42;
                         <br>
-                        I focused on writing modular code to be able to reuse code logic and maintain the website easier&#46;
+                        I focused on writing <span class="point-color--purple"></span>modular code</span> to be able to reuse code logic and maintain the website easier&#46;
                         <br>
                         <br> For Reux state organization&#44; I used
-                        <span class="point-color--purple">normalized data structure like the example below</span>&#46; So that objects can be quickly checked if they exist in Redux store&#46;
+                        <span class="point-color--purple">normalized data structure</span>like the example below&#46; So that objects can be quickly checked if they exist in Redux store&#46;
                         <br>
                         <br>
                         {<br>
@@ -346,7 +346,7 @@
                         <br>
                         <br>
                         For instance&#44; in order to save a searched departure value&#46;
-                        Fist&#44; We need to check if &#39;the object with Id 1&#39; already exists in Redux store&#46; It was done using an array of &#39;Trip Ids&#39; and findIndex() method&#46;like below&#46;
+                        Fist&#44; We need to check if &#39;the object with Id 1&#39; already exists in Redux store&#46; It was done using an array of &#39;Trip Ids&#39; and findIndex() method like below&#46;
                         <br>
                         <br>
                         const isExist &#61; result&#46;length &#61;&#61;&#61; 0 ? -1 &#58; result&#46;findIndex(r => r &#61;&#61;&#61; id)&#59;<br>
