@@ -1,4 +1,4 @@
-const cacheName = 'v8';
+const cacheName = 'v10';
 const cacheFiles = [
 	'/',
 	'/resources/css/style.css',
