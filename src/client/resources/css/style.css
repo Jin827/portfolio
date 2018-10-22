@@ -499,7 +499,8 @@ header {
   flex-direction: column;
   margin: 1.2em;
   font-size: .9em;
-  font-weight: lighter text-align: center;
+  font-weight: lighter;
+  text-align: center;
 }
 
 .skills--logo li div {
