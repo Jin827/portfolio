@@ -462,11 +462,11 @@ header {
   margin-top: 25px;
   margin-bottom: 35px;
   color: #ffffff;
-  font-size: 1.8em;
+  font-size: 1.7em;
   border-top: var(--main-blue);
   border-bottom: var(--main-blue);
   background-color: var(--main-blue);
-  padding: 8px;
+  padding: 7px;
 }
 
 .skill--contents h4:first-child {
