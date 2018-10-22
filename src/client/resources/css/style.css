@@ -207,8 +207,9 @@ header {
   display: inline-block;
   margin-top: 6px;
 }
+
 #nav-container.sticky {
-z-index: 1000;
+  z-index: 1000;
 }
 
 /* --- Buttons --- */
@@ -292,6 +293,7 @@ z-index: 1000;
   text-transform: uppercase;
   font-size: 1em;
 }
+
 .main-nav li a {
   color: #fff;
 }
@@ -449,7 +451,7 @@ z-index: 1000;
 .skill--contents {
   background-color: #fff;
   text-align: center;
-  padding: 70px 10px;
+  padding: 40px 10px;
   margin: 0 10px;
   border: 2px solid rgba(145, 114, 196, 0.4);
   border-radius: 20px;
@@ -457,10 +459,14 @@ z-index: 1000;
 
 .skill--contents h4 {
   text-align: center;
-  margin-top: 30px;
-  margin-bottom: 25px;
-  color: var(--main-blue);
-  font-size: 2em;
+  margin-top: 25px;
+  margin-bottom: 35px;
+  color: #ffffff;
+  font-size: 1.8em;
+  border-top: var(--main-blue);
+  border-bottom: var(--main-blue);
+  background-color: var(--main-blue);
+  padding: 8px;
 }
 
 .skill--contents h4:first-child {
@@ -493,7 +499,7 @@ z-index: 1000;
   flex-direction: column;
   margin: 1.2em;
   font-size: .9em;
-  text-align: center;
+  font-weight: lighter text-align: center;
 }
 
 .skills--logo li div {
@@ -899,7 +905,7 @@ footer {
 }
 
 .jh-logo--link {
-margin-left: 6px;
+  margin-left: 6px;
 }
 
 .jh-logo {
