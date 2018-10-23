@@ -8,7 +8,7 @@ const cors = require('cors');
 const app = express();
 const path = require('path');
 
-const port = process.env.PORT || 9800;
+const port = process.env.PORT || 9900;
 
 const myApi = require('./api.js');
 
@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 app.use(cookieParser());
-console.log(`${process.cwd()}/src/server/views/index.html`);
+
 if (app.get('env') === 'production') {
 	app.get('/', (req, res) => {
 		res.redirect('https://jin827.github.io');

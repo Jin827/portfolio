@@ -57,7 +57,8 @@ section {
 
 :root {
   --main-blue: #4c8ba6;
-  --purple: #9b59b6;
+  --purple: #9c59b6;
+  --purple-light: #9c59b6c6;
 }
 
 /* ---------------------------------------- */
@@ -372,7 +373,7 @@ header {
 }
 
 .healine-box {
-  background-color: var(--purple);
+  background-color: var(--purple-light);
   color: #fff;
   text-align: center;
   padding: 70px 20px;
@@ -776,7 +777,6 @@ header {
 /* ---------------------------------------- */
 
 .section-contact {
-  /* background-color: #dbe9d8; */
   background-color: #fcf7e7;
   margin-top: 4.5em;
   width: 100%;
@@ -814,14 +814,18 @@ header {
 .static-btn,
 .malito {
   font-size: .9em;
-  border: 1px solid var(--main-blue);
   border-radius: 5px;
-  background-color: var(--main-blue);
   color: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
 .static-btn {
   cursor: pointer;
+  border: 1px solid var(--main-blue);
+  background-color: var(--main-blue);
 }
 
 .static-btn:hover {
@@ -838,6 +842,7 @@ header {
   padding: 9px 28px;
   text-align: right;
   border-radius: 20px;
+  background-color: var(--main-blue);
 }
 
 .contact-memo--border {
@@ -848,16 +853,16 @@ header {
 
 .contact-memo {
   font-size: 1.2em;
-  font-weight: 400;
+  font-weight: 500;
   text-align: center;
-  color: var(--main-blue);
+  color: var(--purple);
   -webkit-transition: color .3s;
   transition: color .3s;
 }
 
-.contact-memo:hover {
+.contact-memo span {
+  font-size: 1.3em;
   font-weight: bold;
-  color: rgb(1, 102, 197);
 }
 
 #name,
@@ -900,7 +905,7 @@ footer {
   min-height: 3em;
   text-align: center;
   padding: 2.5em 0 2em 0;
-  background-color: var(--purple);
+  background-color: var(--purple-light);
   color: #fff;
   line-height: 1.4em;
   font-weight: 200;

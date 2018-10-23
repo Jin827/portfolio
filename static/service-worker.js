@@ -1,4 +1,4 @@
-const expectedCaches = ['jiah-static-v1'];
+const expectedCaches = ['jiah-static-v2'];
 const cacheFiles = [
 	'/',
 	'/resources/css/style.css',
@@ -20,15 +20,11 @@ const cacheFiles = [
 	'/vendors/js/cache-polyfill.js',
 ];
 
-// if( 'function' === typeof importScripts) {
-// 	importScripts('/vendors/js/serviceworker-cache-polyfill.js');
-// }
-
 self.addEventListener('install', (e) => {
-	// self.skipWaiting();
+	self.skipWaiting();
 	console.log('[Service Worker] Installing');
 	e.waitUntil(
-		caches.open(cacheName)
+		caches.open(expectedCaches)
 			.then(cache => {
 				console.log('[Service Worker] Caching cacheFiles');
 				return cache.addAll(cacheFiles);
@@ -71,7 +67,7 @@ self.addEventListener('fetch', (e) => {
 							return response;
 						}
 						const responseClone = response.clone();
-						caches.open(cacheName)
+						caches.open(expectedCaches)
 							.then(cache => {
 								cache.put(e.request, responseClone);
 								console.log('[ServiceWorker] New Data Cached', e.request.url);
