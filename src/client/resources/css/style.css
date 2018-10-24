@@ -58,7 +58,7 @@ section {
 :root {
   --main-blue: #4c8ba6;
   --purple: #9c59b6;
-  --purple-light: #9c59b6ee;
+  --purple-light: #b076c7;
 }
 
 /* ---------------------------------------- */
@@ -413,7 +413,7 @@ header {
 }
 
 .offer--contents-points ul {
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -422,8 +422,7 @@ header {
 }
 
 .offer--contents--icon {
-  margin-right: 30px;
-  margin-top: 20px;
+  margin: 20px 35px 0 -10px
 }
 
 .offer--contents h4 {
@@ -453,7 +452,7 @@ header {
   background-color: #fff;
   text-align: center;
   padding: 40px 10px;
-  margin: 0 10px;
+  margin: 0 20px;
   border: 2px solid rgba(145, 114, 196, 0.4);
   border-radius: 20px;
 }
@@ -562,8 +561,7 @@ header {
 
 .section-portfolio {
   text-align: center;
-  padding-bottom: 0;
-  padding-top: 60px;
+  padding: 60px 20px 0 20px;
 }
 
 .main-portfolio.reverse {
