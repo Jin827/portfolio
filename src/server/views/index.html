@@ -621,7 +621,6 @@
       window.addEventListener('load', () => {
         navigator.serviceWorker
           .register('/service-worker.js')
-          // .then((reg) => reg.update())
           .then(() => console.log("[Service Worker] Registered"))
           .catch((err) => console.log(`[Service Worker] Registration failed: ${err}`))
       });
