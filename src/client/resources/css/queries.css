@@ -286,8 +286,9 @@
 
   .contact-form {
     margin: 0 auto;
-    width: 50%;
     max-width: 650px;
+    width: 50%;
+    padding-right: 20px;
   }
 
   #name,

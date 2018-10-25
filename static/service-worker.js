@@ -1,4 +1,4 @@
-const expectedCaches = ['jiah-static-v4'];
+const expectedCaches = ['jiah-static-v5'];
 const cacheFiles = [
 	'/',
 	'/resources/css/style.css',
