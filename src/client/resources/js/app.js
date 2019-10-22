@@ -2,7 +2,7 @@
 
 	// if the url contains ?debug=true
 	const IS_DEBUG_MODE = !!~location.href.indexOf('localhost');
-	const BACKEND_HOST = IS_DEBUG_MODE ? 'http://localhost:9800' : 'https://jiah-lee.herokuapp.com';
+	const BACKEND_HOST = IS_DEBUG_MODE ? 'http://localhost:9900' : 'https://jiah-lee.herokuapp.com';
 
 	/* --- Header Typewriting Animation --- */
 	const TxtType = function (el, toRotate, period) {
@@ -111,7 +111,8 @@
 		}
 	}
 
-	window.onscroll = checkScrollPosition;
+
+
 	checkScrollPosition();
 
 	/* Sticky Nav */
@@ -129,7 +130,7 @@
 		const s = document.createElement('script'); s.async = true;
 		const v = !('IntersectionObserver' in window) ? '8.8.0' : '10.9.0';
 		s.src = 'https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/' + v + '/lazyload.min.js';
-		window.lazyLoadOptions = {}; // Your options here. See "recipes" for more information about async.
+		window.lazyLoadOptions = {};
 		b.appendChild(s);
 	}
 
@@ -203,7 +204,7 @@
 		document.querySelector(`.main--${this.id}`).classList.add('fade');
 		document.querySelector(`.sub--${this.id}`).classList.add('open');
 
-		const profileNum = [1, 3, 4];
+		const profileNum = [1, 3, 4, 5];
 		profileNum
 			.filter(id => id != this.id)
 			.map(id => {
