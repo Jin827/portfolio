@@ -768,6 +768,12 @@ header {
   line-height: 1.43em;
 }
 
+.underline {
+  text-decoration: underline;
+  font-weight: bold;
+  color: var(--main-blue);
+}
+
 /* ---------------------------------------- */
 
 /* CONTACT SECTION */
