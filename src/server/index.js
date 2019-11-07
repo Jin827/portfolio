@@ -1,4 +1,3 @@
-
 require('dotenv').config();
 const logger = require('morgan');
 const bodyParser = require('body-parser');
@@ -7,9 +6,10 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const path = require('path');
+const requestIp = require('request-ip');
+var geoip = require('geoip-country');
 
 const port = process.env.PORT || 9900;
-
 const myApi = require('./api.js');
 
 const corsOptions = {
@@ -25,18 +25,35 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(cookieParser());
 
+app.use(requestIp.mw());
+app.use((req, res, next) =>{
+	const ip = req.clientIp;
+	req.geo = geoip.lookup('1.11.255.255');
+	next();
+
+});
+
 if (app.get('env') === 'production') {
 	app.get('/', (req, res) => {
 		res.redirect('https://jin827.github.io');
 	});
 } else {
-	app.get('/', (req, res) => {
-		res.sendFile(path.join(__dirname, '/views/index.html'));
-		// res.sendFile(`${process.cwd()}/src/server/views/index.html`);
-	});
 	app.use('/vendors', express.static(`${process.cwd()}/vendors`));
 	app.use('/resources', express.static(path.join(__dirname, '../', 'client/resources')));
 	app.use(express.static(`${process.cwd()}/static`));
+
+	app.get('/', (req, res) => {
+		res.sendFile(path.join(__dirname, '/views/index-kr.html'));
+		// const geoIp = req.geo;
+		// if(geoIp) {
+		// 	if(geoIp.country === 'KR'){
+		// 		return res.sendFile(path.join(__dirname, '/views/index-kr.html'));
+		// 	}
+		// 	return res.sendFile(path.join(__dirname, '/views/index-en.html'));
+		// }
+		// return res.sendFile(path.join(__dirname, '/views/index-en.html'));
+		// res.sendFile(`${process.cwd()}/src/server/views/index.html`);
+	});
 }
 
 app.post('/api/contact', (req, res) => {
@@ -46,7 +63,7 @@ app.post('/api/contact', (req, res) => {
 		.catch(err => {
 			console.error(err);
 			res.status(400).json(err);
-  	});
+		});
 });
 
 // error handlers
@@ -62,22 +79,24 @@ app.use(function (err, req, res, next) {
 if (app.get('env') === 'production') {
 	// production error handler
 	// no stacktraces leaked to user
-	app.use((err, req, res) => {
+	app.use((err, req, res, next) => {
 		console.error(err);
 		res.status(err.status || 500);
 		res.json({
 			message: 'An error has occured',
 			error: {}
 		});
+		next();
 	});
 } else {
-	app.use((err, req, res) => {
+	app.use((err, req, res, next) => {
 		console.error(err);
 		res.status(err.status || 500);
 		res.json({
 			message: err.message,
 			error: err
 		});
+		next();
 	});
 }
 
