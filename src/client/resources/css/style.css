@@ -115,6 +115,9 @@ h5 {
 }
 
 /* --- Span colors --- */
+.color-white {
+  color: white
+}
 
 .point-color--blue {
   color: var(--main-blue);
@@ -206,7 +209,7 @@ header {
 
 .mobile-nav-icon {
   display: inline-block;
-  margin-top: 6px;
+  margin-top: 4px;
 }
 
 #nav-container.sticky {
@@ -214,6 +217,9 @@ header {
 }
 
 /* --- Buttons --- */
+.nav-download--box-mobile {
+  display: flex;
+}
 
 .download-link-mobile {
   display: inline-block;
@@ -221,11 +227,22 @@ header {
   -webkit-box-shadow: .5px .5px fff;
   box-shadow: .5px .5px fff;
   color: #fff;
-  padding: 6px 8px;
+  padding: 3px 4px;
   margin-top: auto 0;
 }
 
 .download-link {
+  display: none;
+}
+
+.multi-lang-mobile {
+  color: #fff;
+  margin-top: 4px;
+  margin-left: 15px;
+  margin-right: 5px;
+}
+
+.multi-lang {
   display: none;
 }
 
@@ -290,7 +307,7 @@ header {
   -ms-flex-pack: distribute;
   justify-content: space-around;
   list-style: none;
-  padding: .8em .0;
+  padding: .8em 0 0 0;
   text-transform: uppercase;
   font-size: 1em;
 }

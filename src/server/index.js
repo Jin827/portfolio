@@ -43,7 +43,7 @@ if (app.get('env') === 'production') {
 	app.use(express.static(`${process.cwd()}/static`));
 
 	app.get('/', (req, res) => {
-		res.sendFile(path.join(__dirname, '/views/index-kr.html'));
+		res.sendFile(path.join(__dirname, '/views/index.html'));
 		// const geoIp = req.geo;
 		// if(geoIp) {
 		// 	if(geoIp.country === 'KR'){

@@ -1,4 +1,8 @@
 @media screen and (min-width: 500px) {
+  .nav-download--box {
+    display: flex;
+    margin-top: 12px;
+  }
 
   /* --- Portfolio --- */
   .portpolio-box {
@@ -164,9 +168,22 @@
     display: inline-block;
     text-decoration: none;
     margin: auto 0;
+    padding: 6px 8px;
     padding: 5px 9px;
     -webkit-box-shadow: .5px .5px rgb(34, 69, 109);
     box-shadow: .5px .5px rgb(34, 69, 109);
+  }
+
+  .multi-lang-mobile {
+    display: none;
+  }
+
+  .multi-lang {
+    display: inline-block;
+    color: #fff;
+    margin-top: 5px;
+    margin-left: 25px;
+    margin-right: 15px;
   }
 
   /* --- About me --- */
