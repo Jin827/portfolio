@@ -6,8 +6,6 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const path = require('path');
-const requestIp = require('request-ip');
-const geoip = require('geoip-country');
 
 const port = process.env.PORT || 9900;
 const myApi = require('./api.js');
@@ -30,26 +28,14 @@ const SUPPORTED_LANGUAGES = {
 	kr: 1
 };
 
-// Set in the session the language we want to use
 app.get('/', (req, res, next) => {
 	req._lang = req.query.lang || req.cookies.lang;
 	if (SUPPORTED_LANGUAGES[req._lang]) {
+		// Set the language in the cookie for user accessing via heroku
 		res.cookie('lang', req._lang);
 	} else {
 		req._lang = 'en';
 	}
-
-	if (req.query.lang) {
-		return res.redirect('/');
-	}
-	next();
-});
-
-// get user IP & geoLocation
-app.use(requestIp.mw());
-app.use((req, res, next) =>{
-	const ip = req.clientIp;
-	req.geo = geoip.lookup('1.11.255.255');
 	next();
 });
 
@@ -68,27 +54,14 @@ if (app.get('env') === 'production') {
 	app.use('/resources', express.static(path.join(__dirname, '../', 'client/resources')));
 	app.use(express.static(`${process.cwd()}/static`));
 
+	app.get('/', (req, res) => {
+		res.sendFile(path.join(__dirname, `/views/${req._lang}/index.html`));
+	});
 	app.get('/kr', function (req, res) {
 		res.sendFile(path.join(__dirname, '/views/kr/index.html'));
 	});
 	app.get('/en', function (req, res) {
 		res.sendFile(path.join(__dirname, '/views/en/index.html'));
-	});
-	app.get('/index.html', function (req, res) {
-		res.sendFile(path.join(__dirname, '/views/index.html'));
-	});
-
-	app.get('/', (req, res) => {
-		res.sendFile(path.join(__dirname, `/views/${req._lang}/index.html`));
-		// const geoIp = req.geo;
-		// if(geoIp) {
-		// 	if(geoIp.country kr== 'KR'){
-		// 		return res.sendFile(path.join(__dirname, '/views/index-kr.html'));
-		// 	}
-		// 	return res.sendFile(path.join(__dirname, '/views/index-en.html'));
-		// }
-		// return res.sendFile(path.join(__dirname, '/views/index-en.html'));
-		// res.sendFile(`${process.cwd()}/src/server/views/index.html`);
 	});
 }
 

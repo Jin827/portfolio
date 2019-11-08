@@ -4,7 +4,7 @@
 	const IS_DEBUG_MODE = !!~location.href.indexOf('localhost');
 	const BACKEND_HOST = IS_DEBUG_MODE ? 'http://localhost:9900' : 'https://jiah-lee.herokuapp.com';
 
-	// Check the language
+	/* --- Multi-languages ( Globalization & Localization ) --- */
 	function getCookie(name) {
 		var value = '; ' + document.cookie;
 		var parts = value.split('; ' + name + '=');
@@ -31,18 +31,20 @@
 	// Browser language is different than the set language and the url
 	// querystring does not have a lang parameter
 
+	// set cookie for user accessing via github.
 	if (browserLang && !cookieLanguage) {
+		// set cookie if not exist.
 		setCookie('lang', browserLang, 365);
 		return window.location = '/' + browserLang;
 	}
 
-	// The main index.html is in English
+	// re-set cookie when cookie already exists.
 	setCookie('lang', activeLang, 365);
+
+	// The main index.html is in English
 	if (location.pathname === '/' && cookieLanguage !== 'en') {
 		return window.location = '/' + cookieLanguage;
 	}
-
-
 
 	/* --- Header Typewriting Animation --- */
 	const TxtType = function (el, toRotate, period) {
@@ -151,9 +153,10 @@
 		}
 	}
 
-
-
+	// run the function once when it's loaded.
 	checkScrollPosition();
+
+	// Debounce allow us to "group" multiple sequential calls in a single one.
 	let scrollDebounce = null;
 	window.addEventListener('scroll', function () {
 		clearTimeout(scrollDebounce);
