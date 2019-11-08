@@ -316,12 +316,6 @@ header {
   color: #fff;
 }
 
-@media (min-width: 900px) {
-  .sticky .main-nav li a {
-    color: #333;
-  }
-}
-
 /* --- Sticky Nav --- */
 
 .sticky {
@@ -332,6 +326,20 @@ header {
   background-color: rgba(255, 255, 255, 0.99);
   -webkit-box-shadow: 0 2px 2px #efefef;
   box-shadow: 0 2px 2px #efefef;
+}
+
+@media (min-width: 900px) {
+  .sticky .main-nav li a {
+    color: #333;
+  }
+
+  .sticky .multi-lang {
+    color: #333;
+  }
+
+  .sticky .multi-lang a {
+    color: #333;
+  }
 }
 
 /* ---------------------------------------- */
@@ -568,6 +576,11 @@ header {
   height: 70px;
   margin-top: -15px;
   margin-left: -36px;
+}
+
+.icon-logo--postgres {
+  width: 43px;
+  height: 43px;
 }
 
 /* ---------------------------------------- */
