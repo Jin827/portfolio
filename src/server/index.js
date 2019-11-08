@@ -68,7 +68,7 @@ if (app.get('env') === 'production') {
 app.post('/api/contact', (req, res) => {
 	return myApi.sendEmail(req.body)
 		.then(() => myApi.replyEmail(req.body))
-		.then(() => res.status(201).send('Email Sent Successfully!'))
+		.then(() => res.status(201).send('success'))
 		.catch(err => {
 			console.error(err);
 			res.status(400).json(err);
