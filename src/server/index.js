@@ -55,25 +55,31 @@ app.use((req, res, next) =>{
 
 if (app.get('env') === 'production') {
 	app.get('/', (req, res) => {
-		res.redirect(`https://jin827.github.io/index-${req._lang}.html`);
+		res.redirect(`https://jin827.github.io/${req._lang}/`);
+	});
+	app.get('/en', (req, res) => {
+		res.redirect('https://jin827.github.io/en/');
+	});
+	app.get('/kr', (req, res) => {
+		res.redirect('https://jin827.github.io/kr/');
 	});
 } else {
 	app.use('/vendors', express.static(`${process.cwd()}/vendors`));
 	app.use('/resources', express.static(path.join(__dirname, '../', 'client/resources')));
 	app.use(express.static(`${process.cwd()}/static`));
 
-	app.get('/index-kr.html', function (req, res) {
-		res.sendFile(path.join(__dirname, '/views/index-kr.html'));
+	app.get('/kr', function (req, res) {
+		res.sendFile(path.join(__dirname, '/views/kr/index.html'));
 	});
-	app.get('/index-en.html', function (req, res) {
-		res.sendFile(path.join(__dirname, '/views/index-en.html'));
+	app.get('/en', function (req, res) {
+		res.sendFile(path.join(__dirname, '/views/en/index.html'));
 	});
 	app.get('/index.html', function (req, res) {
 		res.sendFile(path.join(__dirname, '/views/index.html'));
 	});
 
 	app.get('/', (req, res) => {
-		res.sendFile(path.join(__dirname, `/views/index-${req._lang}.html`));
+		res.sendFile(path.join(__dirname, `/views/${req._lang}/index.html`));
 		// const geoIp = req.geo;
 		// if(geoIp) {
 		// 	if(geoIp.country kr== 'KR'){

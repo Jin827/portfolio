@@ -11,12 +11,35 @@
 		if (parts.length == 2) return parts.pop().split(';').shift();
 	}
 
+	function setCookie(name,value,days) {
+		var expires = '';
+		if (days) {
+			var date = new Date();
+			date.setTime(date.getTime() + (days*24*60*60*1000));
+			expires = '; expires=' + date.toUTCString();
+		}
+		document.cookie = name + '=' + (value || '')  + expires + '; path=/';
+	}
+
+	const activeLang = ({
+		'/en': 'en',
+		'/kr': 'kr'
+	})[location.pathname.replace(/\/$/, '')] || 'en';
+
 	const browserLang = (navigator.language || navigator.userLanguage).split('-')[0];
 	const cookieLanguage = getCookie('lang');
 	// Browser language is different than the set language and the url
 	// querystring does not have a lang parameter
-	if (browserLang && !cookieLanguage && location.pathname === '/') {
-		return window.location.search = '?lang=' + browserLang;
+
+	if (browserLang && !cookieLanguage) {
+		setCookie('lang', browserLang, 365);
+		return window.location = '/' + browserLang;
+	}
+
+	// The main index.html is in English
+	setCookie('lang', activeLang, 365);
+	if (location.pathname === '/' && cookieLanguage !== 'en') {
+		return window.location = '/' + cookieLanguage;
 	}
 
 
@@ -131,6 +154,11 @@
 
 
 	checkScrollPosition();
+	let scrollDebounce = null;
+	window.addEventListener('scroll', function () {
+		clearTimeout(scrollDebounce);
+		setTimeout(checkScrollPosition, 200);
+	});
 
 	/* Sticky Nav */
 	function getStickyNav() {
