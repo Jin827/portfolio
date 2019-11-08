@@ -7,7 +7,7 @@ const cors = require('cors');
 const app = express();
 const path = require('path');
 const requestIp = require('request-ip');
-var geoip = require('geoip-country');
+const geoip = require('geoip-country');
 
 const port = process.env.PORT || 9900;
 const myApi = require('./api.js');
@@ -25,28 +25,58 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(cookieParser());
 
+const SUPPORTED_LANGUAGES = {
+	en: 1,
+	kr: 1
+};
+
+// Set in the session the language we want to use
+app.get('/', (req, res, next) => {
+	req._lang = req.query.lang || req.cookies.lang;
+	if (SUPPORTED_LANGUAGES[req._lang]) {
+		res.cookie('lang', req._lang);
+	} else {
+		req._lang = 'en';
+	}
+
+	if (req.query.lang) {
+		return res.redirect('/');
+	}
+	next();
+});
+
+// get user IP & geoLocation
 app.use(requestIp.mw());
 app.use((req, res, next) =>{
 	const ip = req.clientIp;
 	req.geo = geoip.lookup('1.11.255.255');
 	next();
-
 });
 
 if (app.get('env') === 'production') {
 	app.get('/', (req, res) => {
-		res.redirect('https://jin827.github.io');
+		res.redirect(`https://jin827.github.io/index-${req._lang}.html`);
 	});
 } else {
 	app.use('/vendors', express.static(`${process.cwd()}/vendors`));
 	app.use('/resources', express.static(path.join(__dirname, '../', 'client/resources')));
 	app.use(express.static(`${process.cwd()}/static`));
 
-	app.get('/', (req, res) => {
+	app.get('/index-kr.html', function (req, res) {
+		res.sendFile(path.join(__dirname, '/views/index-kr.html'));
+	});
+	app.get('/index-en.html', function (req, res) {
+		res.sendFile(path.join(__dirname, '/views/index-en.html'));
+	});
+	app.get('/index.html', function (req, res) {
 		res.sendFile(path.join(__dirname, '/views/index.html'));
+	});
+
+	app.get('/', (req, res) => {
+		res.sendFile(path.join(__dirname, `/views/index-${req._lang}.html`));
 		// const geoIp = req.geo;
 		// if(geoIp) {
-		// 	if(geoIp.country === 'KR'){
+		// 	if(geoIp.country kr== 'KR'){
 		// 		return res.sendFile(path.join(__dirname, '/views/index-kr.html'));
 		// 	}
 		// 	return res.sendFile(path.join(__dirname, '/views/index-en.html'));

@@ -4,6 +4,22 @@
 	const IS_DEBUG_MODE = !!~location.href.indexOf('localhost');
 	const BACKEND_HOST = IS_DEBUG_MODE ? 'http://localhost:9900' : 'https://jiah-lee.herokuapp.com';
 
+	// Check the language
+	function getCookie(name) {
+		var value = '; ' + document.cookie;
+		var parts = value.split('; ' + name + '=');
+		if (parts.length == 2) return parts.pop().split(';').shift();
+	}
+
+	const browserLang = (navigator.language || navigator.userLanguage).split('-')[0];
+	const cookieLanguage = getCookie('lang');
+	// Browser language is different than the set language and the url
+	// querystring does not have a lang parameter
+	if (browserLang && !cookieLanguage && location.pathname === '/') {
+		return window.location.search = '?lang=' + browserLang;
+	}
+
+
 
 	/* --- Header Typewriting Animation --- */
 	const TxtType = function (el, toRotate, period) {
