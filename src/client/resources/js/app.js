@@ -31,11 +31,21 @@
 	// Browser language is different than the set language and the url
 	// querystring does not have a lang parameter
 
+  const redirects = {
+    "ko": "/kr",
+    "kr": "/kr",
+    "en": "/en"
+  }
+  
 	// set cookie for user accessing via github.
 	if (browserLang && !cookieLanguage) {
+    if (!redirects[browserLang]) {
+      browserLang = "en"
+    }
+    const pathToRedirect = redirects[browserLang]
 		// set cookie if not exist.
 		setCookie('lang', browserLang, 365);
-		return window.location = '/' + browserLang;
+		return window.location = pathToRedirect;
 	}
 
 	// re-set cookie when cookie already exists.
