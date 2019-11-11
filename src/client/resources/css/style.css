@@ -286,6 +286,7 @@ header {
 
 .open {
   display: block;
+  padding-bottom: .4em;
 }
 
 .main-nav--box {
@@ -307,7 +308,7 @@ header {
   -ms-flex-pack: distribute;
   justify-content: space-around;
   list-style: none;
-  padding: .8em 0 0 0;
+  padding: .8em 0;
   text-transform: uppercase;
   font-size: 1em;
 }
@@ -328,16 +329,16 @@ header {
   box-shadow: 0 2px 2px #efefef;
 }
 
-.sticky .multi-lang {
-  color: #333;
-}
-
-.sticky .multi-lang a {
-  color: #333;
-}
-
 @media (min-width: 900px) {
   .sticky .main-nav li a {
+    color: #333;
+  }
+
+  .sticky .multi-lang {
+    color: #333;
+  }
+
+  .sticky .multi-lang a {
     color: #333;
   }
 }

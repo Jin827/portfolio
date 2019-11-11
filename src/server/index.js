@@ -36,6 +36,11 @@ app.get('/', (req, res, next) => {
 	} else {
 		req._lang = 'en';
 	}
+
+	if (req.query.lang) {
+		return res.redirect('/');
+	}
+
 	next();
 });
 
@@ -55,13 +60,16 @@ if (app.get('env') === 'production') {
 	app.use(express.static(`${process.cwd()}/static`));
 
 	app.get('/', (req, res) => {
-		res.sendFile(path.join(__dirname, `/${req._lang}/index.html`));
+		res.sendFile(path.join(__dirname, `/views/${req._lang}/index.html`));
 	});
 	app.get('/kr', function (req, res) {
-		res.sendFile(path.join(__dirname, '/kr/index.html'));
+		res.sendFile(path.join(__dirname, '/views/kr/index.html'));
 	});
 	app.get('/en', function (req, res) {
-		res.sendFile(path.join(__dirname, '/en/index.html'));
+		res.sendFile(path.join(__dirname, '/views/en/index.html'));
+	});
+	app.get('/index.html', function (req, res) {
+		res.sendFile(path.join(__dirname, '/views/index.html'));
 	});
 }
 
