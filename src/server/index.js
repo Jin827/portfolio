@@ -25,7 +25,7 @@ app.use(cookieParser());
 
 const SUPPORTED_LANGUAGES = {
 	en: 1,
-	kr: 1
+	ko: 1
 };
 
 app.get('/', (req, res, next) => {
@@ -51,8 +51,8 @@ if (app.get('env') === 'production') {
 	app.get('/en', (req, res) => {
 		res.redirect('https://jin827.github.io/en/');
 	});
-	app.get('/kr', (req, res) => {
-		res.redirect('https://jin827.github.io/kr/');
+	app.get('/ko', (req, res) => {
+		res.redirect('https://jin827.github.io/ko/');
 	});
 } else {
 	app.use('/vendors', express.static(`${process.cwd()}/vendors`));
@@ -62,8 +62,8 @@ if (app.get('env') === 'production') {
 	app.get('/', (req, res) => {
 		res.sendFile(path.join(__dirname, `/views/${req._lang}/index.html`));
 	});
-	app.get('/kr', function (req, res) {
-		res.sendFile(path.join(__dirname, '/views/kr/index.html'));
+	app.get('/ko', function (req, res) {
+		res.sendFile(path.join(__dirname, '/views/ko/index.html'));
 	});
 	app.get('/en', function (req, res) {
 		res.sendFile(path.join(__dirname, '/views/en/index.html'));

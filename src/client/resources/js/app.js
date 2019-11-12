@@ -23,7 +23,7 @@
 
 	const activeLang = ({
 		'/en': 'en',
-		'/kr': 'kr'
+		'/ko': 'ko'
 	})[location.pathname.replace(/\/$/, '')] || 'en';
 
 	const browserLang = (navigator.language || navigator.userLanguage).split('-')[0];
