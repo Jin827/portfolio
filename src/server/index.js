@@ -37,9 +37,9 @@ app.get('/', (req, res, next) => {
 		req._lang = 'en';
 	}
 
-	if (req.query.lang) {
-		return res.redirect('/');
-	}
+	// if (req.query.lang) {
+	// 	return res.redirect('/');
+	// }
 
 	next();
 });
@@ -61,6 +61,7 @@ if (app.get('env') === 'production') {
 
 	app.get('/', (req, res) => {
 		res.sendFile(path.join(__dirname, `/views/${req._lang}/index.html`));
+
 	});
 	app.get('/ko', function (req, res) {
 		res.sendFile(path.join(__dirname, '/views/ko/index.html'));
@@ -68,9 +69,9 @@ if (app.get('env') === 'production') {
 	app.get('/en', function (req, res) {
 		res.sendFile(path.join(__dirname, '/views/en/index.html'));
 	});
-	app.get('/index.html', function (req, res) {
-		res.sendFile(path.join(__dirname, '/views/index.html'));
-	});
+	// app.get('/index.html', function (req, res) {
+	// 	res.sendFile(path.join(__dirname, '/views/index.html'));
+	// });
 }
 
 app.post('/api/contact', (req, res) => {

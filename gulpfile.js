@@ -24,7 +24,7 @@ const gulpif = require('gulp-if');
 
 // File path
 const paths = {
-	devHTML: 'src/server/**/*.html',
+	devHTML: 'src/server/views/*.html',
 	devCSS: 'src/client/resources/css/**/*.css',
 	devJS: 'src/client/resources/js/**/*js',
 	devIMG: 'src/client/resources/assets/img/**/*.{png,jpeg,jpg,gif}',
