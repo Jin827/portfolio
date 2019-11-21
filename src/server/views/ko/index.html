@@ -112,15 +112,17 @@
   </header>
   <section class="section-about" id="about">
     <h3>about me</h3>
-    <p class="about-me--p">웹 개발자로서의 제 목표는 사람을 더한&#44; 사람을 위한 제품들을 만들어 그들의 삶을 좀 더 쉽고 즐겁게 만드는 것 입니다&#46; 웹 개발자로서의 여정은 캐나다
-      몬트리올에 위치한
-      DecodeMTL 기관에서 <span class="point-color--main-blue">The Full Stack Developer Bootcamp</span> 과정을 수료하였고, 그 후 캐나다에서
+    <p class="about-me--p">웹 개발자로서의 제 목표는 &#127892; <br>사람을 더한&#44; 사람을 위한 제품들을 만들어 그들의 삶을 좀 더 쉽고 즐겁게 만드는 것 입니다&#46;
+      <br>
+      <br>
+      캐나다 몬트리올에 위치한 DecodeMTL 기관에서 <span class="point-color--main-blue">The Full Stack Developer Bootcamp</span> 과정을
+      수료하였고, 그 후 캐나다에서
       인턴십을 거쳐 프리랜서로 일을 하였습니다&#46;
       <br>
       <br>
-      <span class="point-color--main-blue">저는 </span> 화학공학을 전공하고 사설학원 수학강사 경험이 있는 동물 애호가이자&#44; 댄스와 수영 그리고 언어 &#40;
-      영어&#44;
-      불어 &#41;
+      <span class="point-color--main-blue">저는 또한</span> 화학공학을 전공하고 사설학원 수학강사 경험이 있는 동물 애호가이자&#44; 댄스와 수영 그리고 언어
+      &#40;영어&#44;
+      불어&#41;
       를 사랑하는 웹 개발자입니다&#46;
     </p>
     <div class="about-me--link">
@@ -326,7 +328,7 @@
               <span class="point-font-bold">주문 관리 시스템</span>
               <br>
               <br>기획&#44; 디자인&#44; 개발
-              <br>Gibhub를 이용한 협업
+              <br>Github를 이용한 협업
               <br>
               <br>거래 명세서 발행
               <br>회사 매출 관리
@@ -396,11 +398,11 @@
             <br><br>
             <a href="https://docs.google.com/document/d/1ZIgeCL4Pr58z6p-jln7K59Vg3QGSoSAKpFC4uuhjnSk/edit?usp=sharing"
               target="_blank" rel="noopener">
-              <span class="underline">작업한 자료를 보고싶으시다면 클릭해주세요 !</span>
+              <span class="underline">&#35; 작업한 자료를 보고싶으시다면 클릭해주세요 !</span>
             </a>
-            <br><br>데이터베이스와 서버 사이드 코드에 대한 이해도가 전체 프로젝트를 파악하는데 도움이 되었습니다.&#46; 덕분에 <span class="point-color--purple">백앤드
-              개발자와
-              원활하게 의사소통을 할 수 있었고 버그도 더 빠르게 해결하여&#44; 프로젝트를 좀 더 효율적으로 진행할 수 있었습니다&#46; </span>
+            <br><br><span class="point-color--purple">데이터베이스와 서버 사이드 코드에 대한 이해도</span>가 전체 프로젝트를 파악하는데 도움이 되어, 백앤드
+            개발자와
+            원활하게 의사소통을 할 수 있었고 버그도 더 빠르게 해결하여&#44; 프로젝트를 좀 더 효율적으로 진행할 수 있었습니다&#46;
           </p>
           <a class="on-sub js--btn-to-main" id="105">
             <svg class="triangle--sub-portfolio" role="img" aria-label="Portfolio Button">
@@ -468,7 +470,7 @@
             이 프로젝트에서는 확장형 웹사이트를 만들고 유지 관리가 쉽도록&#44; 코드 <span class="point-color--purple">묘듈화</span>에 중점을 두었습니다&#46;
             <br>
             <br> 이의 연장선으로 효율적인 state 관리를 위해&#44; Redux 라이브러리와 정규화된 데이터 구조를 이용하였습니다&#46;
-            <span class="point-color--purple">정규화된 데이터 구조</span>를 적용함으로써 원하는 object를 좀 더 빠르게 찾을 수 있었습니다&#46;
+            <span class="point-color--purple">정규화된 데이터 구조</span>를 적용함으로써 원하는 object를 좀 더 빠르게 찾을 수 있게 하였습니다&#46;
             <br>
             <br>
             {<br>
@@ -479,13 +481,11 @@
             &#160;&#160;&#160;&#160;&#160;1&#58; { id&#58; 1&#44; departure&#58; YUL&#44; destination&#58; IC }<br>
             &#160;&#160;&#160;&#160;&#160;2&#58; { id&#58; 2&#44; ...}<br>
             &#160;&#160;&#160;&#160;}<br>
-            &#160;&#160;}<br>
-            }&#59;
+            &#160;&#160;}}&#59;
             <br>
             <br>
-            For instance&#44; in order to save a searched departure value&#46;
-            Fist&#44; We need to check if &#39;the object with Id 1&#39; already exists in Redux store&#46; It was done
-            using an array of &#39;Trip Ids&#39; and findIndex() method like below&#46;
+            예를 들어 검색된 출발지 값을 저장하는 경우&#44; 아이디 1을 가진 object가 redux store에 있는지 확인 후&#44; findIndex() 를 이용하여 아래와 같이
+            간단하게 해결하였습니다&#46;
             <br>
             <br>
             const isExist &#61; result&#46;length &#61;&#61;&#61; 0 ? -1 &#58; result&#46;findIndex(r => r
@@ -666,19 +666,18 @@
         <div class="sub-portfolio sub--1">
           <h4>Behind Story&#35;&#35;</h4>
           <p>
-            &#42;&#42; 캐나다 DecodeMTL에서 Full Stack Developer Bootcamp 과정의 졸업 팀 프로젝트입니다&#46; &#42;&#42;
-            <br>
             총 4명의 팀원으로 구성되어있는 팀에서 저는 클라이언트 사이드 작업을 했습니다&#46;
             <br>
-            <span class="point-color--purple">&#91; 주요 작업 &#93;</span> &#45;&#32; 로그인 인증 &#40; authentication &#41;
-            &#45;&#32; 프로젝트 업무 카드
-            &#45;&#32; 서버 사이드와 결합 후 디버깅&#46;
+            제가 했던 주요 작업은 <span class="point-color--purple"> 로그인 인증 &#40; authentication
+              &#41;&#44; 프로젝트 업무 카드&#44; 서버 사이드와 결합 후 디버깅</span> 입니다&#46;
             <br>
             <br> 가장 흥미로웠던 것은 디버깅하는 부분이였습니다&#46; 클라이언트 사이드와 서버 사이드를 결합 한 후 어디에서 오는지 알수 없는 버그가 여기저기에서 발생하였었습니다&#46; 이 문제를
             해결하게 위해 서버 사이드에 작업했던 팀원 한명과 제가 각각 클라이언트와 서버 사이드 코드가 켜진 두개의 모니터를 나란히 두고 라인 하나하나를 확인하면서 디버깅을 하였습니다&#46;
             <br>
             <br> 대학시절 많은 프로젝트에 참여하여 팀 프로젝트에 익숙한 저였지만&#44; 이경험을 통해 처음으로 웹 개발자로서의 <span class="point-color--purple">팀워크의
               힘</span>을 배우게 되었습니다&#46;
+            <br>
+            &#42;&#42; 캐나다 DecodeMTL에서 Full Stack Developer Bootcamp 과정의 졸업 팀 프로젝트입니다&#46; &#42;&#42;
           </p>
           <a class="on-sub js--btn-to-main" id="101">
             <svg class="triangle--sub-portfolio" role="img" aria-label="Portfolio Button">
