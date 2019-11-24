@@ -659,6 +659,7 @@ header {
 .main-portfolio--contents--main-text {
   margin-top: 2em;
   margin-bottom: 1em;
+  line-height: 1.2em;
 }
 
 .main-portfolio--contents--skills {
@@ -674,7 +675,7 @@ header {
   letter-spacing: 1.2px;
   color: var(--purple);
   list-style: none;
-  margin-bottom: 2em;
+  margin-bottom: 1.4em;
 }
 
 /* --- Buttons --- */
@@ -690,7 +691,7 @@ header {
 }
 
 .main-portfolio--btns div {
-  margin-top: 29px;
+  margin-top: 15px;
 }
 
 .btn-anchor {
@@ -702,7 +703,7 @@ header {
   width: 100px;
   padding: 6px 25px;
   border-radius: 20px;
-  margin: 20px 12px;
+  margin: 20px 8px;
   border-width: 1.5px;
 }
 
@@ -733,16 +734,15 @@ header {
 
 .triangle--main-portfolio,
 .triangle--sub-portfolio {
-  margin: 28px 12px 12px 12px;
   fill: var(--main-blue);
 }
 
 .triangle--main-portfolio {
-  margin: 28px 12px 12px 12px;
+  margin: 14.5px 12px 12px 12px;
 }
 
 .triangle--sub-portfolio {
-  margin: 15px 5px 0 0;
+  margin: 14.5px 5px 0 0;
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
