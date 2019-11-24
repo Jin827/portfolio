@@ -236,7 +236,7 @@ header {
 }
 
 .multi-lang-mobile {
-  color: #fff;
+  color: var(--main-blue);
   margin-top: 4px;
   margin-left: 15px;
   margin-right: 5px;
@@ -755,6 +755,7 @@ header {
 }
 
 .on-sub {
+  margin-top: 1em;
   float: right;
 }
 
