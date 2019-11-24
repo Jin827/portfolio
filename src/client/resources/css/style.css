@@ -648,7 +648,7 @@ header {
 .main-portfolio--title {
   border-top: 1px solid var(--main-blue);
   border-bottom: 1px solid var(--main-blue);
-  padding: 2em 0;
+  padding: 1.7em 0 1.2em 0;
   margin: 30px auto 0 auto;
 }
 
@@ -657,9 +657,9 @@ header {
 }
 
 .main-portfolio--contents--main-text {
-  margin-top: 2em;
-  margin-bottom: 1em;
-  line-height: 1.2em;
+  margin-top: 2.5em;
+  margin-bottom: 1.5em;
+  line-height: 1.3em;
 }
 
 .main-portfolio--contents--skills {

@@ -17,6 +17,7 @@
 
   .main-portfolio--title {
     width: 80vw;
+    padding: 3.2em 0 2.4em 0;
   }
 
   .section-portfolio p {
@@ -471,15 +472,6 @@
   /* --- Portfolio --- */
   .portpolio-box {
     max-height: 850px;
-  }
-
-  .main-portfolio--title {
-    padding: 3em 0;
-  }
-
-  .main-portfolio--contents--main-text {
-    margin-top: 3em;
-    margin-bottom: 2em;
   }
 
   .main-portfolio--contents--skills {
