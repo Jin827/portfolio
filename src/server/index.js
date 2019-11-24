@@ -58,21 +58,17 @@ if (app.get('env') === 'production') {
 	app.use('/vendors', express.static(`${process.cwd()}/vendors`));
 	app.use('/resources', express.static(path.join(__dirname, '../', 'client/resources')));
 	app.use(express.static(`${process.cwd()}/static`));
-	console.log('It\'s on Dev mode');
+
 	app.get('/', (req, res) => {
-		console.log('########1');
 		res.sendFile(path.join(__dirname, `/views/${req._lang}/index.html`));
 	});
 	app.get('/ko', function (req, res) {
-		console.log('########2');
 		res.sendFile(path.join(__dirname, '/views/ko/index.html'));
 	});
 	app.get('/en', function (req, res) {
-		console.log('########3');
 		res.sendFile(path.join(__dirname, '/views/en/index.html'));
 	});
 	app.get('/index.html', function (req, res) {
-		console.log('########4');
 		res.sendFile(path.join(__dirname, '/views/index.html'));
 	});
 }
