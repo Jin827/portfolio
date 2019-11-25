@@ -475,13 +475,17 @@
     max-height: 850px;
   }
 
+  .main-portfolio--contents--main-text {
+    margin-top: 3.5em;
+    margin-bottom: 2.5em;
+  }
+
   .main-portfolio--contents--skills {
     width: 40vw;
-    margin-bottom: 1.8em;
   }
 
   .main-portfolio--btns {
-    margin-top: 1em;
+    margin-top: 3em;
   }
 
   .sub-portfolio.open {
@@ -494,7 +498,7 @@
   }
 
   .contact-memo {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
 }
 
@@ -513,13 +517,13 @@
   }
 
   /* --- Portfolio --- */
-  .main-portfolio--contents--skills {
-    width: 40vw;
-  }
-
   .image--web {
     max-height: 1600px;
     max-width: 1000px;
+  }
+
+  .main-portfolio--title {
+    padding: 4em 0 3.4em 0;
   }
 
   .sub-portfolio {
