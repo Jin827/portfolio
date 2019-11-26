@@ -193,18 +193,22 @@
 				montreal: {
 					lat: 45.5081804,
 					lng: -73.57
+				},
+				seoul: {
+					lat: 37.532600,
+					lng: 127.024612
 				}
 			};
 
 			const map = new google.maps.Map(googleMap, {
-				center: location.montreal,
+				center: location.seoul,
 				zoom: 11.5
 			});
 
 			new google.maps.Marker({
 				map: map,
-				position: location.montreal,
-				title: 'Montreal'
+				position: location.seoul,
+				title: 'Seoul'
 			});
 		};
 
