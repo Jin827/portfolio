@@ -421,8 +421,8 @@
   }
 
   .sub-portfolio.open {
-    top: -480px;
-    height: 470px;
+    top: -620px;
+    height: 600px;
   }
 
   .fade {
@@ -488,10 +488,6 @@
     margin-top: 3em;
   }
 
-  .sub-portfolio.open {
-    top: -520px;
-  }
-
   /* --- Contact --- */
   .section-contact {
     margin-top: 8em;
@@ -531,8 +527,6 @@
   }
 
   .sub-portfolio.open {
-    top: -620px;
-    height: 600px;
     padding-left: 7em;
     padding-right: 8em;
   }
