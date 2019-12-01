@@ -2,7 +2,7 @@
 
 	// if the url contains ?debug=true
 	const IS_DEBUG_MODE = !!~location.href.indexOf('localhost');
-	const BACKEND_HOST = IS_DEBUG_MODE ? 'http://localhost:9900' : 'https://jiah-lee.herokuapp.com';
+	const BACKEND_HOST = IS_DEBUG_MODE ? 'http://localhost:9950' : 'https://jiah-lee.herokuapp.com';
 
 	/* --- Multi-languages ( Globalization & Localization ) --- */
 	function getCookie(name) {
