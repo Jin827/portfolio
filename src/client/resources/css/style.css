@@ -708,6 +708,11 @@ header {
   border-width: 1.5px;
 }
 
+.btn-anchor.not-available {
+  cursor: none;
+}
+
+
 .btn-anchor:hover {
   border-color: rgb(1, 102, 197);
   background-color: rgb(1, 102, 197);
