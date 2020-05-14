@@ -711,11 +711,11 @@ header {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-top: 1em;
+  margin-top: 1.5em;
 }
 
 .main-portfolio--btns div {
-  margin-top: 15px;
+  line-height: 2em;
 }
 
 .btn-anchor {
@@ -767,7 +767,7 @@ header {
 }
 
 .triangle--main-portfolio {
-  margin: 14.5px 12px 12px 12px;
+  margin: 5px 12px 12px 12px;
 }
 
 .triangle--sub-portfolio {
