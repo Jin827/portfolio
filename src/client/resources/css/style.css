@@ -551,6 +551,13 @@ header {
   height: 45px;
 }
 
+.icon-logo--nextjs {
+  margin-top: 7px;
+  margin-left: -5px;
+  width: 65px;
+  height: auto;
+}
+
 .icon-logo--html {
   width: 45px;
 }
@@ -558,6 +565,13 @@ header {
 .icon-logo--css {
   width: 32px;
   height: 46px;
+}
+
+.icon-logo--styled {
+  margin-top: 10px;
+  margin-left: -10px;
+  width: 65px;
+  height: auto;
 }
 
 .icon-logo--jquery {
@@ -584,6 +598,15 @@ header {
 .icon-logo--postgres {
   width: 43px;
   height: 43px;
+}
+
+.icon-logo--knex {
+  margin-top: -5px;
+}
+
+.icon-logo--jira {
+  margin-top: -3px;
+  width: 33px;
 }
 
 /* ---------------------------------------- */
